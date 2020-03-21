@@ -1,10 +1,10 @@
 const path = require(`path`);
-const _ = require('lodash');
+const _ = require("lodash");
 
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const config = require('./config/siteConfig');
+const config = require("./config/siteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   fmImagesToRelative(node);
@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/archives${slug}`,
+      value: `/archives${slug}`
     });
   }
 };
@@ -54,8 +54,8 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: node.fields.slug,
         prev,
-        next,
-      },
+        next
+      }
     });
 
     if (node.frontmatter.tags) {
@@ -84,13 +84,13 @@ exports.createPages = async ({ graphql, actions }) => {
   for (let i = 0; i < numPages; i += 1) {
     createPage({
       path: i === 0 ? `/` : `/${i + 1}`,
-      component: path.resolve('./src/templates/postList.jsx'),
+      component: path.resolve("./src/templates/postList.jsx"),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
-        currentPage: i + 1,
-      },
+        currentPage: i + 1
+      }
     });
   }
 
@@ -98,15 +98,18 @@ exports.createPages = async ({ graphql, actions }) => {
     numPages = Math.ceil(count / postsPerPage);
     for (let i = 0; i < numPages; i += 1) {
       createPage({
-        path: i === 0 ? `/tags/${_.kebabCase(tag)}` : `/tags/${_.kebabCase(tag)}/${i + 1}`,
+        path:
+          i === 0
+            ? `/tags/${_.kebabCase(tag)}`
+            : `/tags/${_.kebabCase(tag)}/${i + 1}`,
         component: path.resolve(`./src/templates/tag.jsx`),
         context: {
           tag,
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1,
-        },
+          currentPage: i + 1
+        }
       });
     }
   });
@@ -115,15 +118,18 @@ exports.createPages = async ({ graphql, actions }) => {
     numPages = Math.ceil(count / postsPerPage);
     for (let i = 0; i < numPages; i += 1) {
       createPage({
-        path: i === 0 ? `/categories/${_.kebabCase(category)}` : `/categories/${_.kebabCase(category)}/${i + 1}`,
+        path:
+          i === 0
+            ? `/categories/${_.kebabCase(category)}`
+            : `/categories/${_.kebabCase(category)}/${i + 1}`,
         component: path.resolve(`./src/templates/category.jsx`),
         context: {
           category,
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1,
-        },
+          currentPage: i + 1
+        }
       });
     }
   });

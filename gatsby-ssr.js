@@ -1,8 +1,8 @@
-const React = require('react');
+const React = require("react");
 
 exports.onRenderBody = ({ setPreBodyComponents }) => {
   setPreBodyComponents([
-    React.createElement('script', {
+    React.createElement("script", {
       dangerouslySetInnerHTML: {
         __html: `
           (() => {    
@@ -33,8 +33,8 @@ exports.onRenderBody = ({ setPreBodyComponents }) => {
 
             setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'))
           })()
-        `,
-      },
-    }),
+        `
+      }
+    })
   ]);
 };

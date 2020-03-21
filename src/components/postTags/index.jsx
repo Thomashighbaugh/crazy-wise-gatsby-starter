@@ -1,8 +1,8 @@
-import React from 'react';
-import _ from 'lodash';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import './style.scss';
+import React from "react";
+import _ from "lodash";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import "./style.scss";
 
 const PostTags = ({ tags }) => {
   return (
@@ -18,11 +18,11 @@ const PostTags = ({ tags }) => {
 };
 
 PostTags.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.string),
+  tags: PropTypes.arrayOf(PropTypes.string)
 };
 
 PostTags.defaultProps = {
-  tags: null,
+  tags: null
 };
 
 export default React.memo(PostTags);

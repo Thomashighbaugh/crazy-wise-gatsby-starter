@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const MOBILE_BREAKPOINT = 768;
 
@@ -10,16 +10,16 @@ const getWindowDimensions = () => {
 const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState({
     width: 0,
-    height: 0,
+    height: 0
   });
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const handleResize = () => {
         setWindowDimensions(getWindowDimensions());
       };
-      window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
       handleResize();
-      return () => window.removeEventListener('resize', handleResize);
+      return () => window.removeEventListener("resize", handleResize);
     }
     return null;
   }, []);

@@ -1,11 +1,20 @@
-import React from 'react';
-import _ from 'lodash';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import React from "react";
+import _ from "lodash";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
 
-const PostText = ({ head, category, date, timeToRead, wrapClass, children }) => {
+const PostText = ({
+  head,
+  category,
+  date,
+  timeToRead,
+  wrapClass,
+  children
+}) => {
   const formatDate =
-    Number.isNaN(date) === false ? new Date(date).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10);
+    Number.isNaN(date) === false
+      ? new Date(date).toISOString().slice(0, 10)
+      : new Date().toISOString().slice(0, 10);
   return (
     <div className={wrapClass}>
       <h3 className="post-title">{head}</h3>
@@ -16,7 +25,7 @@ const PostText = ({ head, category, date, timeToRead, wrapClass, children }) => 
           </Link>
         )}
         <span>
-          <i className="fas fa-calendar-alt" style={{ marginRight: '4px' }} />
+          <i className="fas fa-calendar-alt" style={{ marginRight: "4px" }} />
           {formatDate}
         </span>
         <span>{` • ${timeToRead} min read`}</span>
@@ -32,14 +41,14 @@ PostText.propTypes = {
   date: PropTypes.string,
   timeToRead: PropTypes.number,
   wrapClass: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 PostText.defaultProps = {
-  head: '',
-  date: '',
+  head: "",
+  date: "",
   timeToRead: 0,
-  wrapClass: '',
+  wrapClass: ""
 };
 
 export default React.memo(PostText);

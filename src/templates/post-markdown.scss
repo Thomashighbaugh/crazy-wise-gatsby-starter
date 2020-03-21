@@ -45,8 +45,8 @@ $alertStyles: (
     overflow: auto;
   }
 
-  code[class ="language-text"] {
-    color:var(--text-color);
+  code[class="language-text"] {
+    color: var(--text-color);
     background-color: var(--inline-code-bg);
   }
 
@@ -204,7 +204,11 @@ $alertStyles: (
   }
 
   .gatsby-highlight-code-line {
-    background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: linear-gradient(
+      to right,
+      hsla(24, 20%, 50%, 0.1) 70%,
+      hsla(24, 20%, 50%, 0)
+    );
     display: block;
     margin-right: -1em;
     margin-left: -1em;
@@ -213,7 +217,3 @@ $alertStyles: (
     border-left: 0.25em solid rgb(255, 248, 153);
   }
 }
-
-
-
-

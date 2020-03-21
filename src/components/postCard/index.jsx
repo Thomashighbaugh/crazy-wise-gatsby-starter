@@ -1,17 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import Img from 'gatsby-image';
-import PostText from '../postText';
-import PostTags from '../postTags';
-import { useIsMobile } from '../utils';
-import './style.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
+import PostText from "../postText";
+import PostTags from "../postTags";
+import { useIsMobile } from "../utils";
+import "./style.scss";
 
 const PostCard = ({ data }) => {
   const isMobile = useIsMobile();
   return (
     <article className="post-card">
-      {!isMobile && data.cover && <Img fluid={{ ...data.cover.childImageSharp.fluid }} className="post-card-cover" />}
+      {!isMobile && data.cover && (
+        <Img
+          fluid={{ ...data.cover.childImageSharp.fluid }}
+          className="post-card-cover"
+        />
+      )}
       <PostText
         category={data.category}
         date={data.date}
@@ -35,8 +40,8 @@ PostCard.propTypes = {
     category: PropTypes.string,
     date: PropTypes.string,
     excerpt: PropTypes.string,
-    timeToRead: PropTypes.number,
-  }).isRequired,
+    timeToRead: PropTypes.number
+  }).isRequired
 };
 
 export default React.memo(PostCard);

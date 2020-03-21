@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import './style.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import "./style.scss";
 
 const postShortList = ({ data }) => {
   return (
@@ -39,11 +39,11 @@ postShortList.propTypes = {
           date: PropTypes.string.isRequired,
           timeToRead: PropTypes.number.isRequired,
           slug: PropTypes.string.isRequired,
-          title: PropTypes.string.isRequired,
-        }),
-      ),
-    }).isRequired,
-  ).isRequired,
+          title: PropTypes.string.isRequired
+        })
+      )
+    }).isRequired
+  ).isRequired
 };
 
 export default React.memo(postShortList);

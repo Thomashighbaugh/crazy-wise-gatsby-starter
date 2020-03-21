@@ -1,7 +1,7 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import React from "react";
+import { Helmet } from "react-helmet";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
 
 const query = graphql`
   query SEO {
@@ -39,9 +39,9 @@ const SEO = ({ title, description, image, path, articleDate }) => (
           datePublished,
           copyrightYear,
           twitterUsername,
-          fbAppId,
-        },
-      },
+          fbAppId
+        }
+      }
     }) => {
       const date = new Date(articleDate).toISOString();
 
@@ -49,12 +49,12 @@ const SEO = ({ title, description, image, path, articleDate }) => (
         url: path ? `${siteUrl}${path}` : siteUrl,
         title: title ? `${title} | ${defaultTitle}` : defaultTitle,
         description: description || defaultDescription,
-        image: image ? `${siteUrl}${image}` : defaultImage,
+        image: image ? `${siteUrl}${image}` : defaultImage
       };
 
       const schemaOrgWebPage = {
-        '@context': 'http://schema.org',
-        '@type': 'WebPage',
+        "@context": "http://schema.org",
+        "@type": "WebPage",
         url: siteUrl,
         headline: siteTitleAlt,
         inLanguage: siteLanguage,
@@ -62,67 +62,67 @@ const SEO = ({ title, description, image, path, articleDate }) => (
         description: defaultDescription,
         name: defaultTitle,
         author: {
-          '@type': 'Person',
-          name: author,
+          "@type": "Person",
+          name: author
         },
         copyrightHolder: {
-          '@type': 'Person',
-          name: author,
+          "@type": "Person",
+          name: author
         },
         copyrightYear,
         creator: {
-          '@type': 'Person',
-          name: author,
+          "@type": "Person",
+          name: author
         },
         publisher: {
-          '@type': 'Person',
-          name: author,
+          "@type": "Person",
+          name: author
         },
         datePublished: new Date(datePublished).toISOString(),
         dateModified: new Date(datePublished).toISOString(),
         image: {
-          '@type': 'ImageObject',
-          url: seo.image,
-        },
+          "@type": "ImageObject",
+          url: seo.image
+        }
       };
 
       const itemListElement = [
         {
-          '@type': 'ListItem',
+          "@type": "ListItem",
           item: {
-            '@id': siteUrl,
-            name: 'Homepage',
+            "@id": siteUrl,
+            name: "Homepage"
           },
-          position: 1,
-        },
+          position: 1
+        }
       ];
 
       let schemaArticle = null;
 
       if (articleDate) {
         schemaArticle = {
-          '@context': 'http://schema.org',
-          '@type': 'Article',
+          "@context": "http://schema.org",
+          "@type": "Article",
           author: {
-            '@type': 'Person',
-            name: author,
+            "@type": "Person",
+            name: author
           },
           copyrightHolder: {
-            '@type': 'Person',
-            name: author,
+            "@type": "Person",
+            name: author
           },
           copyrightYear,
           creator: {
-            '@type': 'Person',
-            name: author,
+            "@type": "Person",
+            name: author
           },
           publisher: {
-            '@type': 'Organization',
+            "@type": "Organization",
             name: author,
             logo: {
-              '@type': 'ImageObject',
-              url: defaultImage,
-            },
+              "@type": "ImageObject",
+              url: defaultImage
+            }
           },
           datePublished: date,
           dateModified: date,
@@ -132,28 +132,28 @@ const SEO = ({ title, description, image, path, articleDate }) => (
           url: seo.url,
           name: seo.title,
           image: {
-            '@type': 'ImageObject',
-            url: seo.image,
+            "@type": "ImageObject",
+            url: seo.image
           },
-          mainEntityOfPage: seo.url,
+          mainEntityOfPage: seo.url
         };
         // Push current blogpost into breadcrumb list
         itemListElement.push({
-          '@type': 'ListItem',
+          "@type": "ListItem",
           item: {
-            '@id': seo.url,
-            name: seo.title,
+            "@id": seo.url,
+            name: seo.title
           },
-          position: 2,
+          position: 2
         });
       }
 
       const breadcrumb = {
-        '@context': 'http://schema.org',
-        '@type': 'BreadcrumbList',
-        description: 'Breadcrumbs list',
-        name: 'Breadcrumbs',
-        itemListElement,
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        description: "Breadcrumbs list",
+        name: "Breadcrumbs",
+        itemListElement
       };
 
       return (
@@ -169,7 +169,7 @@ const SEO = ({ title, description, image, path, articleDate }) => (
             <meta itemProp="description" content={seo.description} />
             <meta itemProp="image" content={seo.image} />
             {/* fb app id */}
-            <meta property="fb:app_id" content={fbAppId || ''} />
+            <meta property="fb:app_id" content={fbAppId || ""} />
             {/* OpenGraph */}
             <meta property="og:url" content={seo.url} />
             {articleDate ? (
@@ -187,9 +187,19 @@ const SEO = ({ title, description, image, path, articleDate }) => (
             <meta name="twitter:description" content={seo.description} />
             <meta name="twitter:image" content={seo.image} />
             {/* Schema.org */}
-            {!articleDate && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
-            {articleDate && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
-            <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+            {!articleDate && (
+              <script type="application/ld+json">
+                {JSON.stringify(schemaOrgWebPage)}
+              </script>
+            )}
+            {articleDate && (
+              <script type="application/ld+json">
+                {JSON.stringify(schemaArticle)}
+              </script>
+            )}
+            <script type="application/ld+json">
+              {JSON.stringify(breadcrumb)}
+            </script>
           </Helmet>
         </>
       );
@@ -202,7 +212,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   path: PropTypes.string,
-  articleDate: PropTypes.string,
+  articleDate: PropTypes.string
 };
 
 SEO.defaultProps = {
@@ -210,7 +220,7 @@ SEO.defaultProps = {
   description: null,
   image: null,
   path: null,
-  articleDate: null,
+  articleDate: null
 };
 
 export default SEO;

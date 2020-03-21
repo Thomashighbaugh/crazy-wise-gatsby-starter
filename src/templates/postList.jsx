@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Layout from '../layout';
-import PostCardList from '../components/postCardList';
-import PostPagination from '../components/postPagination';
-import SEO from '../components/SEO';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../layout";
+import PostCardList from "../components/postCardList";
+import PostPagination from "../components/postPagination";
+import SEO from "../components/SEO";
 
 const PostList = ({ data, pageContext }) => {
   const { edges } = data.allMarkdownRemark;
@@ -19,7 +19,7 @@ const PostList = ({ data, pageContext }) => {
       title: edge.node.frontmatter.title,
       date: edge.node.frontmatter.date,
       timeToRead: edge.node.timeToRead,
-      excerpt: edge.node.excerpt,
+      excerpt: edge.node.excerpt
     });
   });
   return (
@@ -38,7 +38,7 @@ PostList.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
+              slug: PropTypes.string.isRequired
             }).isRequired,
             excerpt: PropTypes.string.isRequired,
             timeToRead: PropTypes.number.isRequired,
@@ -47,24 +47,28 @@ PostList.propTypes = {
               tags: PropTypes.arrayOf(PropTypes.string),
               cover: PropTypes.object,
               category: PropTypes.string,
-              date: PropTypes.string,
-            }).isRequired,
-          }).isRequired,
-        }),
-      ).isRequired,
-    }).isRequired,
+              date: PropTypes.string
+            }).isRequired
+          }).isRequired
+        })
+      ).isRequired
+    }).isRequired
   }).isRequired,
   pageContext: PropTypes.shape({
     currentPage: PropTypes.number,
-    numPages: PropTypes.number,
-  }).isRequired,
+    numPages: PropTypes.number
+  }).isRequired
 };
 
 export default PostList;
 
 export const pageQuery = graphql`
   query PostListQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: $limit, skip: $skip) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           fields {

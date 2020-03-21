@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Layout from '../layout';
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../layout";
 
 const NotFound = () => {
   return (
@@ -9,7 +9,9 @@ const NotFound = () => {
         <h1>Not found :(</h1>
         <Link to="/">
           <i className="far fa-arrow-alt-circle-left fa-2x" />
-          <span style={{ fontSize: '2rem', marginLeft: '1rem' }}>Go to home</span>
+          <span style={{ fontSize: "2rem", marginLeft: "1rem" }}>
+            Go to home
+          </span>
         </Link>
       </div>
     </Layout>

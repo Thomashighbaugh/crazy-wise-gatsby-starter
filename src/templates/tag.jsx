@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import _ from 'lodash';
-import Layout from '../layout';
-import SEO from '../components/SEO';
-import PostCardList from '../components/postCardList';
-import PostPagination from '../components/postPagination';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import _ from "lodash";
+import Layout from "../layout";
+import SEO from "../components/SEO";
+import PostCardList from "../components/postCardList";
+import PostPagination from "../components/postPagination";
 
 const Tag = ({ pageContext, data }) => {
   const postEdges = data.allMarkdownRemark.edges;
@@ -20,7 +20,7 @@ const Tag = ({ pageContext, data }) => {
       title: edge.node.frontmatter.title,
       date: edge.node.frontmatter.date,
       timeToRead: edge.node.timeToRead,
-      excerpt: edge.node.excerpt,
+      excerpt: edge.node.excerpt
     });
   });
   const path = `/tags/${_.kebabCase(tag)}`;
@@ -29,7 +29,11 @@ const Tag = ({ pageContext, data }) => {
       <SEO title={`Posts about tag-${tag}`} path={path} />
       <h1 className="text-center tag-head">{`Posts About ${tag}`}</h1>
       <PostCardList posts={postList} />
-      <PostPagination currentPage={currentPage} numPages={numPages} subpath={path} />
+      <PostPagination
+        currentPage={currentPage}
+        numPages={numPages}
+        subpath={path}
+      />
     </Layout>
   );
 };
@@ -38,7 +42,7 @@ Tag.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string,
     currentPage: PropTypes.number,
-    numPages: PropTypes.number,
+    numPages: PropTypes.number
   }).isRequired,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
@@ -46,7 +50,7 @@ Tag.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
+              slug: PropTypes.string.isRequired
             }).isRequired,
             excerpt: PropTypes.string.isRequired,
             timeToRead: PropTypes.number.isRequired,
@@ -55,13 +59,13 @@ Tag.propTypes = {
               tags: PropTypes.arrayOf(PropTypes.string),
               cover: PropTypes.object,
               category: PropTypes.string,
-              date: PropTypes.string,
-            }).isRequired,
-          }).isRequired,
-        }),
-      ).isRequired,
-    }).isRequired,
-  }).isRequired,
+              date: PropTypes.string
+            }).isRequired
+          }).isRequired
+        })
+      ).isRequired
+    }).isRequired
+  }).isRequired
 };
 
 export default Tag;

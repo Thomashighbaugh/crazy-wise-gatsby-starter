@@ -73,11 +73,11 @@
       border-bottom: $base-border solid rgb(245, 222, 179);
       font-weight: $font-weight-bold;
     }
-  
+
     table > tbody + tbody {
       border-top: $base-border solid rgb(245, 222, 179);
     }
-  
+
     table > tbody > tr > td {
       border-bottom: $base-border / 3 solid rgb(245, 222, 179);
     }
