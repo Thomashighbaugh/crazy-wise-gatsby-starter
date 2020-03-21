@@ -21,9 +21,9 @@ Assuming you use bash, install `node.js` as follows
    nvm install node
 
    npm install --global gatsby-cli node-sass yarn
-   
+
    yarn global upgrade
-   
+
 
 ```
 
@@ -32,17 +32,20 @@ Assuming you use bash, install `node.js` as follows
 ```bash
 git clone https://github.com/Thomashighbaugh/g5-Blog-CCLife
 ```
+
 ### Install the Node Modules
+
 ```bash
 cd g5-Blog-CCLife
-yarn 
+yarn
 ```
+
 ### Run the Dev Server
 
 This will enable you to preview changes as they occur in the browser. Run this within the `~/g5-Blog-CCLife` directory
 
 ```bash
 
-gatsby develop 
+gatsby develop
 
 ```
