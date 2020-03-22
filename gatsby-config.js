@@ -2,9 +2,9 @@ module.exports = {
   siteMetadata: {
     title: 'Gatstrap',
     description: 'Gatsby starter for bootstrap a blog',
-    siteUrl: 'https://g5-Blog--CCLife.netlify.com',
-    author: 'Group 5',
-    twitter: 'fake1991',
+    siteUrl: 'https://gatstrap.netlify.com',
+    author: 'jaxx2104',
+    twitter: 'jaxx2104',
     adsense: '',
   },
   pathPrefix: '/',
@@ -27,16 +27,6 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          {
-            resolve: 'gatsby-remark-embed-video',
-            options: {
-              width: 800,
-              ratio: 1.77,
-              height: 400,
-              related: false,
-              noIframeBorder: true,
-            },
-          },
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -95,8 +85,6 @@ module.exports = {
         mergeLinkHeaders: true,
         mergeCachingHeaders: true,
       },
-    },
-
     },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
