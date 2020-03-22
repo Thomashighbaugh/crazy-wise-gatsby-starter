@@ -1,104 +1,74 @@
-const _ = require('lodash');
-const Promise = require('bluebird');
-const path = require('path');
-const { createFilePath } = require('gatsby-source-filesystem');
+const each = require('lodash/each')
+const path = require('path')
+const PostTemplate = path.resolve('./src/templates/index.js')
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js');
-    const blogTags = path.resolve('./src/templates/blog-tags.js');
-    const aboutPage = path.resolve('./src/templates/about-page.js')
-    const archivePage = path.resolve('./src/templates/archive-page.js');
-
     resolve(
       graphql(
         `
-        {
-          allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, limit: 1000, filter: {frontmatter: {title: {ne: "About"}}}) {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                  tags
+          {
+            allFile(filter: { extension: { regex: "/md|js/" } }, limit: 1000) {
+              edges {
+                node {
+                  id
+                  name: sourceInstanceName
+                  path: absolutePath
+                  remark: childMarkdownRemark {
+                    id
+                    frontmatter {
+                      layout
+                      path
+                    }
+                  }
                 }
               }
             }
           }
-        }
         `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
+      ).then(({ errors, data }) => {
+        if (errors) {
+          console.log(errors)
+          reject(errors)
         }
 
-        // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
-
-        _.each(posts, (post, index) => {
-          const previous =
-            index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
-
+        // Create blog posts & pages.
+        const items = data.allFile.edges
+        const posts = items.filter(({ node }) => /posts/.test(node.name))
+        each(posts, ({ node }) => {
+          if (!node.remark) return
+          const { path } = node.remark.frontmatter
           createPage({
-            path: post.node.fields.slug,
-            component: blogPost,
-            context: {
-              slug: post.node.fields.slug,
-              previous,
-              next,
-            },
-          });
-        });
+            path,
+            component: PostTemplate,
+          })
+        })
 
-        // Tag pages:
-        let tags = [];
-        _.each(posts, edge => {
-          if (_.get(edge, 'node.frontmatter.tags')) {
-            tags = tags.concat(edge.node.frontmatter.tags);
-          }
-        });
-        tags = _.uniq(tags);
-
-        tags.forEach(tag => {
+        const pages = items.filter(({ node }) => /page/.test(node.name))
+        each(pages, ({ node }) => {
+          if (!node.remark) return
+          const { name } = path.parse(node.path)
+          const PageTemplate = path.resolve(node.path)
           createPage({
-            path: `/tags/${tag.toLowerCase()}/`,
-            component: blogTags,
-            context: {
-              tag,
-            },
-          });
-        });
-
-        // About page:
-        createPage({
-          path: `/about`,
-          component: aboutPage
-        });
-
-        createPage({
-          path: `/archive`,
-          component: archivePage
+            path: name,
+            component: PageTemplate,
+          })
         })
       })
-    );
-  });
-};
+    )
+  })
+}
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
-  }
-};
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components'),
+        templates: path.resolve(__dirname, 'src/templates'),
+        scss: path.resolve(__dirname, 'src/scss'),
+      },
+    },
+  })
+}

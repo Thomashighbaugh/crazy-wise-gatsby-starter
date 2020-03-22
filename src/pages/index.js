@@ -1,80 +1,60 @@
-import React from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
-import _ from 'lodash';
-import Img from "gatsby-image"
-import {Card} from 'react-bootstrap';
+import { graphql } from 'gatsby'
+import React from 'react'
+import get from 'lodash/get'
 
-import Layout from '../components/Layout/Layout';
-import SEO from '../components/SEO/SEO';
+import Post from 'templates/post'
+import Meta from 'components/meta'
+import Layout from 'components/layout'
 
-class BlogIndex extends React.Component {
-  render() {
-    const posts = _.get(this, 'props.data.allMarkdownRemark.edges');
-    return (
-      <Layout>
-        <SEO />
-        <div className="home">
-          {posts.map(({ node }) => {
-            const title = _.get(node, 'frontmatter.title') || node.fields.slug;
-            let featuredImgFluid = _.get(node, 'frontmatter.featuredImage.childImageSharp.fluid');
-            let postTitle;
-            let imageQuery = "";
-            if(featuredImgFluid) {
-              postTitle = "";
-              imageQuery = <Link to={node.fields.slug}><Img fluid={featuredImgFluid} /></Link>
-            } else {
-              postTitle = <h2><Link to={node.fields.slug}>{title}</Link></h2>;
-            };
-            return (
-              <div className="post" key={node.fields.slug}>
-                {postTitle}
-                {imageQuery}
-                <p className="subtitle">
-                  <br></br>
-                  <h5>{node.frontmatter.date}</h5>
-                  {node.frontmatter.tags &&
-                    node.frontmatter.tags.map(tag => (
-                      <span key={tag} className="subtitle-tag">
-                        <Link to={'/tags/' + tag.toLowerCase()}>#{tag}</Link>
-                      </span>
-                    ))}
-                </p>
-                <p
-                  dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </Layout>
-    );
-  }
+const BlogIndex = ({ data, location }) => {
+  const posts = get(data, 'remark.posts')
+  return (
+    <Layout location={location}>
+      <Meta site={get(data, 'site.meta')} />
+      {posts.map(({ post }, i) => (
+        <Post
+          data={post}
+          options={{
+            isIndex: true,
+          }}
+          key={i}
+        />
+      ))}
+    </Layout>
+  )
 }
 
-export default BlogIndex;
+export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query IndexQuery {
     site {
-      siteMetadata {
+      meta: siteMetadata {
         title
         description
+        url: siteUrl
+        author
+        twitter
+        adsense
       }
     }
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {title: {ne: "About"}}}) {
-      edges {
-        node {
-          fields {
-            slug
-          }
+    remark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      posts: edges {
+        post: node {
+          html
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            layout
             title
-            spoiler
+            path
+            category
             tags
-            featuredImage {
+            description
+            date(formatString: "YYYY/MM/DD")
+            image {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 500) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -84,4 +64,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
