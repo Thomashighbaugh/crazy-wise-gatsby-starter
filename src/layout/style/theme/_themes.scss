@@ -1,9 +1,0 @@
-@import "_themes-palette.scss";
-
-@each $theme, $map in $palette {
-  .#{$theme} {
-    @each $key, $value in $map {
-      #{$key}: $value;
-    }
-  }
-}

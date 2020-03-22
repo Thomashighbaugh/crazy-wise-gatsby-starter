@@ -1,215 +1,175 @@
-const config = require("./config/siteConfig");
-
 module.exports = {
-  pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
-    author: config.author,
-    siteUrl: `${config.siteUrl}${config.pathPrefix}`,
-    siteLanguage: config.siteLanguage,
-    siteTitleAlt: config.siteTitleAlt,
-    title: config.siteTitle,
-    description: config.siteDescription,
-    image: `${config.siteUrl}${config.pathPrefix}/favicons/logo.png`,
-    datePublished: config.datePublished,
-    copyrightYear: config.copyrightYear,
-    twitterUsername: config.twitterUserName,
-    fbAppId: config.siteFBAppID,
-    copyright: config.copyright
+    title: `Gatsby Starter Webcomic`,
+    author: 'jldevops',
+    description: 'Template for webcomics / artwork',
+    siteUrl: 'https://github.com/JLDevOps/gatsby-starter-webcomic',
+    social: {
+      instagram: '@instagram_handle',
+      facebook: '@facebook_handle',
+      twitter: '@twitter_handle',
+      github: '@github_handle',
+    },
   },
+  pathPrefix: '/',
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-feed`,
       options: {
-        plugins: [
-          `gatsby-remark-relative-images`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 680
-            }
-          },
-          {
-            resolve: "gatsby-remark-custom-blocks",
-            options: {
-              blocks: {
-                info: {
-                  classes: "info"
-                },
-                warning: {
-                  classes: "warning"
-                }
-              }
-            }
-          },
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: `auto-link`
-            }
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              showLineNumbers: true
-            }
-          }
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "images",
-        path: `${__dirname}/static/images`
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "posts",
-        path: `${__dirname}/content`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleShort,
-        description: config.siteDescription,
-        start_url: config.pathPrefix === "" ? "/" : config.pathPrefix,
-        background_color: `#282c35`,
-        theme_color: `#282c35`,
-        display: `standalone`,
-        icon: config.siteLogo,
-        icons: [
-          {
-            src: `favicons/logo-192x192.png`,
-            sizes: "192x192",
-            type: "image/png"
-          },
-          {
-            src: `favicons/logo-512x512.png`,
-            sizes: "512x512",
-            type: "image/png"
-          }
-        ]
-      }
-    },
-    `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
         query: `
           {
             site {
               siteMetadata {
+                title
+                description
                 siteUrl
+                site_url: siteUrl
               }
-            }
-  
-            allSitePage {
-              edges {
-                node {
-                  path
-                }
-              }
-            }
-        }`,
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => {
-            return {
-              url: site.siteMetadata.siteUrl + edge.node.path,
-              changefreq: `daily`,
-              priority: 0.7
-            };
-          })
-      }
-    },
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: config.siteGATrackingID
-      }
-    },
-    {
-      resolve: "gatsby-plugin-feed",
-      options: {
-        query: `
-        {
-          site {
-            siteMetadata {
-              siteUrl
-              title
-              description
-              site_url: siteUrl
-              copyright
-              siteLanguage
-              language: siteLanguage
-              datePublished
-              pubDate: datePublished
             }
           }
-        }
-      `,
+        `,
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                return {
-                  ...edge.node.frontmatter,
-                  date: edge.node.frontmatter.date,
-                  categories: edge.node.frontmatter.tags,
+                return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [
-                    { "content:encoded": edge.node.html },
-                    { author: config.author }
-                  ]
-                };
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                });
               });
             },
             query: `
-            {
-              allMarkdownRemark(
-                limit: 1000,
-                sort: { order: DESC, fields: [frontmatter___date] },
-              ) {
-                edges {
-                  node {
-                    excerpt
-                    html
-                    fields { slug }
-                    frontmatter {
-                      title
-                      date
-                      cover {
-                        relativePath
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
                       }
-                      category
-                      tags
                     }
                   }
                 }
               }
-            }
-          `,
-            output: config.siteRss,
-            title: config.siteTitle
-          }
-        ]
-      }
+            `,
+            output: '/rss.xml',
+            title: 'RSS Feed of gatsby-starter-webcomic',
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            match: '^/post/',
+          },
+        ],
+      },
     },
     {
-      resolve: `gatsby-plugin-netlify-cms`,
+      resolve: `gatsby-transformer-json`,
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`
-      }
-    }
-  ]
+        path: './src/pages/_data',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '÷',
+            },
+          },
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-130668392-1`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby-Starter-Webcomic`,
+        short_name: `Gatsby-Starter-Webcomic`,
+        start_url: `/?utm_source=homescreen`,
+        background_color: `#ffffff`,
+        theme_color: `#FF9800`,
+        display: `standalone`,
+        icon: `src//pages/_assets/icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `tags`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            path: node => node.frontmatter.path,
+          },
+        },
+        // Optional filter to limit indexed nodes
+        filter: (node, getNode) =>
+          node.frontmatter.tags !== 'exempt',
+      },
+    },
+  ],
 };

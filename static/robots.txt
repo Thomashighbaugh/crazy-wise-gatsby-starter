@@ -1,3 +1,2 @@
 User-agent: *
 Disallow:
-sitemap: https://gatsby-starter-papan01.netlify.com//sitemap.xml
