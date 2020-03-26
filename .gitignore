@@ -1,7 +1,7 @@
-node_modules/
-public
-.gatsby-context.js
-.DS_Store
-.intermediate-representation/
+# Project dependencies
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
 .cache/
-.vscode/
+# Build directory
+public/
+.DS_Store

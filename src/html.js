@@ -1,23 +1,37 @@
-import React from 'react'
+import React from 'react';
+// @TODO
+
+let inlinedStyles = '';
+if (process.env.NODE_ENV === 'production') {
+  try {
+    inlinedStyles = require('!raw-loader!../public/styles.css');
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 export default class HTML extends React.Component {
   render() {
+    let css;
+    if (process.env.NODE_ENV === 'production') {
+      css = (
+        <style
+          id="gatsby-inlined-css"
+          dangerouslySetInnerHTML={{ __html: inlinedStyles }}
+        />
+      );
+    }
     return (
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossOrigin="anonymous" />
           {this.props.headComponents}
-          <link
-            href="/img/apple-touch-icon.png"
-            rel="apple-touch-icon"
-            sizes="180x180"
-          />
-          <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+          {css}
         </head>
         <body>
           <div
@@ -25,12 +39,8 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script
-            async
-            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          />
         </body>
       </html>
-    )
+    );
   }
 }

@@ -1,0 +1,14 @@
+// Index component custom styles
+
+$dark : #343a40;
+$light: #f9f9f9;
+footer {
+  .footer-inner {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    background: $dark;
+    color: $light;
+    height: 5rem;
+    width: 100%;
+  }
+}

@@ -1,67 +1,62 @@
-import { graphql } from 'gatsby'
-import React from 'react'
-import get from 'lodash/get'
+import React from 'react';
+import List from '../templates/list';
+import ArchiveList from '../templates/archiveList';
+import Link from 'gatsby-link';
 
-import Post from 'templates/post'
-import Meta from 'components/meta'
-import Layout from 'components/layout'
-
-const BlogIndex = ({ data, location }) => {
-  const posts = get(data, 'remark.posts')
+export default function Index({
+  data
+}) {
   return (
-    <Layout location={location}>
-      <Meta site={get(data, 'site.meta')} />
-      {posts.map(({ post }, i) => (
-        <Post
-          data={post}
-          options={{
-            isIndex: true,
-          }}
-          key={i}
-        />
-      ))}
-    </Layout>
-  )
+    <div className="row">
+      <div className="col-sm-8 blog-main">
+          <List data={data} />
+      </div>
+      <div className="col-sm-3 offset-sm-1 blog-sidebar">
+        <div className="sidebar-module sidebar-module-inset">
+          <h4>About</h4>
+          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+        <div className="sidebar-module">
+          <h4>Archives</h4>
+          <ArchiveList data={data} />
+        </div>
+        <div className="sidebar-module">
+          <h4>Elsewhere</h4>
+          <ol className="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  );
 }
-
-export default BlogIndex
 
 export const pageQuery = graphql`
   query IndexQuery {
-    site {
-      meta: siteMetadata {
-        title
-        description
-        url: siteUrl
-        author
-        twitter
-        adsense
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            path
+          }
+        }
       }
     }
-    remark: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      posts: edges {
-        post: node {
-          html
+    archive: allMarkdownRemark {
+      edges {
+        node {
           frontmatter {
-            layout
-            title
-            path
-            category
-            tags
-            description
-            date(formatString: "YYYY/MM/DD")
-            image {
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            path: date(formatString: "Y-MM")
+            title: date(formatString: "MMMM Y")
           }
         }
       }
     }
   }
-`
+`;
