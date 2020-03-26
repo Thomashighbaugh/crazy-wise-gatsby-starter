@@ -1,13 +1,11 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from "react"
+import Link from "gatsby-link"
 
 // @TODO create and import './list.scss'; // make it pretty!
 // @TODO Turn this page into featured Posts
 
-export default function List({
-  data
-}) {
-  const { edges: posts } = data.allMarkdownRemark;
+export default function List({ data }) {
+  const { edges: posts } = data.allMarkdownRemark
   return (
     <div className="blog-posts">
       {posts
@@ -20,15 +18,18 @@ export default function List({
               </h1>
               <p>{post.excerpt}</p>
             </div>
-          );
+          )
         })}
     </div>
-  );
+  )
 }
 
 export const pageQuery = graphql`
   query ArchiveQuery($regex: String!) {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {frontmatter:{date:{ regex: $regex}}}) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { date: { regex: $regex } } }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
@@ -42,4 +43,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

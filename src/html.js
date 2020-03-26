@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react"
 // @TODO
 
-let inlinedStyles = '';
-if (process.env.NODE_ENV === 'production') {
+let inlinedStyles = ""
+if (process.env.NODE_ENV === "production") {
   try {
-    inlinedStyles = require('!raw-loader!../public/styles.css');
+    inlinedStyles = require("!raw-loader!../public/styles.css")
   } catch (e) {
-    console.log(e);
+    console.log(e)
   }
 }
 
 export default class HTML extends React.Component {
   render() {
-    let css;
-    if (process.env.NODE_ENV === 'production') {
+    let css
+    if (process.env.NODE_ENV === "production") {
       css = (
         <style
           id="gatsby-inlined-css"
           dangerouslySetInnerHTML={{ __html: inlinedStyles }}
         />
-      );
+      )
     }
     return (
       <html lang="en">
@@ -29,7 +29,12 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossOrigin="anonymous" />
+          <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+            integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+            crossOrigin="anonymous"
+          />
           {this.props.headComponents}
           {css}
         </head>
@@ -41,6 +46,6 @@ export default class HTML extends React.Component {
           {this.props.postBodyComponents}
         </body>
       </html>
-    );
+    )
   }
 }

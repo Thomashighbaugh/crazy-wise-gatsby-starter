@@ -12,11 +12,9 @@ plugins: [
   {
     resolve: `gatsby-transformer-remark`,
     options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
-  }
+      plugins: [`gatsby-remark-prismjs`],
+    },
+  },
 ]
 ```
 
@@ -34,10 +32,8 @@ plugins: [
   {
     resolve: `gatsby-transformer-remark`,
     options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
-  }
+      plugins: [`gatsby-remark-prismjs`],
+    },
+  },
 ]
 ```

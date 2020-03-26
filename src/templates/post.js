@@ -1,5 +1,5 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from "react"
+import Helmet from "react-helmet"
 
 // @TODO create and import '../css/blog-post.scss'; // make it pretty!
 
@@ -9,9 +9,7 @@ export default function Template({ data }) {
     <div className="blog-post-container">
       <Helmet title={`JS⁷ - ${post.frontmatter.title}`} />
       <div className="blog-post">
-        <h1>
-          {post.frontmatter.title}
-        </h1>
+        <h1>{post.frontmatter.title}</h1>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
