@@ -9,10 +9,9 @@ Matters:   > components (individual objects) > pages (each site page) > layout (
 This file is called and thus all is evenly applied in the layout, which everything else requires to add in metadata and <head> attributes
 
 */
-@import 'vendors/all';
-@import 'base/all';
-@import 'helpers/all';
-@import 'components/all';
-@import 'pages/all';
-@import 'layout/all';
-
+@import "vendors/all";
+@import "base/all";
+@import "helpers/all";
+@import "components/all";
+@import "pages/all";
+@import "layout/all";

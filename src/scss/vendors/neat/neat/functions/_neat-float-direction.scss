@@ -14,7 +14,7 @@
   $_direction: _retrieve-neat-setting($grid, direction);
   $_float-direction: null;
   @if $_direction == "ltr" {
-      $_float-direction: left;
+    $_float-direction: left;
   } @else if $_direction == "rtl" {
     $_float-direction: right;
   }

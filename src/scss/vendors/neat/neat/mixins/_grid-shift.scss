@@ -26,7 +26,10 @@
 
 @mixin grid-shift($shift: false, $grid: $neat-grid) {
   @if $shift {
-    $_shift-value: calc(#{_neat-column-width($grid, $shift)} + #{_retrieve-neat-setting($grid, gutter)});
+    $_shift-value: calc(
+      #{_neat-column-width($grid, $shift)} +
+        #{_retrieve-neat-setting($grid, gutter)}
+    );
     #{_neat-float-direction($grid)}: $_shift-value;
   } @else {
     #{_neat-float-direction($grid)}: auto;

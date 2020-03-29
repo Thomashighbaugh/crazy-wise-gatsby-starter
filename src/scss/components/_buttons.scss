@@ -1,4 +1,4 @@
-.btn{
+.btn {
   border-radius: 10px;
   border: solid $white 0.25rem;
   text-align: center;
@@ -7,17 +7,16 @@
   font-family: $ff-subtitle;
   font-size: $fz-h4;
   margin-left: 3rem;
-
 }
 .btn:hover,
 .btn:active,
-.btn:focus{
+.btn:focus {
   color: $black0;
   border-color: $black0;
 }
 
 @media (max-width: 48em) {
-  .btn{
+  .btn {
     display: block;
     font-size: 80%;
   }
