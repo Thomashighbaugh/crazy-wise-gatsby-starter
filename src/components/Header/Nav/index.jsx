@@ -1,28 +1,48 @@
-import React from "react"
-import "./Nav.scss"
+import React, { Component } from "react"
+import Link from "gatsby-link"
 
 const Nav = () => (
-  <div className="blog-masthead navbar">
-    <div className="container">
-      <nav className="nav blog-nav">
-        <a className="nav-link active" href="/">
-          Home
-        </a>
-        <a className="nav-link" href="#">
-          New features
-        </a>
-        <a className="nav-link" href="#">
-          Press
-        </a>
-        <a className="nav-link" href="#">
-          New hires
-        </a>
-        <a className="nav-link" href="#">
-          About
-        </a>
+      <nav className="navbar">
+            <div className="btn-group links">
+          <Link className="nav-link btn" id="nav0" to="/">
+            HOME
+          </Link>
+
+          <Link
+              to="/about/"
+              onlyActiveOnIndex
+              className="btn nav-link "
+              id="nav1"
+
+          >
+           ABOUT
+          </Link>
+          <Link
+              to="/projects/"
+              onlyActiveOnIndex
+              className="btn nav-link "
+              id="nav2"
+          >
+            ARCHIVE
+          </Link>
+                <Link
+              to="/projects/"
+              onlyActiveOnIndex
+              className="btn nav-link "
+              id="nav3"
+          >
+TEST          </Link>
+                <Link
+              to="/projects/"
+              onlyActiveOnIndex
+              className="btn nav-link "
+              id="nav4"
+          >
+            TEST
+          </Link>
+            </div>
+
       </nav>
-    </div>
-  </div>
 )
 
 export default Nav
