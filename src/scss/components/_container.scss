@@ -1,0 +1,21 @@
+/*
+ * Override Bootstrap's default container.
+ */
+
+
+body {
+  font-family: $ff-text0;
+  color: $black0;
+}
+
+
+.container {
+  max-width: 60rem;
+}
+
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}

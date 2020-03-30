@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
 
-// @TODO create and import './list.scss'; // make it pretty!
 // @TODO Turn this page into featured Posts
 
 export default function List({ data }) {

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Link from "gatsby-link"
-
+//@TODO add in nav links for each page
 const Nav = () => (
   <nav className="navbar">
     <div className="btn-group links">

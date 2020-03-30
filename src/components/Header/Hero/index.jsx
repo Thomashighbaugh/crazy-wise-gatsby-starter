@@ -1,5 +1,6 @@
 import React from "react"
-
+//@TODO change header content
+//@TODO add image to header
 const Hero = () => (
   <div className="blog-header">
     <div className="container">

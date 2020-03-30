@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
 
-// @TODO create and import './archive.scss';
 // @TODO
 
 export default function ArchiveList({ data }) {
