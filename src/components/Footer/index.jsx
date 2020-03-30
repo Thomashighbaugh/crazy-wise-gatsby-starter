@@ -1,17 +1,10 @@
 import React from "react"
-import "./Footer.scss"
 
 const Footer = () => (
-  <footer>
-    <div className="container">
+  <footer className="blog-footer navbar fixed-bottom ">
       <div className="footer-inner">
-        Footer Component Loaded{" "}
-        <span role="img" aria-label="party-popper">
-          {" "}
-          🎉
-        </span>
+          <h3 className="blog-description">        Footer Component Loaded{" "}</h3>
       </div>
-    </div>
   </footer>
 )
 

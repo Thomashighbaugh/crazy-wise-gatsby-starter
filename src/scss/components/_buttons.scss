@@ -8,15 +8,6 @@
   font-size: $fz-h4;
   margin-left: 3rem;
 }
-.btn:hover,
-.btn:active,
-.btn:focus {
-  color: $black0;
-  border-color: $black0;
-  a {
-    color: $black0;
-  }
-}
 
 @media (max-width: 48em) {
   .btn {
@@ -25,6 +16,7 @@
   }
 }
 
+<<<<<<< HEAD
 .btn-group {
   justify-self: center;
   align-self: center;
@@ -65,3 +57,5 @@
   border-left: 0.3rem solid transparent;
 }
 >>>>>>> 36600ba... almost there
+=======
+>>>>>>> 5635ce8... almost there

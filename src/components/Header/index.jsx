@@ -1,10 +1,10 @@
 import React from "react"
-import Nav from "./Nav"
+import Navigation from "./Nav"
 import Hero from "./Hero"
 
 const Header = () => (
   <div className="blog-masthead">
-    <Nav />
+    <Navigation />
     <Hero />
   </div>
 )
