@@ -12,7 +12,7 @@ export default function ArchiveList({ data }) {
 
   return (
     <ol className="list-unstyled">
-      {Object.keys(months).map((key) => {
+      {Object.keys(months).map(key => {
         const title = months[key]
         return (
           <li key={key}>
