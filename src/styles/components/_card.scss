@@ -6,10 +6,7 @@
 *
  *******************************************************************/
 .card {
-  border-top: $bdr-ct;
-  border-right: $bdr-cr;
-  border-left: $bdr-cl;
-  border-bottom: $bdr-cb;
+
   padding: 1rem;
   justify-self: center;
   background: $header-background;
@@ -35,7 +32,7 @@
     background: $white;
     .card-text {
       border-radius: 10px;
-      font-family: $ff-sub;
+      font-family: $ff-subtitle;
       font-weight: 600;
       color: $text;
       text-align: center;
@@ -50,7 +47,7 @@
       width: auto;
       font-size: $fz-h4;
       text-align: center;
-      font-family: $ff-title;
+      font-family: $ff-title0;
     }
   }
   .card-header {
@@ -60,9 +57,8 @@
     margin: 0 0 0.5rem;
     border: $primary 0.35rem solid;
     .card-title {
-      font-family: $ff-title;
+      font-family: $ff-title0;
       color: $primary;
-      font-size: $fz-h2;
       width: auto;
       background: $white;
       text-align: left;
@@ -71,7 +67,7 @@
       text-shadow: 0.25rem 0.25rem $light;
     }
     .card-subtitle {
-      font-family: $ff-sub;
+      font-family: $ff-subtitle;
       color: $text;
       text-align: right;
       font-size: $fz-h5;
@@ -106,7 +102,7 @@
       .shoutout {
         color: $primary;
         background: $light;
-        font-family: $ff-title;
+        font-family: $ff-title0;
         font-weight: 900;
       }
       .card-text {

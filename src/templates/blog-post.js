@@ -2,9 +2,8 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { kebabCase } from 'lodash'
 import Img from 'gatsby-image'
-
-import DefaultLayout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -12,7 +11,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <DefaultLayout>
+      <Layout location={this.props.location} title={post.frontmatter.title}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <article className="article-page">
           <div className="page-content">
@@ -35,7 +34,7 @@ class BlogPostTemplate extends React.Component {
                 </div>
               </header>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              <div className="page-footer">
+              <div className="footer">
                 <div className="page-tag">
                   {post.frontmatter.tags &&
                     post.frontmatter.tags.map(tag => (
@@ -50,7 +49,7 @@ class BlogPostTemplate extends React.Component {
             </div>
           </div>
         </article>
-      </DefaultLayout>
+      </Layout>
     )
   }
 }

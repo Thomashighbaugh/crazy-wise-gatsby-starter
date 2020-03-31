@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby'
 
 import { kebabCase } from 'lodash'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 const TagsPage = ({ data }) => {
   const allTags = data.allMarkdownRemark.group
 

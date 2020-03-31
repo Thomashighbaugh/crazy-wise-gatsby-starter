@@ -4,21 +4,7 @@
 *
 *
 **************************************************************************************/
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: fixed;
-  border-top: $primary solid 1rem;
-  border-bottom: $primary solid 1rem;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 15%;
-  height: 100%;
-  background-color: $gray;
-  color: $white;
-}
+
 .about {
   margin-top: 2rem;
   text-align: center;
@@ -41,7 +27,7 @@
     }
   }
   .author-name {
-    font-family: $ff-sub;
+    font-family: $ff-subtitle;
     position: relative;
     padding-bottom: 15px;
     font-size: 1rem;
@@ -63,7 +49,7 @@
     }
   }
   .site-name {
-    font-family: $ff-title;
+    font-family: $ff-title0;
     position: relative;
     padding-bottom: 15px;
     margin-top: 10rem;
@@ -93,7 +79,7 @@
   .contact-title {
     position: relative;
     font-weight: 900;
-    font-family: $ff-title;
+    font-family: $ff-title0;
     font-size: 1rem;
     margin: 0 0 5px;
     text-transform: uppercase;
@@ -186,7 +172,7 @@
       font-size: 30px;
       font-weight: 400;
       a {
-        font-family: $ff-title;
+        font-family: $ff-title0;
         text-decoration: none;
         color: $white;
         text-shadow: 0.125rem 0.125rem $light;
@@ -217,7 +203,7 @@ a.newer-posts:hover {
 
 .copyright {
   font-size: 0.65rem;
-  font-family: $ff-title;
+  font-family: $ff-title0;
   width: 100%;
   margin-left: 3rem;
 }

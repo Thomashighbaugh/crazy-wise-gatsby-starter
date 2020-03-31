@@ -5,11 +5,11 @@ module.exports = {
     author: `Thomas Leon Highbaugh`,
     siteUrl: `https://thomasleonhighbaugh.me`,
     social: {
-      twitter: `tlhighbaugh`,
-      facebook: ``,
-      github: `Thomashighbaugh`,
-      linkedin: `thomas-leon-highbaugh`,
-      email: `thighbaugh@zoho.com`,
+      twitter: `x`,
+      facebook: `x`,
+      github: `x`,
+      linkedin: `x`,
+      email: `x`,
     },
   },
   plugins: [

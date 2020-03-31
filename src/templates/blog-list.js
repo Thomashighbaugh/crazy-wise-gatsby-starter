@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import DefaultLayout from '../components/layout'
-import SEO from '../components/seo'
+import DefaultLayout from '../components/Layout'
+import SEO from '../components/SEO'
 
 class BlogIndex extends React.Component {
   render() {
@@ -25,16 +25,16 @@ class BlogIndex extends React.Component {
           return (
             <article className="post" key={node.fields.slug}>
               {node.frontmatter.img &&
-                node.frontmatter.img.childImageSharp &&
-                node.frontmatter.img.childImageSharp.fluid && (
-                  <Link
-                    to={node.fields.slug}
-                    className="post-thumbnail"
-                    style={{
-                      backgroundImage: `url(${node.frontmatter.img.childImageSharp.fluid.src})`,
-                    }}
-                  />
-                )}
+              node.frontmatter.img.childImageSharp &&
+              node.frontmatter.img.childImageSharp.fluid && (
+                <Link
+                  to={node.fields.slug}
+                  className="post-thumbnail"
+                  style={{
+                    backgroundImage: `url(${node.frontmatter.img.childImageSharp.fluid.src})`,
+                  }}
+                />
+              )}
               <div className="post-content">
                 <h2 className="post-title">
                   <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
@@ -50,14 +50,13 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
-
-        <div className="container">
-          <nav className="pagination" role="pagination">
+<br/>
+        <footer className="pagination  page-footer" role="pagination">
             <ul>
               {!isFirst && (
                 <p>
                   <Link to={prevPage} rel="prev" className="newer-posts">
-                    ← Previous Page
+                  <button>  ← Previous Page </button>
                   </Link>
                 </p>
               )}
@@ -69,13 +68,12 @@ class BlogIndex extends React.Component {
               {!isLast && (
                 <p>
                   <Link to={nextPage} rel="next" className="older-posts">
-                    Next Page →
+                    <button>Next Page →</button>
                   </Link>
                 </p>
               )}
             </ul>
-          </nav>
-        </div>
+        </footer>
       </DefaultLayout>
     )
   }
@@ -84,41 +82,41 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          timeToRead
-          frontmatter {
-            date(formatString: "YYYY, MMM DD")
-            title
-            img {
-              childImageSharp {
-                fluid(maxWidth: 3720) {
-                  aspectRatio
-                  base64
-                  sizes
-                  src
-                  srcSet
-                }
-              }
+    query blogPageQuery($skip: Int!, $limit: Int!) {
+        site {
+            siteMetadata {
+                title
             }
-          }
         }
-      }
+        allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            limit: $limit
+            skip: $skip
+        ) {
+            edges {
+                node {
+                    excerpt
+                    fields {
+                        slug
+                    }
+                    timeToRead
+                    frontmatter {
+                        date(formatString: "YYYY, MMM DD")
+                        title
+                        img {
+                            childImageSharp {
+                                fluid(maxWidth: 3720) {
+                                    aspectRatio
+                                    base64
+                                    sizes
+                                    src
+                                    srcSet
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 `

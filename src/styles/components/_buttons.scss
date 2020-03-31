@@ -1,150 +1,50 @@
-/*********************************************************************
-*  BUTTON
-*
-*
-*
-*  Defines the button classes
-*  ------------------------------------------------------------------
-*  Markup:
-*  -------
-*
-*  <button class="button">Button</button>
-*  <button class="button button--big">Button +</button>
-*  <button class="button button--secondary">Button 2</button>
-*  <button className="nav-btn"> Button 3 </button>
-*
- *******************************************************************/
-
-// reset default buttons
-button {
-  cursor: pointer;
+.btn {
   border-radius: 10px;
-  background-color: $bg-button;
-  color: $c-button;
-  display: inline-block;
-  font-family: $ff-button;
-  font-size: $fz-button;
-  font-weight: $fw-button;
-  line-height: $lh-button;
-  margin: $m-button;
-  padding: $p-button;
+  border: solid $white 0.25rem;
   text-align: center;
-  text-decoration: none;
-  text-transform: $tt-button;
-  transition: opacity 0.2s ease-in-out;
-  white-space: nowrap;
-  border: $bdr-button;
-  &:focus,
-  &:hover,
-  &:active {
-    color: $c-button;
-    border: $bdr-button-hover;
+  display: inline-flex;
+  color: $white;
+  font-family: $ff-subtitle;
+  font-size: $fz-h4;
+  margin-left: 3rem;
+}
+
+@media (max-width: 48em) {
+  .btn {
+    display: block;
+    font-size: 80%;
   }
+}
 
-  &:hover {
-    background-color: rgba($primary, 0.8);
-    color: $white;
-    border-color: $white;
-    cursor: pointer;
-    text-decoration: none;
-  }
+/* Nav links */
+.nav-link {
+  position: relative;
+  padding: 1rem;
+  font-weight: 500;
+  color: #cdddeb;
+  font-family: $ff-subtitle;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: $black0;
+  background-color: transparent;
+}
 
-  &:active {
-    opacity: 1;
-  }
+/* Active state gets a caret at the bottom */
 
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  // sizes
-  &--big {
-    font-size: $fz-button-big;
-    padding: $p-button-big;
-  }
-
-  &--small {
-    font-size: $fz-button-small;
-    padding: $p-button-small;
-  }
-
-  &--mobileFull {
-    @include media-breakpoint-down(md) {
-      margin-left: 0;
-      margin-right: 0;
-      width: 100%;
-    }
-  }
-
-  // colors
-  &--secondary {
-    background-color: $secondary;
-    color: $white;
-
-    &:hover {
-      background-color: rgba($secondary, 0.8);
-      color: $white;
-    }
-  }
-
-  &--white {
-    background-color: $white;
-    color: $primary;
-
-    &:hover {
-      background-color: rgba($white, 0.8);
-      color: rgba($primary, 0.8);
-    }
-  }
-
-  &--green {
-    background-color: $success;
-    color: $white;
-
-    &:hover {
-      background-color: rgba($success, 0.8);
-      color: $white;
-    }
-  }
-
-  &--red {
-    background-color: $error;
-    color: $white;
-
-    &:hover {
-      background-color: rgba($error, 0.8);
-      color: $white;
-    }
-  }
-
-  &--transparent {
-    background-color: transparent;
-    color: $c-button-transparent;
-
-    &:active,
-    &:hover,
-    &:focus {
-      background-color: transparent;
-      color: rgba($c-button-transparent, 0.8);
-      opacity: 0.8;
-    }
-  }
-
-  &--outlined {
-    background-color: transparent;
-    border: $bd-medium;
-    color: $c-button-outlined;
-
-    &:active,
-    &:hover,
-    &:focus {
-      background-color: transparent;
-      color: rgba($c-button-outlined, 0.8);
-      opacity: 0.8;
-    }
-  }
+.nav-link.active {
+  color: #fff;
+}
+.nav-link.active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -0.3rem;
+  vertical-align: middle;
+  content: "";
+  border-right: 0.3rem solid transparent;
+  border-bottom: 0.3rem solid;
+  border-left: 0.3rem solid transparent;
 }

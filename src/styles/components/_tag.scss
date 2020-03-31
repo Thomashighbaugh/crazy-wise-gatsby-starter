@@ -46,7 +46,7 @@
   span {
     a {
       text-decoration: none;
-      color: $dark-blue;
+      color: $accent2;
       &:hover {
         text-decoration: underline;
         opacity: 0.8;
@@ -59,7 +59,7 @@
   span {
     a {
       text-decoration: none;
-      color: $dark-blue;
+      color: $accent2;
       &:hover {
         text-decoration: underline;
         opacity: 0.8;
@@ -82,38 +82,26 @@
 }
 
 .tag {
-  background-color: $bg-tag;
-  border-radius: $bdr-tag;
-  color: $c-tag;
+  background-color: $black0;
   display: inline-block;
-  line-height: $lh-tag;
-  margin: $m-tag;
-  padding: $p-tag;
+
   position: relative;
 
   // triangle arrow
   &::before {
-    border-bottom: ($lh-tag / 2) + $p-tag solid transparent;
-    border-left: $p-tag solid $bg-tag;
-    border-top: ($lh-tag / 2) + $p-tag solid transparent;
     content: '';
     height: 0;
     position: absolute;
-    right: -$p-tag;
     top: 0;
     width: 0;
   }
 
   // dot
   &::after {
-    background: $bg-tag-dot;
+    background: $black0;
     border-radius: 100%;
     content: '';
-    height: $size-tag-dot;
-    margin-top: -$size-tag-dot / 2;
     position: absolute;
-    right: -$size-tag-dot / 2;
     top: 50%;
-    width: $size-tag-dot;
   }
 }

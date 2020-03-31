@@ -64,8 +64,8 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Create blog post list pages
-    const postsPerPage = 10
-    const numPages = Math.ceil(posts.length / postsPerPage)
+    const postsPerPage = 2;
+    const numPages = Math.ceil(posts.length / postsPerPage);
 
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
@@ -75,12 +75,15 @@ exports.createPages = ({ graphql, actions }) => {
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1,
+          currentPage: i + 1
         },
-      })
-    })
+      });
+    });
 
-    // create Tags pages
+
+
+
+// create Tags pages
     // pulled directly from https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/#add-tags-to-your-markdown-files
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
