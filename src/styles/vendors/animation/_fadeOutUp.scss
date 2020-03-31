@@ -1,5 +1,5 @@
-@mixin fadeOutUp($strength:100) {
-    $keyValue: $strength * 1%;
+@mixin fadeOutUp($strength: 100) {
+  $keyValue: $strength * 1%;
 
   @-webkit-keyframes fadeOutUp#{$strength} {
     from {

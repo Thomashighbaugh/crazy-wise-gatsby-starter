@@ -1,5 +1,5 @@
-@mixin flipOutY($strength:100) {
- $keyValue: 2deg * $strength;
+@mixin flipOutY($strength: 100) {
+  $keyValue: 2deg * $strength;
 
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;

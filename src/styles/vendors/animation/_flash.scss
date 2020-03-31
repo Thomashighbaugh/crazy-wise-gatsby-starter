@@ -1,20 +1,26 @@
-@mixin flash($strength:100){
+@mixin flash($strength: 100) {
   @-webkit-keyframes flash#{$strength} {
-  from, 50%, to {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-  @keyframes flash#{$strength} {
-    from, 50%, to {
+    from,
+    50%,
+    to {
       opacity: 1;
     }
 
-    25%, 75% {
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes flash#{$strength} {
+    from,
+    50%,
+    to {
+      opacity: 1;
+    }
+
+    25%,
+    75% {
       opacity: 0;
     }
   }

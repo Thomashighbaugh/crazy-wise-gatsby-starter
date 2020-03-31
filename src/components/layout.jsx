@@ -28,9 +28,7 @@ const DefaultLayout = ({ children }) => (
     `}
     render={data => (
       <div className="wrapper">
-        <Helmet>
-
-        </Helmet>
+        <Helmet></Helmet>
         <Sidebar siteMetadata={data.site.siteMetadata} />
         <div className="content-box clearfix">{children}</div>
       </div>

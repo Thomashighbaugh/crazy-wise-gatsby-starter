@@ -1,5 +1,5 @@
-@mixin rollOut($strength:100) {
-    $keyValue: 100deg + $strength;
+@mixin rollOut($strength: 100) {
+  $keyValue: 100deg + $strength;
 
   @-webkit-keyframes rollOut#{$strength} {
     from {
@@ -24,5 +24,4 @@
       transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, $keyValue);
     }
   }
-
 }

@@ -1,5 +1,5 @@
-@mixin zoomOut($strength:100) {
-    $keyValue: 1 - ((1/100) * $strength);
+@mixin zoomOut($strength: 100) {
+  $keyValue: 1 - ((1/100) * $strength);
 
   @-webkit-keyframes zoomOut#{$strength} {
     from {

@@ -1,6 +1,6 @@
-@mixin fadeInUpBig($strength:100) {
-    $keyValue: $strength * 2 * 10%;
-    
+@mixin fadeInUpBig($strength: 100) {
+  $keyValue: $strength * 2 * 10%;
+
   @-webkit-keyframes fadeInUpBig#{$strength} {
     from {
       opacity: 0;

@@ -1,37 +1,37 @@
-@mixin pulse($strength:100) {
+@mixin pulse($strength: 100) {
   $keyValue: 1 + $strength/100;
 
   @-webkit-keyframes pulse#{$strength} {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
   }
 
-  50% {
-    -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
-    transform: scale3d($keyValue, $keyValue, $keyValue);
-  }
+  @keyframes pulse#{$strength} {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
 
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
+    50% {
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
 
-@keyframes pulse#{$strength} {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
   }
-
-  50% {
-    -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
-    transform: scale3d($keyValue, $keyValue, $keyValue);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
 }

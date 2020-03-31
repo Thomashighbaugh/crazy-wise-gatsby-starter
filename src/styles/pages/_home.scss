@@ -37,7 +37,7 @@
     margin-bottom: 3rem;
     transition: transform 0.35s;
     &:hover {
-      transform: scale3d(0.90,0.90,1);
+      transform: scale3d(0.9, 0.9, 1);
     }
   }
   .author-name {
@@ -50,7 +50,7 @@
     text-shadow: 0.1rem 0.1rem $light;
     font-weight: 900;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -62,7 +62,7 @@
       background-color: $primary;
     }
   }
-  .site-name{
+  .site-name {
     font-family: $ff-title;
     position: relative;
     padding-bottom: 15px;
@@ -99,7 +99,7 @@
     text-transform: uppercase;
     text-align: center;
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 2px;
       width: calc(50% - 48px);
@@ -110,7 +110,7 @@
       background-color: $gray;
     }
     &::after {
-      content: "";
+      content: '';
       display: block;
       height: 2px;
       width: calc(50% - 48px);
@@ -147,7 +147,6 @@
   }
 }
 
-
 .post {
   width: 100%;
   max-width: 100%;
@@ -158,11 +157,11 @@
   min-height: 11rem;
   border-radius: 10px;
   overflow: hidden;
-  transition: all .3s ease;
-  box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 1px 0 rgba(31, 35, 46, 0.15);
   &:hover {
     transform: translate(0px, -2px);
-    box-shadow: 0 15px 45px -10px rgba(10, 16, 34, .2);
+    box-shadow: 0 15px 45px -10px rgba(10, 16, 34, 0.2);
   }
 
   .post-thumbnail {
@@ -196,16 +195,16 @@
     p {
       margin-top: 0;
       color: $white;
-
     }
   }
 }
 
-a.older-posts, a.newer-posts {
+a.older-posts,
+a.newer-posts {
   font-size: 18px;
   display: inline-block;
   color: $white;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 a.older-posts:hover {
@@ -216,7 +215,7 @@ a.newer-posts:hover {
   transform: translateX(-10px);
 }
 
-.copyright{
+.copyright {
   font-size: 0.65rem;
   font-family: $ff-title;
   width: 100%;

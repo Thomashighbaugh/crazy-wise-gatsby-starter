@@ -1,36 +1,35 @@
-@mixin zoomOutLeft($strength:100) {
-    $keyValue: $strength * 2 * 10px;
+@mixin zoomOutLeft($strength: 100) {
+  $keyValue: $strength * 2 * 10px;
 
   @-webkit-keyframes zoomOutLeft#{$strength} {
-   40% {
-     opacity: 1;
-     -webkit-transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
-     transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
-   }
+    40% {
+      opacity: 1;
+      -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    }
 
-   to {
-     opacity: 0;
-     -webkit-transform: scale(.1) translate3d(-$keyValue, 0, 0);
-     transform: scale(.1) translate3d(-$keyValue, 0, 0);
-     -webkit-transform-origin: left center;
-     transform-origin: left center;
-   }
+    to {
+      opacity: 0;
+      -webkit-transform: scale(0.1) translate3d(-$keyValue, 0, 0);
+      transform: scale(0.1) translate3d(-$keyValue, 0, 0);
+      -webkit-transform-origin: left center;
+      transform-origin: left center;
+    }
   }
 
   @keyframes zoomOutLeft#{$strength} {
-   40% {
-     opacity: 1;
-     -webkit-transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
-     transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
-   }
+    40% {
+      opacity: 1;
+      -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    }
 
-   to {
-     opacity: 0;
-     -webkit-transform: scale(.1) translate3d(-$keyValue, 0, 0);
-     transform: scale(.1) translate3d(-$keyValue, 0, 0);
-     -webkit-transform-origin: left center;
-     transform-origin: left center;
-   }
+    to {
+      opacity: 0;
+      -webkit-transform: scale(0.1) translate3d(-$keyValue, 0, 0);
+      transform: scale(0.1) translate3d(-$keyValue, 0, 0);
+      -webkit-transform-origin: left center;
+      transform-origin: left center;
+    }
   }
-
 }

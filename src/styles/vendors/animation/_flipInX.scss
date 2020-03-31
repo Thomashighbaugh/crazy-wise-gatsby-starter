@@ -1,5 +1,5 @@
-@mixin flipInX($strength:100) {
-    $keyValue: 2deg * $strength;
+@mixin flipInX($strength: 100) {
+  $keyValue: 2deg * $strength;
 
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
@@ -68,5 +68,4 @@
       transform: perspective(400px);
     }
   }
-
 }

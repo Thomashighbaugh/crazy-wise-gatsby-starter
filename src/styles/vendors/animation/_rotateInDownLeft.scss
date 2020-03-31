@@ -1,5 +1,5 @@
-@mixin rotateInDownLeft($strength:100) {
-    $keyValue: $strength * 1deg;
+@mixin rotateInDownLeft($strength: 100) {
+  $keyValue: $strength * 1deg;
 
   @-webkit-keyframes rotateInDownLeft#{$strength} {
     from {

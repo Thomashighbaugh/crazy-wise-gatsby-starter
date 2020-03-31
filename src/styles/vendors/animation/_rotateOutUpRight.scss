@@ -1,5 +1,5 @@
-@mixin rotateOutUpRight($strength:100) {
-    $keyValue: $strength * 1deg;
+@mixin rotateOutUpRight($strength: 100) {
+  $keyValue: $strength * 1deg;
 
   @-webkit-keyframes rotateOutUpRight#{$strength} {
     from {

@@ -1,15 +1,19 @@
-@mixin bounceInRight($strength:100) {
-    $keyValue: 25px / (100/$strength);
+@mixin bounceInRight($strength: 100) {
+  $keyValue: 25px / (100 / $strength);
   @-webkit-keyframes bounceInRight#{$strength} {
-    from, 60%, 75%, 90%, to {
-      -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
     from {
       opacity: 0;
-      -webkit-transform: translate3d($keyValue*100, 0, 0);
-      transform: translate3d($keyValue*100, 0, 0);
+      -webkit-transform: translate3d($keyValue * 100, 0, 0);
+      transform: translate3d($keyValue * 100, 0, 0);
     }
 
     60% {
@@ -19,8 +23,8 @@
     }
 
     75% {
-      -webkit-transform: translate3d($keyValue*1.4, 0, 0);
-      transform: translate3d($keyValue*1.4, 0, 0);
+      -webkit-transform: translate3d($keyValue * 1.4, 0, 0);
+      transform: translate3d($keyValue * 1.4, 0, 0);
     }
 
     90% {
@@ -35,15 +39,19 @@
   }
 
   @keyframes bounceInRight#{$strength} {
-    from, 60%, 75%, 90%, to {
-      -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
     from {
       opacity: 0;
-      -webkit-transform: translate3d($keyValue*100, 0, 0);
-      transform: translate3d($keyValue*100, 0, 0);
+      -webkit-transform: translate3d($keyValue * 100, 0, 0);
+      transform: translate3d($keyValue * 100, 0, 0);
     }
 
     60% {
@@ -53,8 +61,8 @@
     }
 
     75% {
-      -webkit-transform: translate3d($keyValue*1.4, 0, 0);
-      transform: translate3d($keyValue*1.4, 0, 0);
+      -webkit-transform: translate3d($keyValue * 1.4, 0, 0);
+      transform: translate3d($keyValue * 1.4, 0, 0);
     }
 
     90% {

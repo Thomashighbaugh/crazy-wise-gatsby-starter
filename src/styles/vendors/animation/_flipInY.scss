@@ -1,5 +1,5 @@
-@mixin flipInY($strength:100) {
-    $keyValue: 2deg * $strength;
+@mixin flipInY($strength: 100) {
+  $keyValue: 2deg * $strength;
 
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
@@ -37,20 +37,20 @@
   }
 
   @keyframes flipInY#{$strength} {
-      from {
-        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, $keyValue);
-        transform: perspective(400px) rotate3d(0, 1, 0, $keyValue);
-        -webkit-animation-timing-function: ease-in;
-        animation-timing-function: ease-in;
-        opacity: 0;
-      }
+    from {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, $keyValue);
+      transform: perspective(400px) rotate3d(0, 1, 0, $keyValue);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
 
-      40% {
-        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0-$keyValue/9);
-        transform: perspective(400px) rotate3d(0, 1, 0, 0-$keyValue/9);
-        -webkit-animation-timing-function: ease-in;
-        animation-timing-function: ease-in;
-      }
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0-$keyValue/9);
+      transform: perspective(400px) rotate3d(0, 1, 0, 0-$keyValue/9);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
 
     60% {
       -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);

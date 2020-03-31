@@ -29,13 +29,9 @@
 
   $_grid-columns: _retrieve-neat-setting($grid, columns);
   $_grid-gutter: _retrieve-neat-setting($grid, gutter);
-  $_grid-visual-column: "#{_neat-column-width($grid, 1)} + #{$_grid-gutter}";
-  $_grid-visual:
-    transparent,
-    transparent $_grid-gutter,
-    $color $_grid-gutter,
-    $color calc(#{$_grid-visual-column}),
-  ;
+  $_grid-visual-column: '#{_neat-column-width($grid, 1)} + #{$_grid-gutter}';
+  $_grid-visual: transparent, transparent $_grid-gutter, $color $_grid-gutter,
+    $color calc(#{$_grid-visual-column});
 
   background-image: repeating-linear-gradient(to right, $_grid-visual);
 }

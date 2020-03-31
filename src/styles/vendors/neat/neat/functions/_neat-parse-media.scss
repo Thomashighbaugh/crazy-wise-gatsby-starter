@@ -13,8 +13,8 @@
 
 @function _neat-parse-media($media) {
   @if type-of($media) == number {
-    @return "only screen and (min-width: #{$media})";
+    @return 'only screen and (min-width: #{$media})';
   } @else if type-of($media) == string {
-    @return "#{$media}";
+    @return '#{$media}';
   }
 }

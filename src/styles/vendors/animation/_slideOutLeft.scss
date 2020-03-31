@@ -1,5 +1,5 @@
-@mixin slideOutLeft($strength:100) {
-    $keyValue: $strength * 10%;
+@mixin slideOutLeft($strength: 100) {
+  $keyValue: $strength * 10%;
 
   @-webkit-keyframes slideOutLeft#{$strength} {
     from {
@@ -26,5 +26,4 @@
       transform: translate3d(-$keyValue, 0, 0);
     }
   }
-
 }

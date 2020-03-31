@@ -1,4 +1,4 @@
-@mixin fadeOut($strength:100) {
+@mixin fadeOut($strength: 100) {
   @-webkit-keyframes fadeOut#{$strength} {
     from {
       opacity: 1;

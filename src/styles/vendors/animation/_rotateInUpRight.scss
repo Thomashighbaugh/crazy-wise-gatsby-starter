@@ -1,7 +1,7 @@
-@mixin rotateInUpRight($strength:100) {
-    $keyValue: $strength * 1deg;
+@mixin rotateInUpRight($strength: 100) {
+  $keyValue: $strength * 1deg;
 
-    @-webkit-keyframes rotateInUpRight#{$strength} {
+  @-webkit-keyframes rotateInUpRight#{$strength} {
     from {
       -webkit-transform-origin: right bottom;
       transform-origin: right bottom;

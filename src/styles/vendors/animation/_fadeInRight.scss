@@ -1,5 +1,5 @@
-@mixin fadeInRight($strength:100) {
-    $keyValue: $strength * 1%;
+@mixin fadeInRight($strength: 100) {
+  $keyValue: $strength * 1%;
 
   @-webkit-keyframes fadeInRight#{$strength} {
     from {
@@ -28,5 +28,4 @@
       transform: none;
     }
   }
-
 }

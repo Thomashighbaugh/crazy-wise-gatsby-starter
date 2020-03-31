@@ -2,7 +2,6 @@
 //Animation Library
 // for examples of usage see: https://georgeevans1995.github.io/Sassimate/
 
-
 @import 'animation/bounce';
 @import 'animation/bounceIn';
 @import 'animation/bounceInLeft';
@@ -78,7 +77,6 @@
 @import 'animation/zoomOutDown';
 @import 'animation/zoomOutLeft';
 @import 'animation/zoomOutRight';
-
 
 @mixin keyframes($name, $strength) {
   @if $name == bounce {
@@ -316,25 +314,29 @@
 @mixin dynamicStrength($animation-name, $duration, $strength, $iteration) {
   // for use in example only. Remove for the real project files!
   .#{$animation-name}#{$strength} {
-    @include animate(#{$animation-name},#{$duration}, #{$strength}, #{$iteration});
+    @include animate(
+      #{$animation-name},
+      #{$duration},
+      #{$strength},
+      #{$iteration}
+    );
   }
 }
 
-
 //our actual animation mixin
 //call using @include animate(bounce,1s,100,1);
-@mixin animate($animation-name, $duration, $strength:100, $iteration: 1){
-    //calls in the correct keyframe
-    @include keyframes($animation-name, $strength);
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    //get duration
-    -webkit-animation-duration: #{$duration};
-    animation-duration: #{$duration};
-    //get iterations
-    -webkit-animation-iteration-count: #{$iteration};
-    animation-iteration-count: #{$iteration};
-    //get animation name
-    -webkit-animation-name: #{$animation-name}#{$strength};
-    animation-name: #{$animation-name}#{$strength};
+@mixin animate($animation-name, $duration, $strength: 100, $iteration: 1) {
+  //calls in the correct keyframe
+  @include keyframes($animation-name, $strength);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  //get duration
+  -webkit-animation-duration: #{$duration};
+  animation-duration: #{$duration};
+  //get iterations
+  -webkit-animation-iteration-count: #{$iteration};
+  animation-iteration-count: #{$iteration};
+  //get animation name
+  -webkit-animation-name: #{$animation-name}#{$strength};
+  animation-name: #{$animation-name}#{$strength};
 }

@@ -1,5 +1,5 @@
-@mixin rollIn($strength:100) {
-    $keyValue: 100deg + $strength;
+@mixin rollIn($strength: 100) {
+  $keyValue: 100deg + $strength;
 
   @-webkit-keyframes rollIn#{$strength} {
     from {

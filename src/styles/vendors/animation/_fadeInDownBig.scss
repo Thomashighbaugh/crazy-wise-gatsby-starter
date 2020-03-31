@@ -1,5 +1,5 @@
-@mixin fadeInDownBig($strength:100) {
-$keyValue: $strength * 2 * 10px;
+@mixin fadeInDownBig($strength: 100) {
+  $keyValue: $strength * 2 * 10px;
 
   @-webkit-keyframes fadeInDownBig#{$strength} {
     from {

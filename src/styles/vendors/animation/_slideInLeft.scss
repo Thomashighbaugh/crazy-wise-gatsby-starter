@@ -1,5 +1,5 @@
-@mixin slideInLeft($strength:100) {
-    $keyValue: $strength * 10%;
+@mixin slideInLeft($strength: 100) {
+  $keyValue: $strength * 10%;
 
   @-webkit-keyframes slideInLeft#{$strength} {
     from {

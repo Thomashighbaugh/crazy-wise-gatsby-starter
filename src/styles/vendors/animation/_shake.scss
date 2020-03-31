@@ -1,38 +1,53 @@
-@mixin shake($strength:100){
-$keyValue: (20px /100) * $strength;
+@mixin shake($strength: 100) {
+  $keyValue: (20px /100) * $strength;
 
-@-webkit-keyframes shake#{$strength} {
-  from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  @-webkit-keyframes shake#{$strength} {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-$keyValue, 0, 0);
+      transform: translate3d(-$keyValue, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d($keyValue, 0, 0);
+      transform: translate3d($keyValue, 0, 0);
+    }
   }
 
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-$keyValue, 0, 0);
-    transform: translate3d(-$keyValue, 0, 0);
-  }
+  @keyframes shake#{$strength} {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
 
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d($keyValue, 0, 0);
-    transform: translate3d($keyValue, 0, 0);
-  }
-}
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-$keyValue, 0, 0);
+      transform: translate3d(-$keyValue, 0, 0);
+    }
 
-@keyframes shake#{$strength} {
-  from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d($keyValue, 0, 0);
+      transform: translate3d($keyValue, 0, 0);
+    }
   }
-
-  10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-$keyValue, 0, 0);
-    transform: translate3d(-$keyValue, 0, 0);
-  }
-
-  20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d($keyValue, 0, 0);
-    transform: translate3d($keyValue, 0, 0);
-  }
-}
-
 }

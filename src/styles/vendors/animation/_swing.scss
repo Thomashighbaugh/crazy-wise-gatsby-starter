@@ -1,5 +1,5 @@
-@mixin swing($strength:100) {
-    $keyValue: ($strength / 2) * 1deg;
+@mixin swing($strength: 100) {
+  $keyValue: ($strength / 2) * 1deg;
 
   -webkit-transform-origin: top center;
   transform-origin: top center;
@@ -11,8 +11,8 @@
     }
 
     40% {
-      -webkit-transform: rotate3d(0, 0, 1, -$keyValue*0.4);
-      transform: rotate3d(0, 0, 1, -$keyValue*0.4);
+      -webkit-transform: rotate3d(0, 0, 1, -$keyValue * 0.4);
+      transform: rotate3d(0, 0, 1, -$keyValue * 0.4);
     }
 
     60% {
@@ -32,25 +32,25 @@
   }
 
   @keyframes swing#{$strength} {
-      20% {
-        -webkit-transform: rotate3d(0, 0, 1, $keyValue);
-        transform: rotate3d(0, 0, 1, $keyValue);
-      }
+    20% {
+      -webkit-transform: rotate3d(0, 0, 1, $keyValue);
+      transform: rotate3d(0, 0, 1, $keyValue);
+    }
 
-      40% {
-        -webkit-transform: rotate3d(0, 0, 1, -$keyValue*0.4);
-        transform: rotate3d(0, 0, 1, -$keyValue*0.4);
-      }
+    40% {
+      -webkit-transform: rotate3d(0, 0, 1, -$keyValue * 0.4);
+      transform: rotate3d(0, 0, 1, -$keyValue * 0.4);
+    }
 
-      60% {
-        -webkit-transform: rotate3d(0, 0, 1, $keyValue/5);
-        transform: rotate3d(0, 0, 1, $keyValue/5);
-      }
+    60% {
+      -webkit-transform: rotate3d(0, 0, 1, $keyValue/5);
+      transform: rotate3d(0, 0, 1, $keyValue/5);
+    }
 
-      80% {
-        -webkit-transform: rotate3d(0, 0, 1, -$keyValue/5);
-        transform: rotate3d(0, 0, 1, -$keyValue/5);
-      }
+    80% {
+      -webkit-transform: rotate3d(0, 0, 1, -$keyValue/5);
+      transform: rotate3d(0, 0, 1, -$keyValue/5);
+    }
 
     to {
       -webkit-transform: rotate3d(0, 0, 1, 0deg);

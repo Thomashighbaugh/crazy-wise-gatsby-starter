@@ -1,5 +1,4 @@
-@mixin fadeIn($strength:100) {
-
+@mixin fadeIn($strength: 100) {
   @-webkit-keyframes fadeIn#{$strength} {
     from {
       opacity: 0;

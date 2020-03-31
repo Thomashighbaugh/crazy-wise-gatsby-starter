@@ -1,6 +1,6 @@
-@mixin lightSpeedOut($strength:100) {
-    $keyValue: (70deg/100) * $strength;
-    $keyValueTranslate: 1% * $strength;
+@mixin lightSpeedOut($strength: 100) {
+  $keyValue: (70deg/100) * $strength;
+  $keyValueTranslate: 1% * $strength;
 
   -webkit-animation-timing-function: ease-in;
   animation-timing-function: ease-in;

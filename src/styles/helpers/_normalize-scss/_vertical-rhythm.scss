@@ -5,17 +5,20 @@
 // CSS. If you are looking for a robust solution, look at the excellent Typey
 // library. @see https://github.com/jptaranto/typey
 
-@function normalize-rhythm($value, $relative-to: $base-font-size, $unit: $base-unit) {
+@function normalize-rhythm(
+  $value,
+  $relative-to: $base-font-size,
+  $unit: $base-unit
+) {
   @if unit($value) != px {
     @error "The normalize vertical-rhythm module only supports px inputs. The typey library is better.";
   }
   @if $unit == rem {
     @return ($value / $base-font-size) * 1rem;
-  }
-  @else if $unit == em {
+  } @else if $unit == em {
     @return ($value / $relative-to) * 1em;
-  }
-  @else { // $unit == px
+  } @else {
+    // $unit == px
     @return $value;
   }
 }
@@ -32,8 +35,7 @@
   $sep: space;
   @if type-of($values) == 'list' {
     $sep: list-separator($values);
-  }
-  @else {
+  } @else {
     $value-list: append((), $values);
   }
 

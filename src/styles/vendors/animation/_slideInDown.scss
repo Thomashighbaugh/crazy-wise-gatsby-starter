@@ -1,5 +1,5 @@
-@mixin slideInDown($strength:100) {
-    $keyValue: $strength * 10%;
+@mixin slideInDown($strength: 100) {
+  $keyValue: $strength * 10%;
 
   @-webkit-keyframes slideInDown#{$strength} {
     from {
@@ -26,5 +26,4 @@
       transform: translate3d(0, 0, 0);
     }
   }
-
 }

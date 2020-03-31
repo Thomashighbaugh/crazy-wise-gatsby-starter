@@ -1,5 +1,5 @@
-@mixin fadeInLeftBig($strength:100) {
-$keyValue: $strength * 2 * 10px;
+@mixin fadeInLeftBig($strength: 100) {
+  $keyValue: $strength * 2 * 10px;
 
   @-webkit-keyframes fadeInLeftBig#{$strength} {
     from {

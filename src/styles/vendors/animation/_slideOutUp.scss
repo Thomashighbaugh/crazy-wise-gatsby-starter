@@ -1,5 +1,5 @@
-@mixin slideOutUp($strength:100) {
-    $keyValue: $strength * 10%;
+@mixin slideOutUp($strength: 100) {
+  $keyValue: $strength * 10%;
 
   @-webkit-keyframes slideOutUp#{$strength} {
     from {

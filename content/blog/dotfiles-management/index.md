@@ -6,15 +6,12 @@ img: ./make.jpg # Add image post (optional)
 tags: [Dotfiles, Makefile] # add tag
 ---
 
-
-
-If you have explored dotfiles repos on GitHub or GitLab, one very obvious difference between them all are the methods 
+If you have explored dotfiles repos on GitHub or GitLab, one very obvious difference between them all are the methods
 in which they are provisioned (usually plastered all over the ReadMe).
 
+## Many, Many Options
 
-## Many, Many Options 
-
-I have tried many of these options, with varying degrees of success but found the supposedly most complicated way, 
+I have tried many of these options, with varying degrees of success but found the supposedly most complicated way,
 using Makefile, to be the easiest and best method of provisioning my dotfiles consistently.
 
 Here are some options and my thoughts on each
@@ -28,6 +25,7 @@ Here are some options and my thoughts on each
 | Makefile     | Creates syslink farm and allows shell script like configuration. Best of both worlds and easy to write. Since you control the link commands, you can control the file names adding dots to the link but having the actual file not hidden.                                                                              |
 | rcm          | Did not work for me, moved on instead of trying to get it to work because the bounty of other options                                                                                                                                                                                                                   |
 | yadm         | Tried it out, was something like dotbro in needing a config file that was tedious, moved on to other options                                                                                                                                                                                                            |
+
 ## Makefile is the Winner
 
 Makefile turns out to offer the most in ways of features, allowing stow like **syslink farming**
@@ -52,7 +50,7 @@ example:
 
 ### Repo Structure
 
-To keep things easy, most of my Makefile commands are named after the directory in my repo, 
+To keep things easy, most of my Makefile commands are named after the directory in my repo,
 
 For example let's imagine we have this directory in our dotfiles
 
@@ -88,14 +86,14 @@ and everything would work just as well. So much for the cool kids and their Stow
 
 ## Advantages Over Roll-Your-Own Scripts
 
-I generally prefer using my own scripts when I can, even if they are rudimentary they are a lot easier to manage than 
+I generally prefer using my own scripts when I can, even if they are rudimentary they are a lot easier to manage than
 the uncommented monstrosities common in Linux. Makefile offers one advantage over a Tom script though, its modular
 without need for extra bs to debug.
 
-Makefiles are used for installing and removing programs in your system, having both sets of commands in th esame file 
+Makefiles are used for installing and removing programs in your system, having both sets of commands in th esame file
 called with commands like `make install` which calls the make command install. Its a very elegant system compared to
- stow farming and it is easily adapted to provisioing different systems (which is my next project as git branches are
-  a little less useful as it happens)
+stow farming and it is easily adapted to provisioing different systems (which is my next project as git branches are
+a little less useful as it happens)
 
 ## Disadvantages of Makefile for Dotfiles:
 
@@ -108,17 +106,17 @@ suit my needs and there is none of the features of Ansible to add to the Makefil
 provisioning tool worth knowing, even if I found it utterly useless for provisioning thanks to makefile rolling
 in my dotfile configuration and **having a much more organic flow** to my work pattern.
 
-Nonetheless, one will have to tweak their Makefile, more if they have a large one like myself and even in smaller 
+Nonetheless, one will have to tweak their Makefile, more if they have a large one like myself and even in smaller
 deployments probably somewhat here and there.
 
-The lack of idempotency is a pain especially if one has changed some aspect of their Makefile and then have to debug 
-it. I guess the best way to do this reliably is to do all one's debugging on a VM and then only pull in the perfectly 
+The lack of idempotency is a pain especially if one has changed some aspect of their Makefile and then have to debug
+it. I guess the best way to do this reliably is to do all one's debugging on a VM and then only pull in the perfectly
 functional variants into the system but let's be real and admit that doing that is a little more work than it is worth.
 
 ### 'Bolted On'
 
-I have seen people chide Makefile provisioning as feeling bolted on and treat it as if it was a wasteful use of a 
-powerful program. These same people also stated elsewhere that they used Stow, which like Make **was not intended 
+I have seen people chide Makefile provisioning as feeling bolted on and treat it as if it was a wasteful use of a
+powerful program. These same people also stated elsewhere that they used Stow, which like Make **was not intended
 to manage dotfiles**.
 
 Dotfile management, like so much in the Linux community, attracts a certain portion of users that are more into

@@ -1,5 +1,5 @@
 const path = require(`path`)
-const _ = require('lodash');
+const _ = require('lodash')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
@@ -70,7 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/${i + 1}`,
-        component: path.resolve("./src/templates/blog-list.js"),
+        component: path.resolve('./src/templates/blog-list.js'),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
@@ -82,15 +82,15 @@ exports.createPages = ({ graphql, actions }) => {
 
     // create Tags pages
     // pulled directly from https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/#add-tags-to-your-markdown-files
-    let tags = [];
+    let tags = []
     // Iterate through each post, putting all found tags into `tags`
     _.each(posts, edge => {
       if (_.get(edge, 'node.frontmatter.tags')) {
-        tags = tags.concat(edge.node.frontmatter.tags);
+        tags = tags.concat(edge.node.frontmatter.tags)
       }
-    });
+    })
     // Eliminate duplicate tags
-    tags = _.uniq(tags);
+    tags = _.uniq(tags)
     // Make tag pages
     tags.forEach(tag => {
       createPage({
