@@ -5,10 +5,11 @@ description: Boilerplate posts
 img: ./make.jpg # Add image post (optional)
 tags: [Dotfiles, Makefile] # add tag
 ---
+
 This is an example of some source code in Markdown, rendered with PrismJS, Gatsby and what's left of my patience.
 
 ```bash
-sudo pacman -S git 
+sudo pacman -S git
 
 git clone https://github.com/Thomashighbaugh/g5-Blog-CCLife CCLife
 

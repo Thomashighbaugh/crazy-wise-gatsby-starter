@@ -8,9 +8,8 @@ tags: [Dotfiles]
 
 ## Post 1
 
-Blah blah blah, look at my custom Linux desktop! 
+Blah blah blah, look at my custom Linux desktop!
 
 ![My Desktop](./desktop.png)
 
 Yup, I really made that! Took a while, and I might now hate Linux, AwesomeWM and i3, but at least I learned something!
-

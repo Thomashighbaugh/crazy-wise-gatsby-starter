@@ -34,7 +34,7 @@ const DefaultLayout = ({ children }) => (
         <Header />
         <Sidebar siteMetadata={data.site.siteMetadata} />
         <div className="content-box clearfix">{children}</div>
-      <Footer/>
+        <Footer />
       </div>
     )}
   />

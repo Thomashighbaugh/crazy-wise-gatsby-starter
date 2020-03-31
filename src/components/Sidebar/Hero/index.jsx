@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 //@TODO add image to header
 const Hero = () => (
   <div className="blog-header">

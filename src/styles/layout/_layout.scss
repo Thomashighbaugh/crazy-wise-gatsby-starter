@@ -9,10 +9,9 @@
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   color: #555;
 }
-
 
 /*
  * Override Bootstrap's default container.
@@ -21,4 +20,3 @@ body {
 .container {
   max-width: 60rem;
 }
-

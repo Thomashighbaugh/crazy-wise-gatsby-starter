@@ -25,16 +25,16 @@ class BlogIndex extends React.Component {
           return (
             <article className="post" key={node.fields.slug}>
               {node.frontmatter.img &&
-              node.frontmatter.img.childImageSharp &&
-              node.frontmatter.img.childImageSharp.fluid && (
-                <Link
-                  to={node.fields.slug}
-                  className="post-thumbnail"
-                  style={{
-                    backgroundImage: `url(${node.frontmatter.img.childImageSharp.fluid.src})`,
-                  }}
-                />
-              )}
+                node.frontmatter.img.childImageSharp &&
+                node.frontmatter.img.childImageSharp.fluid && (
+                  <Link
+                    to={node.fields.slug}
+                    className="post-thumbnail"
+                    style={{
+                      backgroundImage: `url(${node.frontmatter.img.childImageSharp.fluid.src})`,
+                    }}
+                  />
+                )}
               <div className="post-content">
                 <h2 className="post-title">
                   <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
@@ -50,29 +50,29 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
-<br/>
+        <br />
         <footer className="pagination  page-footer" role="pagination">
-            <ul>
-              {!isFirst && (
-                <p>
-                  <Link to={prevPage} rel="prev" className="newer-posts">
-                  <button>  ← Previous Page </button>
-                  </Link>
-                </p>
-              )}
+          <ul>
+            {!isFirst && (
               <p>
-                <span className="page-number">
-                  Page {currentPage} of {numPages}
-                </span>
+                <Link to={prevPage} rel="prev" className="newer-posts">
+                  <button> ← Previous Page </button>
+                </Link>
               </p>
-              {!isLast && (
-                <p>
-                  <Link to={nextPage} rel="next" className="older-posts">
-                    <button>Next Page →</button>
-                  </Link>
-                </p>
-              )}
-            </ul>
+            )}
+            <p>
+              <span className="page-number">
+                Page {currentPage} of {numPages}
+              </span>
+            </p>
+            {!isLast && (
+              <p>
+                <Link to={nextPage} rel="next" className="older-posts">
+                  <button>Next Page →</button>
+                </Link>
+              </p>
+            )}
+          </ul>
         </footer>
       </DefaultLayout>
     )
@@ -82,41 +82,41 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-    query blogPageQuery($skip: Int!, $limit: Int!) {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-        allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
-            limit: $limit
-            skip: $skip
-        ) {
-            edges {
-                node {
-                    excerpt
-                    fields {
-                        slug
-                    }
-                    timeToRead
-                    frontmatter {
-                        date(formatString: "YYYY, MMM DD")
-                        title
-                        img {
-                            childImageSharp {
-                                fluid(maxWidth: 3720) {
-                                    aspectRatio
-                                    base64
-                                    sizes
-                                    src
-                                    srcSet
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+  query blogPageQuery($skip: Int!, $limit: Int!) {
+    site {
+      siteMetadata {
+        title
+      }
     }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          timeToRead
+          frontmatter {
+            date(formatString: "YYYY, MMM DD")
+            title
+            img {
+              childImageSharp {
+                fluid(maxWidth: 3720) {
+                  aspectRatio
+                  base64
+                  sizes
+                  src
+                  srcSet
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `

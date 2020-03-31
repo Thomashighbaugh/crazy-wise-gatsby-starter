@@ -1,5 +1,5 @@
 /* Sidebar modules for boxing content */
-.sidebar{
+.sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +25,7 @@
 .blog-header {
   padding-bottom: 1.25rem;
   margin-top: 20%;
-  border-bottom: .05rem solid #eee;
+  border-bottom: 0.05rem solid #eee;
 }
 .blog-title {
   margin-bottom: 0;
@@ -42,4 +42,3 @@
     font-size: 3.5rem;
   }
 }
-
