@@ -1,0 +1,149 @@
+/*************************************************************************************
+*  HEADER
+*
+*
+*
+**************************************************************************************/
+header {
+  padding-bottom: 2.5rem;
+  margin-top: 0;
+  padding-top: 0;
+  justify-content: center;
+  align-content: center;
+
+  nav {
+    border-right: $bdr-nr;
+    border-left: $bdr-nl;
+    border-bottom: $bdr-nb;
+    background: $header-background;
+    margin-top: 0;
+    padding: 0 !important;
+    clear: both;
+    font-family: $ff-title;
+    display: block;
+    @include for-size(big-desktop) {
+      width: 100%;
+      font-size: 100%;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 2rem;
+      margin-top: 0;
+      display: inline-block;
+      font-size: 85%;
+      width: 100%;
+    }
+    @include for-size(tablet-landscape) {
+      margin-bottom: 2rem;
+      margin-top: 0;
+      display: inline-grid;
+      font-size: 75%;
+      width: 100%;
+    }
+    @include for-size(tablet-portrait) {
+      margin-bottom: 1.5rem;
+      margin-top: 0;
+      display: inline-block;
+      font-size: 65%;
+      width: 100%;
+    }
+    @include for-size(phone-only) {
+      margin-bottom: 1rem;
+      margin-top: 0;
+      display: inline-block;
+      font-size: 50%;
+      width: 100%;
+    }
+
+    .links {
+      margin-top: 1rem;
+      padding: 0;
+    }
+
+    clear: both;
+
+    .navbar-brand {
+      color: $white;
+      font-weight: 900;
+      font-family: $ff-title;
+      display: inline-block !important;
+      font-size: 2.25rem !important;
+      padding: 0.75rem !important;
+      text-shadow: 0.18rem 0.18rem $light;
+
+      a {
+        @extend %btn-1;
+        width: 100%;
+      }
+
+      a:hover {
+        border: $bdr-button-hover;
+      }
+
+      @include for-size(big-desktop) {
+        font-size: 1.75rem;
+        font-weight: 900;
+      }
+      @include for-size(desktop) {
+        font-size: 60%;
+        font-weight: 900;
+      }
+      @include for-size(tablet-landscape) {
+        font-size: 1rem;
+        font-weight: 900;
+      }
+      @include for-size(tablet-portrait) {
+        padding: 0;
+        margin-top: 0;
+        display: none !important;
+        font-size: 1.25rem;
+      }
+      @include for-size(phone-only) {
+        margin-top: 0;
+        display: none;
+        padding: 0;
+      }
+    }
+  }
+}
+.nav-btn {
+  color: $white !important;
+  font-family: $ff-title;
+  text-decoration: none !important;
+  text-align: center !important;
+  padding: $p-s;
+  font-size: 1.5rem;
+  margin-right: $mb-nav;
+  @extend %btn-1;
+  display: inline-block;
+  border: $light solid 0.5rem;
+  text-shadow: 0.16rem 0.16rem $light;
+  &:hover {
+    border: $bdr-button-hover;
+    background: $gradient5;
+  }
+
+  @include for-size(big-desktop) {
+    margin-bottom: 1rem;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  @include for-size(tablet-landscape) {
+    font-size: 1.5rem;
+  }
+  @include for-size(tablet-portrait) {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  @include for-size(phone-only) {
+    width: 100% !important;
+    font-size: 1.5rem;
+  }
+}
+.links {
+  float: right;
+  margin: 0;
+  position: relative;
+  font-family: $ff-title;
+}

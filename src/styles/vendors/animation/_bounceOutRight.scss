@@ -1,0 +1,31 @@
+@mixin bounceOutRight($strength:100) {
+    $keyValue: 40px / (100/$strength);
+
+  @-webkit-keyframes bounceOutRight#{$strength} {
+    20% {
+      opacity: 1;
+      -webkit-transform: translate3d(-$keyValue, 0, 0);
+      transform: translate3d(-$keyValue, 0, 0);
+    }
+
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d($keyValue*50, 0, 0);
+      transform: translate3d($keyValue*50, 0, 0);
+    }
+  }
+
+  @keyframes bounceOutRight#{$strength} {
+      20% {
+        opacity: 1;
+        -webkit-transform: translate3d(-$keyValue, 0, 0);
+        transform: translate3d(-$keyValue, 0, 0);
+      }
+
+      to {
+        opacity: 0;
+        -webkit-transform: translate3d($keyValue*50, 0, 0);
+        transform: translate3d($keyValue*50, 0, 0);
+      }
+  }
+}

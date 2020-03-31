@@ -1,0 +1,27 @@
+@mixin fadeOutUp($strength:100) {
+    $keyValue: $strength * 1%;
+
+  @-webkit-keyframes fadeOutUp#{$strength} {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -$keyValue, 0);
+      transform: translate3d(0, -$keyValue, 0);
+    }
+  }
+
+  @keyframes fadeOutUp#{$strength} {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -$keyValue, 0);
+      transform: translate3d(0, -$keyValue, 0);
+    }
+  }
+}

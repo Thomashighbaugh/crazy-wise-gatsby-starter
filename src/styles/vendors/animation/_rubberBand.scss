@@ -1,0 +1,76 @@
+@mixin rubberBand($strength:100){
+    $keyValue: 1 + (0.5/100 * $strength);
+
+  @-webkit-keyframes rubberBand#{$strength} {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d($keyValue, $keyValue*0.6, 1);
+    transform: scale3d($keyValue, $keyValue*0.6, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d($keyValue*0.6, $keyValue, 1);
+    transform: scale3d($keyValue*0.6, $keyValue, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d($keyValue*0.92, $keyValue*0.68, 1);
+    transform: scale3d($keyValue*0.92, $keyValue*0.68, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d($keyValue*0.76, $keyValue*0.84, 1);
+    transform: scale3d($keyValue*0.76, $keyValue*0.84, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d($keyValue*0.84, $keyValue*0.76, 1);
+    transform: scale3d($keyValue*0.84, $keyValue*0.76, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes rubberBand#{$strength} {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+      -webkit-transform: scale3d($keyValue, $keyValue*0.6, 1);
+      transform: scale3d($keyValue, $keyValue*0.6, 1);
+    }
+
+    40% {
+      -webkit-transform: scale3d($keyValue*0.6, $keyValue, 1);
+      transform: scale3d($keyValue*0.6, $keyValue, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d($keyValue*0.92, $keyValue*0.68, 1);
+      transform: scale3d($keyValue*0.92, $keyValue*0.68, 1);
+    }
+
+    65% {
+      -webkit-transform: scale3d($keyValue*0.76, $keyValue*0.84, 1);
+      transform: scale3d($keyValue*0.76, $keyValue*0.84, 1);
+    }
+
+    75% {
+      -webkit-transform: scale3d($keyValue*0.84, $keyValue*0.76, 1);
+      transform: scale3d($keyValue*0.84, $keyValue*0.76, 1);
+    }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+}

@@ -1,0 +1,57 @@
+@mixin tada($strength:100) {
+    $keyValue: ($strength / 10) * 1deg;
+
+  @-webkit-keyframes tada#{$strength} {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    10%, 20% {
+      -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -$keyValue);
+      transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -$keyValue);
+    }
+
+    30%, 50%, 70%, 90% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, $keyValue);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, $keyValue);
+    }
+
+    40%, 60%, 80% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -$keyValue);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -$keyValue);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes tada#{$strength} {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    10%, 20% {
+      -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -$keyValue);
+      transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -$keyValue);
+    }
+
+    30%, 50%, 70%, 90% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, $keyValue);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, $keyValue);
+    }
+
+    40%, 60%, 80% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -$keyValue);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -$keyValue);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}

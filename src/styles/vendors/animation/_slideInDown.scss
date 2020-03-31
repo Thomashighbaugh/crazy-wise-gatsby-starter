@@ -1,0 +1,30 @@
+@mixin slideInDown($strength:100) {
+    $keyValue: $strength * 10%;
+
+  @-webkit-keyframes slideInDown#{$strength} {
+    from {
+      -webkit-transform: translate3d(0, -$keyValue, 0);
+      transform: translate3d(0, -$keyValue, 0);
+      visibility: visible;
+    }
+
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes slideInDown#{$strength} {
+    from {
+      -webkit-transform: translate3d(0, -$keyValue, 0);
+      transform: translate3d(0, -$keyValue, 0);
+      visibility: visible;
+    }
+
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+}

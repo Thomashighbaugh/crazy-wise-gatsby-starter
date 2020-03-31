@@ -1,0 +1,31 @@
+/****************************************************************
+*  BADGE
+*
+*
+*
+*  Defines the badge class and subclasses
+*****************************************************************/
+
+.badge {
+  background-color: $bg-badge;
+  border-radius: $bdr-badge;
+  color: $c-badge;
+  display: inline-block;
+  line-height: $lh-badge;
+  padding: $p-badge;
+
+  &--big {
+    font-size: $fz-badge-big;
+  }
+
+  &--small {
+    font-size: $fz-badge-small;
+  }
+
+  @each $type, $color in $badges-color-map {
+    &--#{$type} {
+      background-color: $color;
+      color: $c-badge-colored;
+    }
+  }
+}

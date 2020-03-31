@@ -1,0 +1,32 @@
+@mixin fadeInDown($strength:100) {
+    $keyValue: $strength * 1%;
+
+  @-webkit-keyframes fadeInDown#{$strength} {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -$keyValue, 0);
+      transform: translate3d(0, -$keyValue, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @keyframes fadeInDown#{$strength} {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -$keyValue, 0);
+      transform: translate3d(0, -$keyValue, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+}

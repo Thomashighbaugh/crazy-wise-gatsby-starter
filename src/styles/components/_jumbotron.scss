@@ -1,0 +1,41 @@
+/*********************************************************************
+*  JUMBOTRON
+*
+*
+*
+*  Defines Jumbotron component
+*  ------------------------------------------------------------------
+ *******************************************************************/
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: $header-background;
+  color: $primary;
+  min-width: 100%;
+  h1 {
+    font-weight: 900;
+    font-size: 4rem;
+    margin: 1.5rem;
+    color: $primary;
+    font-family: $ff-title;
+
+    background: $white;
+  }
+  img {
+    height: 12rem;
+    background: $gray;
+    border-radius: 1rem;
+    margin: 1rem;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 0.5rem;
+    font-family: $ff-sub;
+    color: $primary;
+    background: $white;
+  }
+}

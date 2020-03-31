@@ -1,0 +1,58 @@
+@mixin lightSpeedIn($strength:100) {
+    $keyValue: (70deg/100) * $strength;
+    $keyValueTranslate: 1% * $strength;
+
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  @-webkit-keyframes lightSpeedIn#{$strength} {
+    from {
+      -webkit-transform: translate3d($keyValueTranslate, 0, 0) skewX(-$keyValue);
+      transform: translate3d($keyValueTranslate, 0, 0) skewX(-$keyValue);
+      opacity: 0;
+    }
+
+    60% {
+      -webkit-transform: skewX($keyValue*0.66);
+      transform: skewX($keyValue*0.66);
+      opacity: 1;
+    }
+
+    80% {
+      -webkit-transform: skewX(-$keyValue/6);
+      transform: skewX(-$keyValue/6);
+      opacity: 1;
+    }
+
+    to {
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes lightSpeedIn#{$strength}  {
+      from {
+        -webkit-transform: translate3d($keyValueTranslate, 0, 0) skewX(-$keyValue);
+        transform: translate3d($keyValueTranslate, 0, 0) skewX(-$keyValue);
+        opacity: 0;
+      }
+
+      60% {
+        -webkit-transform: skewX($keyValue*0.66);
+        transform: skewX($keyValue*0.66);
+        opacity: 1;
+      }
+
+      80% {
+        -webkit-transform: skewX(-$keyValue/6);
+        transform: skewX(-$keyValue/6);
+        opacity: 1;
+      }
+
+      to {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 1;
+      }
+  }
+}

@@ -1,0 +1,122 @@
+/*********************************************************************
+*  CARD
+*
+*
+*
+*
+ *******************************************************************/
+.card {
+  border-top: $bdr-ct;
+  border-right: $bdr-cr;
+  border-left: $bdr-cl;
+  border-bottom: $bdr-cb;
+  padding: 1rem;
+  justify-self: center;
+  background: $header-background;
+  border-radius: 10px;
+  @include for-size(big-desktop) {
+  }
+
+  @include for-size(desktop) {
+  }
+  @include for-size(tablet-landscape) {
+    font-size: 80% !important;
+  }
+  @include for-size(tablet-portrait) {
+    font-size: 75%;
+  }
+  @include for-size(phone-only) {
+  }
+  .card-body {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    border-radius: 10px;
+    background: $white;
+    .card-text {
+      border-radius: 10px;
+      font-family: $ff-sub;
+      font-weight: 600;
+      color: $text;
+      text-align: center;
+      background: $white;
+    }
+    .techs {
+      border-radius: 10px;
+      color: $primary;
+      margin: 0.25rem;
+      text-shadow: 0.125rem 0.125rem $light;
+      background: $white;
+      width: auto;
+      font-size: $fz-h4;
+      text-align: center;
+      font-family: $ff-title;
+    }
+  }
+  .card-header {
+    background: $white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 0 0 0.5rem;
+    border: $primary 0.35rem solid;
+    .card-title {
+      font-family: $ff-title;
+      color: $primary;
+      font-size: $fz-h2;
+      width: auto;
+      background: $white;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      text-shadow: 0.25rem 0.25rem $light;
+    }
+    .card-subtitle {
+      font-family: $ff-sub;
+      color: $text;
+      text-align: right;
+      font-size: $fz-h5;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  hr {
+    color: $primary;
+    border-bottom: 0.5rem $light solid;
+    outline: none;
+  }
+  &:hover {
+    hr {
+      border-bottom: $primary 0.5rem solid;
+    }
+    .card-header {
+      color: $primary;
+      background: $light;
+      .card-title {
+        color: $primary;
+        background: $light;
+        text-shadow: 0.125rem 0.125rem $white;
+      }
+      .card-subtitle {
+        color: $primary;
+        background: $light;
+      }
+    }
+    .card-body {
+      background: $light;
+      .shoutout {
+        color: $primary;
+        background: $light;
+        font-family: $ff-title;
+        font-weight: 900;
+      }
+      .card-text {
+        color: $primary;
+        background: $light;
+      }
+      .techs {
+        color: $primary;
+        background: $light;
+      }
+    }
+  }
+}

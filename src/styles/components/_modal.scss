@@ -1,0 +1,101 @@
+/*********************************************************************
+ *  MODAL
+ *
+ *
+ *  ------------------------------------------------------------------
+ *
+ *******************************************************************/
+
+.modal {
+  display: block;
+  background: $header-background;
+}
+.header {
+  background: $white;
+  padding: 1rem !important;
+  margin-bottom: 3rem !important;
+}
+.content {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.modal > .header {
+  min-width: 100%;
+  border-bottom: $light 0.5rem solid;
+  margin-bottom: 0.5rem;
+  font-size: $fz-h2;
+  text-align: center;
+  font-family: $ff-sub;
+  color: $primary;
+  padding: 1rem;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 2rem;
+  background: $light;
+  color: $primary;
+  border-radius: 18px;
+  font-weight: 900;
+  border: 1px solid $white;
+}
+
+.modal-list {
+  width: 25%;
+  float: left;
+  list-style: inside;
+  position: relative;
+  background: $white;
+  border: 0.2rem solid $light;
+  .modal-list-heading {
+    color: $primary;
+    font-family: $ff-title;
+    font-size: $fz-h4;
+    border-bottom: $light solid 0.15rem;
+    margin-bottom: 0;
+  }
+  .modal-list-item {
+    color: $light;
+    font-family: $ff-body;
+    font-weight: 900;
+    font-size: 0.75rem;
+  }
+}
+
+.actions {
+  background: $white;
+  border-radius: 10px;
+  color: $light;
+  font-family: $ff-body;
+  font-weight: 900;
+  button {
+    @extend %btn-1;
+  }
+}
+
+.modal-button {
+  color: $white;
+  width: 45%;
+  border: $light solid 0.5rem;
+  background: $gradient0;
+  font-family: $ff-title;
+  font-size: 1.1rem;
+  padding: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}

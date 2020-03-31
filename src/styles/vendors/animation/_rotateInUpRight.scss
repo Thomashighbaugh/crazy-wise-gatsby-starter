@@ -1,0 +1,39 @@
+@mixin rotateInUpRight($strength:100) {
+    $keyValue: $strength * 1deg;
+
+    @-webkit-keyframes rotateInUpRight#{$strength} {
+    from {
+      -webkit-transform-origin: right bottom;
+      transform-origin: right bottom;
+      -webkit-transform: rotate3d(0, 0, 1, -$keyValue);
+      transform: rotate3d(0, 0, 1, -$keyValue);
+      opacity: 0;
+    }
+
+    to {
+      -webkit-transform-origin: right bottom;
+      transform-origin: right bottom;
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotateInUpRight#{$strength} {
+    from {
+      -webkit-transform-origin: right bottom;
+      transform-origin: right bottom;
+      -webkit-transform: rotate3d(0, 0, 1, -$keyValue);
+      transform: rotate3d(0, 0, 1, -$keyValue);
+      opacity: 0;
+    }
+
+    to {
+      -webkit-transform-origin: right bottom;
+      transform-origin: right bottom;
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+}

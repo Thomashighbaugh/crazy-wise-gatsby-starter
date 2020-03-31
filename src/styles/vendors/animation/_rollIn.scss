@@ -1,0 +1,31 @@
+@mixin rollIn($strength:100) {
+    $keyValue: 100deg + $strength;
+
+  @-webkit-keyframes rollIn#{$strength} {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -$keyValue);
+      transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -$keyValue);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @keyframes rollIn#{$strength} {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -$keyValue);
+      transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -$keyValue);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+}

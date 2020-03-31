@@ -1,0 +1,119 @@
+/***************************************************************
+*  TAG
+*
+*
+*
+****************************************************************/
+.blog-tags {
+  width: 100%;
+  background-color: $white;
+  padding: 0 20px 20px;
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.3;
+    color: $dark-blue;
+  }
+  h2 {
+    color: $dark-blue;
+    margin: 10px 0;
+  }
+}
+
+.tags {
+  margin: 0;
+  padding: 10px;
+  li {
+    display: inline-block;
+    margin: 5px;
+    list-style: none;
+    a {
+      text-decoration: none;
+      color: $dark-blue;
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid $gray;
+      background-color: $lightgray;
+      transition: all .3s;
+      &:hover {
+        background-color: $gray;
+      }
+    }
+  }
+}
+
+.tag-list {
+  span {
+    a {
+      text-decoration: none;
+      color: $dark-blue;
+      &:hover {
+        text-decoration: underline;
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.page-tag {
+  span {
+    a {
+      text-decoration: none;
+      color: $dark-blue;
+      &:hover {
+        text-decoration: underline;
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.blog-tags {
+  span {
+    a {
+      text-decoration: none;
+      color: $dark-blue;
+      &:hover {
+        text-decoration: underline;
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.tag {
+  background-color: $bg-tag;
+  border-radius: $bdr-tag;
+  color: $c-tag;
+  display: inline-block;
+  line-height: $lh-tag;
+  margin: $m-tag;
+  padding: $p-tag;
+  position: relative;
+
+  // triangle arrow
+  &::before {
+    border-bottom: ($lh-tag / 2) + $p-tag solid transparent;
+    border-left: $p-tag solid $bg-tag;
+    border-top: ($lh-tag / 2) + $p-tag solid transparent;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: -$p-tag;
+    top: 0;
+    width: 0;
+  }
+
+  // dot
+  &::after {
+    background: $bg-tag-dot;
+    border-radius: 100%;
+    content: '';
+    height: $size-tag-dot;
+    margin-top: -$size-tag-dot / 2;
+    position: absolute;
+    right: -$size-tag-dot / 2;
+    top: 50%;
+    width: $size-tag-dot;
+  }
+}

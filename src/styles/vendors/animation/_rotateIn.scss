@@ -1,0 +1,39 @@
+@mixin rotateIn($strength:100) {
+    $keyValue: 150deg + $strength;
+
+  @-webkit-keyframes rotateIn#{$strength} {
+    from {
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-transform: rotate3d(0, 0, 1, -$keyValue);
+      transform: rotate3d(0, 0, 1, -$keyValue);
+      opacity: 0;
+    }
+
+    to {
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotateIn#{$strength} {
+    from {
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-transform: rotate3d(0, 0, 1, -$keyValue);
+      transform: rotate3d(0, 0, 1, -$keyValue);
+      opacity: 0;
+    }
+
+    to {
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+}

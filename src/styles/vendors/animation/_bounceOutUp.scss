@@ -1,0 +1,42 @@
+@mixin bounceOutUp($strength:100) {
+    $keyValue: 40px / (100/$strength);
+
+  @-webkit-keyframes bounceOutUp#{$strength} {
+    20% {
+      -webkit-transform: translate3d(0, -$keyValue*0.5, 0);
+      transform: translate3d(0, -$keyValue*0.5, 0);
+    }
+
+    40%, 45% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, $keyValue, 0);
+      transform: translate3d(0, $keyValue, 0);
+    }
+
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -$keyValue*50, 0);
+      transform: translate3d(0, -$keyValue*50, 0);
+    }
+  }
+
+  @keyframes bounceOutUp#{$strength} {
+      20% {
+        -webkit-transform: translate3d(0, -$keyValue*0.5, 0);
+        transform: translate3d(0, -$keyValue*0.5, 0);
+      }
+
+      40%, 45% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, $keyValue, 0);
+        transform: translate3d(0, $keyValue, 0);
+      }
+
+      to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -$keyValue*50, 0);
+        transform: translate3d(0, -$keyValue*50, 0);
+      }
+  }
+
+}

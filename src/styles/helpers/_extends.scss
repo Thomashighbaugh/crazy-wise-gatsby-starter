@@ -1,0 +1,56 @@
+/*************************************************************************************
+*  EXTENDS
+*
+*
+*  Creates templates for consistently used components
+**************************************************************************************/
+
+/*
+* Buttons
+*/
+
+%btn-1 {
+  border: $light solid 0.5rem;
+  text-decoration: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    -35deg,
+    #4df 10%,
+    #4df 20%,
+    #68b6e3 35%,
+    #80bdff 45%,
+    #68b6e3 55%,
+    #86cfda 65%,
+    #4df 76%
+  );
+  text-align: center;
+  color: $white !important;
+}
+%btn-2 {
+  border: $bdr-button-hover;
+}
+%btn-3 {
+  border: $light solid 0.4rem;
+  color: $white !important;
+  background: linear-gradient(
+    -35deg,
+    #4df 10%,
+    #4df 20%,
+    #68b6e3 35%,
+    #80bdff 45%,
+    #68b6e3 55%,
+    #86cfda 65%,
+    #4df 76%
+  );
+}
+
+%btn-4 {
+  color: $white;
+  background: $gray;
+}
+
+%btn-5 {
+  background: $header-background;
+  color: $gray;
+}

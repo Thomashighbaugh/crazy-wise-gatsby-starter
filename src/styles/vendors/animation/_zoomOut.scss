@@ -1,0 +1,35 @@
+@mixin zoomOut($strength:100) {
+    $keyValue: 1 - ((1/100) * $strength);
+
+  @-webkit-keyframes zoomOut#{$strength} {
+    from {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes zoomOut#{$strength} {
+    from {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+}

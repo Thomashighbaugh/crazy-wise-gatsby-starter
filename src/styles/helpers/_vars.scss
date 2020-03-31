@@ -1,0 +1,444 @@
+/*************************************************************************************
+*  VARS
+*
+*
+*  Variables that are used through out the stylesheet
+**************************************************************************************/
+
+/*******************************************
+Imports
+* Brings in Google Fonts for use in the project
+*********************************************/
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Faster+One|Knewave|Lalezar|Lexend+Exa|Lexend+Giga|Lexend+Peta|Libre+Barcode+128+Text|Libre+Barcode+39+Text|Permanent+Marker|Rubik+Mono+One|Space+Mono|Squada+One|Supermercado+One|VT323&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro|Fira+Code|Gochi+Hand|Long+Cang|Nova+Mono|Oxygen+Mono|Rock+Salt|Share+Tech+Mono|VT323&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+/*******************************************
+* Color Configuration
+* TODO phase out the old color standard variables in favor of newer, better standard
+*********************************************/
+$white: #f9f9f9 !default;
+$black: #17161b !default;
+$black-alt: lighten($black, 5%);
+$success: #4caf50 !default;
+$info: #44ddff !default;
+$warning: #ffcf65 !default;
+$error: #cf4646 !default;
+$gray: #24262A !default;
+$gray-light: #686868 !default;
+$gray-alt: #3a3c4e;
+
+
+$primary: #8265FF !default;
+$secondary: #8000FF !default;
+$dark: #2d2d2d !default;
+$dark-alt: #17161b;
+$light: $gray-light !default;
+$light-alt: #939597;
+$text: $light !default;
+$link: $primary !default;
+$link-hover: $secondary !default;
+$body-color: #515151;
+$lightgray: $light;
+$dark-gray: $dark;
+$dark-blue: #263959;
+
+$background-gradient: linear-gradient(
+  -35deg,
+  $dark-alt,
+  $dark,
+  $dark-alt,
+  $dark
+);
+
+$background-gradient-2: linear-gradient(
+  -35deg,
+  $black,
+  $black-alt,
+  $black,
+  $black-alt
+);
+
+$bgc-body: $black !default;
+
+$map: (
+  'primary': $primary,
+  'dark': $dark,
+  'secondary': $secondary,
+  'white': $white,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'error': $error,
+  'gray': $gray,
+  'gray-light': $gray-light,
+) !default;
+
+// Social colors
+$fb: #3b59b6 !default;
+$tw: #4099ff !default;
+$googleplus: #d73d32 !default;
+$pinterest: #cb2027 !default;
+$skype: #12a5f4 !default;
+$spotify: #81b71a !default;
+$instagram: #4e433c !default;
+$tumblr: #2b4964 !default;
+$vimeo: #86b32d !default;
+$soundcloud: #f76600 !default;
+$youtube: #ff3333 !default;
+$linkedin: #4875b4 !default;
+$flickr: #fe0883 !default;
+$foursquare: #8fd400 !default;
+$dribbble: #ea4c89 !default;
+$github: #24292e !default;
+$gitlab: #fc6d26 !default;
+
+$gradient0: linear-gradient(
+  -35deg,
+  #4df 10%,
+  #4df 20%,
+  #68b6e3 35%,
+  #80bdff 45%,
+  #68b6e3 55%,
+  #86cfda 65%,
+  #4df 76%
+);
+$gradient1: linear-gradient(-35deg, #4df 25%, #68b6e3 50%, #80bdff 75%);
+$gradient2: linear-gradient(-35deg, #68b6e3 25%, #86cfda 50%, #4df 75%);
+$gradient3: linear-gradient(-35deg, #86cfda 15%, #68b6e3 65%);
+$gradient4: linear-gradient(35deg, #86cfda 15%, #68b6e3 35%, #80bdff 65%);
+$gradient5: linear-gradient(35deg, #4df 25%, #68b6e3 50%, #80bdff 75%);
+/*******************************************
+*  Background Images
+********************************************/
+// courtesy of Hero Patterns
+$background2: #17161B url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%238265ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+$header-background: #17161B url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%238265ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+$background: #686868
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%2300b2da' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+$background3: #686868
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%2300b2da' fill-opacity='1' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+
+/***********************************************************************
+* Component Variable Definitions
+* **********************************************************************
+* Note: acronyms should remain consistent and conform to the
+* trait-component model
+************************************************************************
+* Acronym Key
+* Not intended to be comprehensive just to remind me of the meaning of *
+* them when debugging or changing things in the future                 *
+* fw - font weight                                                     *
+* bxsh - box shadow                                                    *
+* ff - font family                                                     *
+* fz - font size                                                       *
+* lh - line height                                                     *
+* bd- border                                                           *
+* bdc - border color                                                   *
+* bdr - border radius                                                  *
+* m - margin                                                           *
+* mb - margin bottom                                                   *
+* mt - margin top                                                      *
+* ml - margin left                                                     *
+* mr - margin right                                                    *
+* p - padding                                                          *
+* pt - padding top                                                     *
+* pb - padding bottom                                                  *
+* pl - padding left                                                    *
+* pr- padding right                                                    *
+* bg - background                                                      *
+ ***********************************************************************/
+
+/********************************************
+* Box Shadow
+********************************************/
+$bxsh-base: 0 0 5px rgba(0, 0, 0, 0.2) !default;
+$bxsh-medium: $bxsh-base !default;
+
+/********************************************
+* Typography
+********************************************/
+$fw-light: 300 !default;
+$fw-normal: 400 !default;
+$fw-bold: 600 !default;
+$fw-headings: $fw-light !default;
+
+$ff-base: 'Kanit', sans-serif !default;
+$ff-mono: 'Share Tech Mono', monospace !default;
+$ff-title: 'Bungee', 'Kanit', sans-serif !default;
+$ff-sub: 'Permanent Marker', monospace !default;
+$fw-base: 400 !default;
+$fz-base: 16px !default;
+
+$fz-huge: 2.5rem !default;
+$fz-big: 1.5rem !default;
+$fz-medium: 1.25rem !default;
+$fz-small: 1rem !default;
+
+$fz-h1: 4rem !default;
+$fz-h2: 3rem !default;
+$fz-h3: 1.75em !default;
+$fz-h4: 1.25em !default;
+$fz-h5: 0.75em !default;
+$fz-h6: 0.5em !default;
+
+$lh-base: 1.65em !default;
+$lh-huge: 2em !default;
+$lh-big: 1.75em !default;
+$lh-medium: $lh-base !default;
+$lh-small: 1em !default;
+$lh-xsmall: 0.5em !default;
+
+/********************************************
+* Body
+********************************************/
+$body: $text !default;
+$ff-body: $ff-base !default;
+$fz-body: $fz-base !default;
+$fw-body: $fw-base !default;
+$lh-body: $lh-base !default;
+
+/********************************************
+* Border
+********************************************/
+$bdc-base: $primary !default;
+$bd-medium: 1px solid $bdc-base !default;
+$bdr-base: 3px !default;
+$bdr-medium: $bdr-base !default;
+$bdr-rounded-corners: 10px !default;
+
+$bdr-ct: $light 0.75rem solid;
+$bdr-cr: $gray 1rem solid;
+$bdr-cl: $primary 1rem solid;
+$bdr-cb: $secondary 1rem solid;
+
+$bdr-nr: $gray 0.75rem solid;
+$bdr-nl: $primary 0.75rem solid;
+$bdr-nb: $light 0.75rem solid;
+$bdr-button: 0.35rem $light solid;
+$bdr-button-hover: 0.5rem $light-alt solid;
+/********************************************
+* Default
+********************************************/
+$fw-strong: $fw-bold !default;
+$mb-p: 1.5em !default;
+$mb-ul: 1em !default;
+$mb-li: 0.5em !default;
+
+/********************************************
+* Margin
+********************************************/
+$m-xsmall: 0.125rem !default;
+$m-small: 0.25rem !default;
+$m-medium: 0.5rem !default;
+$m-big: 1rem !default;
+$m-huge: 1.75rem !default;
+
+$mt-nav: 0.96rem;
+$mb-nav: 0.5rem;
+$m-p: 1.5rem;
+$m-h1: 1.5rem;
+$m-h2: 2.5rem;
+$m-h3: 1.5rem;
+$ml-nav: 1rem;
+$m-card: 6rem;
+$ml-ct: 3rem;
+$mr-ct: 6rem;
+/********************************************
+* Width
+********************************************/
+$w-ct: 25%;
+
+/********************************************
+* Padding
+********************************************/
+$p-small: 4px !default;
+$p-medium: 8px !default;
+$p-big: 16px !default;
+$p-huge: 36px !default;
+
+$p-xs: 0.25rem;
+$p-s: 0.5rem;
+$p-l: 1rem;
+$p-xl: 1.5rem;
+$p-xxl: 2.5rem;
+/********************************************
+* Container
+********************************************/
+$bgc-container: transparent !default;
+$mwi-container: 1380px !default;
+$mwi-container-medium: 944px !default;
+$mwi-container-small: 400px !default;
+$w-gutter: 2rem !default;
+
+/********************************************
+* Badges
+********************************************/
+//
+$c-badge: $text !default;
+$c-badge-colored: $white !default;
+$bg-badge: $light !default;
+$bdr-badge: $bdr-medium !default;
+$lh-badge: 1.2em !default;
+$p-badge: $p-medium $p-big !default;
+$fz-badge-big: 1.3em !default;
+$fz-badge-small: 0.7em !default;
+$badges-color-map: (
+  primary: $primary,
+  secondary: $secondary,
+  dark: $dark,
+  light: $gray,
+  success: $success,
+  error: $error,
+  warning: $warning,
+) !default;
+/********************************************
+* Buttons
+********************************************/
+
+$bg-button: $primary !default;
+$c-button: $white !default;
+$c-button-transparent: $primary !default;
+$c-button-outlined: $white !default;
+$bdc-button: $bg-button !default;
+$bd-button: 1px solid $bdc-button !default;
+$bdr-button: 200px !default;
+$ff-button: $ff-body !default;
+$fz-button: $fz-medium !default;
+$fw-button: $fw-bold !default;
+$lh-button: $lh-body !default;
+$m-button: 0 $m-small $m-medium $m-small !default;
+$p-button: $p-medium $p-big !default;
+$tt-button: uppercase !default;
+
+$fz-button-big: $fz-big !default;
+$p-button-big: $p-big $p-huge !default;
+
+$fz-button-small: $fz-small !default;
+$p-button-small: $p-small $p-big !default;
+/********************************************
+* Form
+********************************************/
+$bgc-form: $light !default;
+$c-form: $text !default;
+$bdr-form: $bdr-medium !default;
+$bd-form: $bd-medium !default;
+$fz-form: $fz-body !default;
+$bgc-form-focus: lighten($bgc-form, 5%) !default;
+$trs-form: background-color 0.2s ease-in-out !default;
+$c-form-placeholder: $gray !default;
+$mih-form-textarea: 120px !default;
+$p-form: $p-medium $p-big !default;
+$size-form-input-icon: 16px !default;
+$c-form-input-icon: $gray !default;
+$bd-form-error: 1px solid $error !default;
+$bgc-form-error: $bgc-form !default;
+/********************************************
+* Loading bar
+********************************************/
+$h-loading-bar: 6px !default;
+$w-loading-bar: 300px !default;
+$z-loading-bar: 1000 !default;
+/********************************************
+* Loading spinner
+********************************************/
+$bg-loading-spinner: $secondary !default;
+$size-loading-spinner-inner: 9px !default;
+$size-loading-spinner: 30px !default;
+$z-loading-spinner: 1000 !default;
+/********************************************
+* Notification
+********************************************/
+$bdr-notification: $bdr-medium !default;
+$c-notification: $white !default;
+$mb-notification: $m-big !default;
+$p-notification: $p-big !default;
+
+/********************************************
+* Paginator
+********************************************/
+$mr-paginator-item: $m-xsmall !default;
+$bdr-paginator-item: $bdr-medium !default;
+$bg-paginator-item: $light !default;
+$c-paginator-item: $text !default;
+$bg-paginator-item-active: $primary !default;
+$c-paginator-item-active: $white !default;
+$p-paginator-item: $p-medium $p-big !default;
+
+/********************************************
+* Table
+********************************************/
+$bgc-table-header: $bgc-body !default;
+$bgc-table: $light !default;
+$bd-table: $bd-medium !default;
+$c-table-heading: $gray !default;
+$c-table-text: $text !default;
+$fw-table-heading: normal !default;
+$mwi-table: 100% !default;
+$p-table-cell: $p-medium !default;
+$p-table-heading: $p-medium !default;
+$w-table: 100% !default;
+$fz-table-heading: $fz-small !default;
+
+/********************************************
+* Tabs
+********************************************/
+$bdb-tabs-item-selected: 3px solid $primary !default;
+$bdb-tabs-item: 3px solid transparent !default;
+$bdb-tabs: $bd-medium !default;
+$c-tabs-item-hover: $primary !default;
+$c-tabs-item-selected: $primary !default;
+$c-tabs-item: $gray !default;
+$m-tabs-item: 0 $m-medium 0 0 !default;
+$miw-tabs-item: 70px !default;
+$p-tabs-item: $p-big !default;
+
+/********************************************
+* Tags
+********************************************/
+$bg-tag-dot: $dark !default;
+$bg-tag: $gray !default;
+$bdr-tag: $bdr-medium 0 0 $bdr-medium !default;
+$c-tag: $text !default;
+$lh-tag: 16px !default;
+$m-tag: 0 $m-medium $m-medium 0 !default;
+$p-tag: $p-medium !default;
+$size-tag-dot: 5px !default;
+/********************************************
+* Display
+********************************************/
+$d-base: block !default;
+$d-in: inline-block !default;
+
+/********************************************
+* Grid
+********************************************/
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+$grid-columns: 9 !default;
+$grid-gutter-width: $w-gutter !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+) !default;
+
+// for about page's card grid
+$mobile-breakpoint: 560px;
+$tablet-breakpoint: 960px;
+$grid-width: 1800;
+$column-gap: 100;
+$gutter: ($column-gap / 2 / $grid-width * 100%);
+$column-width: 100% - $gutter * 2;
+$enable-grid-classes: true !default; // generate grid classes

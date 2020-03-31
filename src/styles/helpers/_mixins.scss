@@ -1,0 +1,78 @@
+/*************************************************************************************
+*  MIXINS
+*
+*
+*  Creates reusable functionality that takes arguments
+**************************************************************************************/
+
+// To create standard sizes for consistent responsiveness
+
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 499px) {
+      @content;
+    }
+  } @else if $size == tablet-portrait {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $size == big-desktop {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+@mixin generate-grid() {
+  @for $i from 2 through 6 {
+    $width: ((100% - ($gutter * $i)) / $i) - $gutter;
+    .grid-#{$i} {
+      .col {
+        width: $width * $i + ($gutter * $i * 2) - $gutter * 2;
+
+        @media (min-width: $mobile-breakpoint) {
+          width: 100% / 2 - $gutter * 2;
+        }
+
+        @media (min-width: $tablet-breakpoint) {
+          width: $width;
+        }
+
+        &--full {
+          width: 100% - $gutter * 2;
+        }
+      }
+
+      &.v-align {
+        align-self: center;
+      }
+
+      &.fill-height {
+        flex: 1;
+      }
+
+      &.colored {
+        background-color: papayawhip;
+      }
+
+      &.padding {
+        margin-left: initial;
+        margin-right: initial;
+        padding: 2rem;
+      }
+    }
+
+    // Grid modifiers
+    &.no--margin {
+      margin: 0 auto;
+    }
+  }
+}

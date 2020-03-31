@@ -1,0 +1,86 @@
+@mixin bounceIn($strength:100) {
+
+  $keyValue: 1 - ($strength / 100);
+  $keyValue2: 1 + ($strength / 100) ;
+
+  @-webkit-keyframes bounceIn#{$strength} {
+    from, 20%, 40%, 60%, 80%, to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    20% {
+      -webkit-transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+      transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+    }
+
+    40% {
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+      transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+    }
+
+    80% {
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes bounceIn#{$strength} {
+
+    from, 20%, 40%, 60%, 80%, to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    20% {
+      -webkit-transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+      transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+    }
+
+    40% {
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+      transform: scale3d($keyValue2, $keyValue2, $keyValue2);
+    }
+
+    80% {
+      -webkit-transform: scale3d($keyValue, $keyValue, $keyValue);
+      transform: scale3d($keyValue, $keyValue, $keyValue);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}

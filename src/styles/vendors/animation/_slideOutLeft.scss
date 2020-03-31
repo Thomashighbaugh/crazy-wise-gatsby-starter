@@ -1,0 +1,30 @@
+@mixin slideOutLeft($strength:100) {
+    $keyValue: $strength * 10%;
+
+  @-webkit-keyframes slideOutLeft#{$strength} {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(-$keyValue, 0, 0);
+      transform: translate3d(-$keyValue, 0, 0);
+    }
+  }
+
+  @keyframes slideOutLeft#{$strength} {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(-$keyValue, 0, 0);
+      transform: translate3d(-$keyValue, 0, 0);
+    }
+  }
+
+}
