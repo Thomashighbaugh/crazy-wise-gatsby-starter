@@ -22,13 +22,20 @@ const TagsPage = ({
             style={{ marginBottom: "6rem" }}
           >
             <div className="jumbotron">
-            <h1 className="display-1">Subjects</h1>
+              <h1 className="display-1">Subjects</h1>
             </div>
-            <h4 className="lead">This is where you can find our content organized by subjects, or tags as they are also known. Just select one below and enjoy!</h4>
+            <h4 className="lead">
+              This is where you can find our content organized by subjects, or
+              tags as they are also known. Just select one below and enjoy!
+            </h4>
             <ul className="taglist nav btn-group">
               {group.map(tag => (
                 <li className="nav-item" key={tag.fieldValue}>
-                  <Link className="btn btn-lg btn-dark nav-link" role="button" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  <Link
+                    className="btn btn-lg btn-dark nav-link"
+                    role="button"
+                    to={`/tags/${kebabCase(tag.fieldValue)}/`}
+                  >
                     {tag.fieldValue} ({tag.totalCount})
                   </Link>
                 </li>

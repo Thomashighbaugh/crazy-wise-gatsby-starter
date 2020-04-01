@@ -9,9 +9,7 @@ assignees: ""
 name: Feature request
 about: Suggest an idea for this project
 
----
-
-<!-- Please don't delete this template or we'll close your issue -->
+---<!-- Please don't delete this template or we'll close your issue -->
 
 ## Feature request
 
