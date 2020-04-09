@@ -3,11 +3,11 @@ templateKey: index-page
 title: Group 5's Submission
 image: /img/home-jumbotron.jpg
 heading: Who Knew School Would Be So Hard?
-subheading: A blog about community college despite all the things in the way.  
+subheading: A blog about community college despite all the things in the way.
 mainpitch:
   title: G5-Blog-CCLife
   description: >
-    This is just dummy text: I don't like or use Lorem Ipsum, 
+    This is just dummy text: I don't like or use Lorem Ipsum,
 description: >-
   I am fully capable 
   of blabbering endlessly via typed text, or spoken words really, so using 
@@ -22,12 +22,12 @@ intro:
       text: >
         This site is another excellent example of the pain in my a@@ that web development
         seems endlessly to be. I had to fight with Node.js versions, because it has a 
-        terribly crappy system of dealing with updates and NPM/Yarn make it even worse. 
+        terribly crappy system of dealing with updates and NPM/Yarn make it even worse.
     - image: /img/8.jpg
       text: >
         I have selected, though may change, a very minimalistic theme for the time being.
         While minimalism is in, I think it looks God awful personally. I prefer dark 
-        themes personally, but due to accessibility concerns, don't use them in school submissions 
+        themes personally, but due to accessibility concerns, don't use them in school submissions
     - image: /img/2.jpg
       text: >
         While I will later compose this as HTML, I am just looking to fill some space so the 
@@ -43,7 +43,7 @@ intro:
   heading: What we offer
   description: >
     Very soon, I will have the real text up for this particular portion of 
-    the site, but for now pardon my dust. 
+    the site, but for now pardon my dust.
 main:
   heading: Also going to redo the graphics, obviously
   description: >
