@@ -1,45 +1,39 @@
 // blog roll
 
-
-.blog-list-item{
+.blog-list-item {
   background-color: $white;
 
   header {
     margin-bottom: 3em;
   }
-.button{
-  border-color:$body-color
-}
-
-  .button:hover{
-    background: #008fe4;
-    color:$white;
-    border-color: $white;
+  .button {
+    border-color: $body-color;
   }
 
+  .button:hover {
+    background: #008fe4;
+    color: $white;
+    border-color: $white;
+  }
 }
 
 // blog roll
 .is-featured {
   background-color: $body-color;
-  color: #e9e9ff ;
+  color: #e9e9ff;
 
   header {
-        margin-bottom: 3em;
+    margin-bottom: 3em;
   }
 
-  .button{
+  .button {
     background-color: $body-color;
-    color: #e9e9ff ;
+    color: #e9e9ff;
     border-color: $white;
   }
 
-  .button:hover{
+  .button:hover {
     background: #008fe4;
-    color:$white;
-
+    color: $white;
   }
-
-
 }
-
