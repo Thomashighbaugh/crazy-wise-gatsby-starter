@@ -4,12 +4,13 @@ about: Create a report to help us improve
 title: ""
 labels: ""
 assignees: ""
-------
+---
 
 name: Bug report
 about: Create a report to help us improve
 
 ---<!-- Please don't delete this template because we'll close your issue -->
+
 <!-- Before creating an issue please make sure you are using the latest version of the starter. -->
 <!-- This project is starter project using Gatsby and NetlifyCMS in it, if you think the issue can originate from upstream then please report it-->
 

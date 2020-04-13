@@ -1,0 +1,13 @@
+.content .taglist {
+  list-style: none;
+  margin: 1rem 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  li {
+    padding: 0 2rem 1rem 0;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+  }
+}

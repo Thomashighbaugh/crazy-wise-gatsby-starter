@@ -2,15 +2,15 @@ import React from "react";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
 import { Link, graphql } from "gatsby";
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout/Layout";
 
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title }
-    }
-  }
+      siteMetadata: { title },
+    },
+  },
 }) => (
   <Layout>
     <section className="section">
@@ -29,7 +29,7 @@ const TagsPage = ({
               tags as they are also known. Just select one below and enjoy!
             </h4>
             <ul className="taglist nav btn-group">
-              {group.map(tag => (
+              {group.map((tag) => (
                 <li className="nav-item" key={tag.fieldValue}>
                   <Link
                     className="btn btn-lg btn-dark nav-link"

@@ -1,0 +1,24 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji+2|Baloo+Tamma+2|Viga&display=swap');
+$primary: #a0a5bd;
+$primary-invert: #434760;
+$accent-color: #008fe4;
+$accent-color-reverse: #f0ee6e;
+$body-color: #292d3e;
+
+$black: #17161b;
+$white: #e9e9ff;
+$menu-item-color: $white;
+$menu-item-hover-color: $black !important;
+$menu-item-hover-background-color: $black;
+$menu-item-active-color: $primary-invert;
+$menu-item-active-background-color: $primary-invert;
+$menu-list-border-left: 1px solid $primary-invert;
+$menu-label-color: $white;
+
+
+$font-flair: "Viga", sans-serif;
+$font-title: "Baloo Paaji 2", sans-serif;
+$font-content: "Baloo Tamma 2", monospace;
+
+$body-background-color: $white;

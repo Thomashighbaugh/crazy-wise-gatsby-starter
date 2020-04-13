@@ -1,6 +1,6 @@
 import React from "react";
 import { navigate } from "gatsby-link";
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout/Layout";
 
 function encode(data) {
   const formData = new FormData();
@@ -18,26 +18,26 @@ export default class Contact extends React.Component {
     this.state = {};
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleAttachment = e => {
+  handleAttachment = (e) => {
     this.setState({ [e.target.name]: e.target.files[0] });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     fetch("/", {
       method: "POST",
       body: encode({
         "form-name": form.getAttribute("name"),
-        ...this.state
-      })
+        ...this.state,
+      }),
     })
       .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error));
+      .catch((error) => alert(error));
   };
 
   render() {

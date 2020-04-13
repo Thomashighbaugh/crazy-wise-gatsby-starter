@@ -1,7 +1,7 @@
 import React from "react";
 
-import Layout from "../../components/Layout";
-import BlogRoll from "../../components/BlogRoll";
+import Layout from "../../components/Layout/Layout";
+import BlogRoll from "../../components/BlogRoll/BlogRoll";
 
 export default class BlogIndexPage extends React.Component {
   render() {
@@ -10,7 +10,7 @@ export default class BlogIndexPage extends React.Component {
         <div
           className="full-width-image-container margin-top-0"
           style={{
-            backgroundImage: `url('/img/og-image.jpg')`
+            backgroundImage: `url('/img/5.jpg')`,
           }}
         >
           <h1
@@ -18,8 +18,8 @@ export default class BlogIndexPage extends React.Component {
             style={{
               boxShadow: "0.5rem 0 0 #9e9e9e, -0.5rem 0 0 #9e9e9e",
               backgroundColor: "#17161b",
-              color: "white",
-              padding: "1rem"
+              color: "#e9e9ff",
+              padding: "1rem",
             }}
           >
             Latest Stories
