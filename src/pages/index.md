@@ -3,9 +3,9 @@ templateKey: index-page
 title: Community College Life
 image: /img/home-jumbotron.jpg
 heading: Who Knew School Would Be So Hard
-subheading: The Practical Approach to College 
+subheading: The Practical Approach to College
 mainpitch:
-  title: Community College Life 
+  title: Community College Life
   description: >
     Community College Life is a blog about... life for students attending community college.
 description: >-
@@ -17,15 +17,15 @@ intro:
     - image: /img/7.jpg
       text: >
         On this site you will find a whole bunch of articles about all things relating to 
-        life at community college written by students of real community colleges. 
+        life at community college written by students of real community colleges.
     - image: /img/6.jpg
       text: >
         This site was written as a class project for the Spring 2020 offering of Javascript
         at Las Positas Community College in Livermore, California. Not far from the Lawerence 
-        Livermore National Laboratory in the beautiful San Francisco Bay Area. 
+        Livermore National Laboratory in the beautiful San Francisco Bay Area.
     - image: /img/5.jpg
       text: >
-        The authors of this site compose group 5 of the above mentioned class. We are 
+        The authors of this site compose group 5 of the above mentioned class. We are
     - image: /img/4.jpg
       text: >
         We believe that good coffee has the power to bring people together.
