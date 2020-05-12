@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Scott Byrne <scott.byrne@forestry.io>",
   "dependencies": {
+    "@babel/core": "^7.9.6",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "babel-plugin-styled-components": "^1.10.6",
