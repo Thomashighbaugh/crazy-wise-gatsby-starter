@@ -1,0 +1,40 @@
+{
+  "color": {
+    "black": "#151519",
+    "white": "#d7d7d7",
+    "primary": "#8265ff",
+    "secondary": "#614be0"
+  },
+  "easing": "cubic-bezier(0.215, 0.610, 0.355, 1.000)",
+  "breakpoints": {
+    "small": "600px",
+    "medium": "1200px",
+    "large": "1600px",
+    "huge": "2200px"
+  },
+  "radius": {
+    "small": "8px"
+  },
+  "header": {
+    "overline": true,
+    "transparent": true,
+    "height": "5.25rem",
+    "underline": true
+  },
+  "hero": {
+    "image": "../images/cafe.jpg",
+    "large": false,
+    "overlay": true,
+    "overlap": "8rem",
+    "parallax": true
+  },
+  "typography": {
+    "uppercaseH2": false
+  },
+  "menu": {
+    "style": "glow"
+  },
+  "__gatsby_resolved": {
+    "fileRelativePath": "/content/settings/theme.json"
+  }
+}

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gatsby-starter-delog.iml" filepath="$PROJECT_DIR$/.idea/gatsby-starter-delog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tina-starter-grande.iml" filepath="$PROJECT_DIR$/.idea/tina-starter-grande.iml" />
     </modules>
   </component>
 </project>
