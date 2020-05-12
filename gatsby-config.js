@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/siteLayout.js`),
+        component: require.resolve(`./src/components/SiteLayout/index.js`),
       },
     },
     `gatsby-plugin-styled-components`,
