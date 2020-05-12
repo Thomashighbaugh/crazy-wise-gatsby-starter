@@ -1,129 +1,64 @@
-const theme = require("./content/settings/theme.json")
-const site = require("./content/settings/site.json")
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ */
 
 module.exports = {
+  /* Your site config here */
+  siteMetadata: require("./site-meta-data.json"),
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-tinacms-json`,
-    `gatsby-transformer-json`,
-    {
-      resolve: "gatsby-plugin-tinacms",
-      options: {
-        sidebar: {
-          hidden: process.env.NODE_ENV === "production",
-          position: "displace",
-          theme: {
-            color: {
-              primary: {
-                light: theme.color.primary,
-                medium: theme.color.primary,
-                dark: theme.color.primary,
-              },
-            },
-          },
-        },
-        plugins: [
-          "gatsby-tinacms-git",
-          "gatsby-tinacms-remark",
-          {
-            resolve: "gatsby-tinacms-git",
-            options: {
-              pathToRepo: "https://github.com/Thomashighbaugh/g5-Blog-CCLife",
-              pathToContent: "content/posts",
-              defaultCommitMessage: "Edited with TinaCMS",
-              defaultCommitName: "Thomas Leon Highbaugh",
-              defaultCommitEmail: "thighbaugh@zoho.com",
-              pushOnCommit: true,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/static/images`,
-        name: `uploads`,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/content`,
+        name: `markdown-pages`,
+        path: `${__dirname}/_data`,
       },
     },
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/components/SiteLayout/index.js`),
-      },
-    },
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: site.title,
-        short_name: site.title,
-        start_url: `/`,
-        background_color: theme.color.primary,
-        theme_color: theme.color.primary,
-        display: `minimal-ui`,
-        icon: `content/images/icon.png`,
-      },
-    },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-relative-images",
-            options: {
-              name: "uploads",
-            },
+        plugins: [{
+          resolve: `gatsby-remark-prismjs`,
+          options: {
+            classPrefix: "language-",
+            inlineCodeMarker: null,
+            aliases: {},
+            showLineNumbers: false,
+            noInlineHighlight: false,
           },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 880,
-              withWebp: true,
-            },
-          },
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {
-              destinationDir: "static",
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: true,
-              noInlineHighlight: false,
-              prompt: {
-                user: "root",
-                host: "localhost",
-                global: false,
-              },
-            },
-          },
-        ],
+        },
+        {
+          resolve: 'gatsby-remark-emojis',
+        }],
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        google: {
-          families: ["Lato:400,700"],
-        },
+        // The property ID; the tracking code won't be generated without it. replace with yours
+        trackingId: "UA-164743872-1",
+        head: true,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Delog GatbsyJS Starter`,
+        short_name: `Delog`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#381696`,
+        display: `standalone`,
+        icon: "src/images/icon.png",
       },
     },
+    `gatsby-plugin-sass`, 
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
+    'gatsby-plugin-dark-mode',
+    // siteURL is a must for sitemap generation
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
   ],
 }
