@@ -1,7 +1,7 @@
 ---
 title: Markdown Content Management
 path: /blog/introducing-tina-grande
-date: '2019-11-06T00:00:00.000Z'
+date: "2019-11-06T00:00:00.000Z"
 type: post
 authors:
   - scott-byrne
@@ -63,11 +63,11 @@ really improve the professional quality of one's documentation and are an easy w
 
 becomes:
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Tables        |      Are      |   Cool |
+| ------------- | :-----------: | -----: |
+| col 3 is      | right-aligned | \$1600 |
+| col 2 is      |   centered    |   \$12 |
+| zebra stripes |   are neat    |    \$1 |
 
 Though of particular interest in the academic world, markdown lists are made without needing to explore a menu or learn a
 hot key combo, simply add a hyphen to the front of the line. If you want to nest items, add a space in front of that hyphen
