@@ -1,0 +1,30 @@
+{
+  "authors": [
+    {
+      "name": "Thomas Leon Highbaugh",
+      "id": "thomas-leon-highbaugh",
+      "email": "mailto:thighbaugh@zoho.com"
+    },
+    {
+      "id": "",
+      "name": "NUTTHAWAT PANYANGNOI",
+      "email": "scott.byrne@forestry.io",
+      "link": "mailto:x@x.io"
+    },
+    {
+      "id": "",
+      "name": "NUTTHAWAT PANYANGNOI",
+      "email": "scott.byrne@forestry.io",
+      "link": "mailto:x@x.io"
+    },
+    {
+      "id": "",
+      "name": "NUTTHAWAT PANYANGNOI",
+      "email": "scott.byrne@forestry.io",
+      "link": "mailto:x@x.io"
+    }
+  ],
+  "__gatsby_resolved": {
+    "fileRelativePath": "/content/settings/authors.json"
+  }
+}

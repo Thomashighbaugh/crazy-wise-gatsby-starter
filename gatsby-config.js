@@ -1,38 +1,83 @@
+const theme = require("./content/settings/theme.json")
+const site = require("./content/settings/site.json")
+
 module.exports = {
-  siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
-    description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
-  },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
+    `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-tinacms-json`,
+    `gatsby-transformer-json`,
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: "gatsby-source-filesystem",
+      resolve: "gatsby-plugin-tinacms",
       options: {
-        path: `${__dirname}/static/img`,
-        name: "uploads",
+        sidebar: {
+          hidden: process.env.NODE_ENV === "production",
+          position: "displace",
+          theme: {
+            color: {
+              primary: {
+                light: theme.color.primary,
+                medium: theme.color.primary,
+                dark: theme.color.primary,
+              },
+            },
+          },
+        },
+        plugins: [
+          "gatsby-tinacms-git",
+          "gatsby-tinacms-remark",
+          {
+            resolve: "gatsby-tinacms-git",
+            options: {
+              pathToRepo: "https://github.com/Thomashighbaugh/g5-Blog-CCLife",
+              pathToContent: "content/posts",
+              defaultCommitMessage: "Edited with TinaCMS",
+              defaultCommitName: "Thomas Leon Highbaugh",
+              defaultCommitEmail: "thighbaugh@zoho.com",
+              pushOnCommit: true,
+            },
+          },
+        ],
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/pages`,
-        name: "pages",
+        path: `${__dirname}/static/images`,
+        name: `uploads`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/img`,
-        name: "images",
+        name: `content`,
+        path: `${__dirname}/content`,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/siteLayout.js`),
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: site.title,
+        short_name: site.title,
+        start_url: `/`,
+        background_color: theme.color.primary,
+        theme_color: theme.color.primary,
+        display: `minimal-ui`,
+        icon: `content/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
@@ -42,12 +87,10 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: `gatsby-remark-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
+              maxWidth: 880,
+              withWebp: true,
             },
           },
           {
@@ -56,22 +99,31 @@ module.exports = {
               destinationDir: "static",
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+            },
+          },
         ],
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
+        google: {
+          families: ["Lato:400,700"],
+        },
       },
     },
-    {
-      resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
-      },
-    }, // must be after other CSS plugins
-    "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
-};
+}

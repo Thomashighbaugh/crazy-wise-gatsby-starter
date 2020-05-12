@@ -1,87 +1,200 @@
-const _ = require("lodash");
-const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
-const { fmImagesToRelative } = require("gatsby-remark-relative-images");
+const path = require(`path`)
+const { GraphQLBoolean } = require("gatsby/graphql")
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+exports.setFieldsOnGraphQLNodeType = ({ type }) => {
+  // if the node is a markdown file, add the `published` field
+  if ("MarkdownRemark" === type.name) {
+    return {
+      published: {
+        type: GraphQLBoolean,
+        resolve: ({ frontmatter }) => {
+          /*
+          `published` is always true in development
+              so both drafts and finished posts are built
+          */
+          if (process.env.NODE_ENV !== "production") {
+            return true
+          }
+          /*
+          return the opposite of the `draft` value,
+          i.e. if draft = true : published = false
+          */
+          return !frontmatter.draft
+        },
+      },
+    }
+  }
+  return {}
+}
 
-  return graphql(`
+exports.onCreateNode = ({
+  node,
+  actions,
+  createNodeId,
+  createContentDigest,
+}) => {
+  const { createNode, createNodeField, createParentChildLink } = actions
+
+  // Check for the correct type to only affect this
+  if (node.internal.type === `PagesJson`) {
+    // transform markdown in blocks[i].content
+    if (node.blocks) {
+      const markdownHost = {
+        id: createNodeId(`${node.id} markdown host`),
+        parent: node.id,
+        internal: {
+          contentDigest: createContentDigest(JSON.stringify(node.blocks)),
+          type: `${node.internal.type}MarkdownData`,
+        },
+      }
+
+      createNode(markdownHost)
+
+      createNodeField({
+        node,
+        name: `markdownContent___NODE`, // Before the ___NODE: Name of the new fields
+        value: markdownHost.id, // Connects both nodes
+      })
+
+      node.blocks.forEach((block, i) => {
+        if (!block.content) {
+          block.content = ""
+        }
+        const blockNode = {
+          id: `${node.id} block ${i} markdown`,
+          parent: markdownHost.id,
+          internal: {
+            content: block.content,
+            contentDigest: createContentDigest(block.content),
+            type: `${node.internal.type}BlockMarkdown`,
+            mediaType: "text/markdown",
+          },
+        }
+
+        createNode(blockNode)
+
+        createParentChildLink({ parent: node, child: blockNode })
+      })
+    }
+
+    // transform markdown in node.content
+    if (node.content) {
+      const textNode = {
+        id: createNodeId(`${node.id} markdown field`),
+        children: [],
+        parent: node.id,
+        internal: {
+          content: node.content,
+          mediaType: `text/markdown`, // Important!
+          contentDigest: createContentDigest(node.content),
+          type: `${node.internal.type}Markdown`,
+        },
+      }
+
+      createNode(textNode)
+
+      // Add link to the new node
+      createNodeField({
+        node,
+        name: `markdownContent___NODE`, // Before the ___NODE: Name of the new fields
+        value: textNode.id, // Connects both nodes
+      })
+    }
+  }
+}
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+
+  const result = await graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      pages: allPagesJson(
+        filter: { path: { ne: null }, listType: { eq: null } }
+      ) {
         edges {
           node {
-            id
-            fields {
-              slug
-            }
+            path
+          }
+        }
+      }
+      lists: allPagesJson(
+        filter: { path: { ne: null }, listType: { ne: null } }
+      ) {
+        edges {
+          node {
+            path
+            listType
+          }
+        }
+      }
+      posts: allMarkdownRemark(
+        filter: { frontmatter: { path: { ne: null } } }
+      ) {
+        edges {
+          node {
+            published
             frontmatter {
-              tags
-              templateKey
+              path
+              type
             }
           }
         }
       }
     }
-  `).then((result) => {
-    if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()));
-      return Promise.reject(result.errors);
-    }
+  `)
 
-    const posts = result.data.allMarkdownRemark.edges;
-
-    posts.forEach((edge) => {
-      const id = edge.node.id;
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      });
-    });
-
-    // Tag pages:
-    let tags = [];
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags);
-      }
-    });
-    // Eliminate duplicate tags
-    tags = _.uniq(tags);
-
-    // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`;
-
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      });
-    });
-  });
-};
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-  fmImagesToRelative(node); // convert image paths for gatsby images
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
   }
-};
+
+  result.data.pages.edges.forEach(({ node }) => {
+    createPage({
+      path: node.path,
+      component: path.resolve(`src/templates/page.js`),
+      context: {},
+    })
+  })
+
+  result.data.posts.edges.forEach(({ node }) => {
+    if (!node.published) return
+
+    createPage({
+      path: node.frontmatter.path,
+      component: path.resolve(`src/templates/post.js`),
+      context: {},
+    })
+  })
+
+  result.data.lists.edges.forEach(({ node }) => {
+    const listPageTemplate = path.resolve(`src/templates/list.js`)
+    const listType = node.listType
+    const allPosts = result.data.posts.edges
+    const posts = allPosts.filter(
+      (post) => post.node.frontmatter.type === listType
+    )
+    const postsPerPage = 5
+    const numPages = Math.max(Math.ceil(posts.length / postsPerPage), 1)
+    const slug = node.path
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      const currentPage = i + 1
+      const isFirstPage = i === 0
+
+      createPage({
+        path: isFirstPage
+          ? node.path
+          : `${String(node.path)}/${String(currentPage)}`,
+        component: listPageTemplate,
+        context: {
+          listType: listType,
+          slug: slug,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages: numPages,
+          currentPage: currentPage,
+        },
+      })
+    })
+  })
+}
