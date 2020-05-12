@@ -43,21 +43,23 @@ module.exports = {
     },
     {
       resolve: "gatsby-source-filesystem",
-      options: [
-        {
-          path: `${__dirname}/static/images`,
-          name: `uploads`,
-        },
-      ],
+      options: {
+        path: `${__dirname}/static/images`,
+        name: `uploads`,
+      },
+    },    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}`,
+        name: ` `,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
-      options: [
-        {
-          name: `content`,
-          path: `${__dirname}/content`,
-        },
-      ],
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
     },
     {
       resolve: `gatsby-plugin-layout`,
