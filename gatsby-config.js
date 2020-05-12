@@ -3,7 +3,6 @@ const site = require("./content/settings/site.json")
 
 module.exports = {
   plugins: [
-    `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-tinacms-json`,
