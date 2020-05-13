@@ -23,8 +23,8 @@
         "primary": false
       }
     ],
-    "image": "../images/lpc3.jpg",
-    "large": false
+    "image": "../images/LPC52.jpg",
+    "large": true
   },
   "displayTitle": false,
   "title": "Home"

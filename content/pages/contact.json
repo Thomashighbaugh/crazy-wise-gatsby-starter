@@ -1,6 +1,12 @@
 {
   "title": "Contact",
   "path": "/contact",
+  "hero": {
+    "headline": "Join the List",
+    "textline": "Sign up for an exclusive newletter sent to your inbox",
+    "image": "../images/LPC5.jpg",
+    "large": false
+  },
   "blocks": [
     {
       "_template": "TitleBlock",

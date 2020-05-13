@@ -228,7 +228,7 @@ export const NavLink = styled(({ children, ...styleProps }) => (
       &.active {
         color: ${(props) =>
           props.theme.isDarkMode
-            ? props.theme.color.foreground
+            ? props.theme.color.background
             : props.theme.color.primary} !important;
         &:before {
           opacity: 1;

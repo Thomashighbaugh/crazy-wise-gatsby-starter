@@ -37,41 +37,44 @@ export const Header = styled(({ siteTitle, ...styleProps }) => {
   ${(props) =>
     props.theme.header.overline &&
     css`
-      border-top: 6px solid ${(props) => props.theme.color.primary};
+      border-top: 4px solid ${(props) => props.theme.color.primary};
+      border-bottom: 4px solid ${(props) => props.theme.color.primary};
     `};
 
   ${(props) =>
     props.theme.header.underline &&
     css`
-      box-shadow: inset 0 -1px 0 ${(props) => transparentize(0.9, props.theme.color.white)},
-        0 1px 0 ${(props) => transparentize(0.9, props.theme.color.black)};
+      box-shadow: inset 0 -1px 0 ${(props) => transparentize(0.99, props.theme.color.white)},
+        0 1px 0 ${(props) => transparentize(0.99, props.theme.color.black)};
     `};
 
   ${(props) =>
     props.theme.header.transparent &&
     css`
       background-color: ${(props) =>
-        transparentize(0.9, props.theme.color.black)};
+        transparentize(0.8, props.theme.color.black)};
       color: ${(props) => props.theme.color.white};
     `};
 `
 
 export const SiteLink = styled(Link)`
   position: relative;
-  line-height: 3rem;
+  line-height: 1.75rem;
   display: flex;
   align-items: center;
+  justify-items: start;
   align-self: stretch;
   color: inherit !important;
   text-decoration: none;
-  margin: 0;
-  transition: all 150ms ${(p) => p.theme.easing};
+  margin: 0 1.75rem 0 0;
+
+  transition: all 2s ${(p) => p.theme.easing};
   z-index: 1;
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
-    fill: currentColor;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.75rem;
+    fill: ${(props) => props.theme.color.primary};
   }
   &:after {
     content: "";
@@ -83,7 +86,7 @@ export const SiteLink = styled(Link)`
     height: 100%;
     background-color: ${(props) => props.theme.color.primary};
     opacity: 0;
-    transition: all 150ms ${(p) => p.theme.easing};
+    transition: all 2s ${(p) => p.theme.easing};
     z-index: -1;
   }
 
@@ -97,7 +100,7 @@ export const SiteLink = styled(Link)`
 export const SiteTitle = styled.h1`
   margin: 0;
   flex: 0 0 auto;
-  font-size: 1rem;
+  font-size: 2.5rem;
   align-self: stretch;
   display: flex;
 `
