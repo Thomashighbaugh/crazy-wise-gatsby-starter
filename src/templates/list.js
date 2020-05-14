@@ -7,7 +7,7 @@ import {
   MetaSpan,
   MetaActions,
   DraftBadge,
-} from "../components/Style/style"
+} from "../components/Style"
 import { ListAuthors, AuthorsForm } from "../components/Authors/authors"
 import { Link } from "gatsby"
 import { PageLayout } from "../components/PageLayout/pageLayout"

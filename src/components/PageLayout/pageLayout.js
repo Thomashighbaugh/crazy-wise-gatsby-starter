@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Wrapper, Main } from "../Style/style"
+import { Wrapper, Main } from "../Style"
 import { SEO } from "../SEO/seo"
 import { ThemeContext } from "../Theme/theme"
 import { Hero } from "../Hero/hero"

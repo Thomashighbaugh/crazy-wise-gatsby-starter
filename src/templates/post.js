@@ -6,7 +6,7 @@ import {
   MetaSpan,
   MetaActions,
   DraftBadge,
-} from "../components/Style/style"
+} from "../components/Style"
 import { EditToggle } from "../components/EditToggle/editToggle"
 import { ListAuthors } from "../components/Authors/authors"
 import { Link } from "gatsby"

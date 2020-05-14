@@ -1,5 +1,5 @@
 import React from "react"
-import { Wrapper } from "../Style/style"
+import { Wrapper } from "../Style"
 import styled from "styled-components"
 import { transparentize } from "polished"
 

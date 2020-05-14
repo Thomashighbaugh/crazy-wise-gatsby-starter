@@ -1,5 +1,5 @@
 import React from "react"
-import { Wrapper } from "../Style/style"
+import { Wrapper } from "../Style"
 import { Coffee } from "styled-icons/boxicons-regular"
 import styled, { css } from "styled-components"
 import { transparentize } from "polished"
@@ -7,7 +7,7 @@ import { Nav } from "../Nav/nav"
 import { ThemeContext } from "../Theme/theme"
 import { Link } from "gatsby"
 
-export const Header = styled(({ siteTitle, ...styleProps }) => {
+export const Index = styled(({ siteTitle, ...styleProps }) => {
   return (
     <ThemeContext.Consumer>
       {({ toggleDarkMode, isDarkMode, theme }) => (
@@ -38,7 +38,6 @@ export const Header = styled(({ siteTitle, ...styleProps }) => {
     props.theme.header.overline &&
     css`
       border-top: 4px solid ${(props) => props.theme.color.primary};
-      border-bottom: 4px solid ${(props) => props.theme.color.primary};
     `};
 
   ${(props) =>

@@ -19,12 +19,12 @@
       {
         "label": "Hit Us Up",
         "link": "/contact",
-        "arrow": false,
+        "arrow": true,
         "primary": false
       }
     ],
     "image": "../images/LPC52.jpg",
-    "large": true
+    "large": false
   },
   "displayTitle": false,
   "title": "Home"

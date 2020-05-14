@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
-import { Header } from "../Header/header"
+import { Index } from "../Header"
 import { Footer } from "../Footer/footer"
 import { Theme } from "../Theme/theme"
 import Helmet from "react-helmet"
@@ -28,7 +28,7 @@ const MasterLayout = ({ children }) => {
       </Helmet>
       <Theme>
         <Site>
-          <Header siteTitle={data.site.title} />
+          <Index siteTitle={data.site.title} />
           {children}
           <Footer />
         </Site>
@@ -92,7 +92,7 @@ export const Site = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  > ${Header} {
+  > ${Index} {
     flex: 0 0 auto;
   }
 

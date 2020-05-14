@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "../components/Style/style"
+import { Button } from "../components/Style"
 import styled, { css } from "styled-components"
 import { mix } from "polished"
 import slugify from "react-slugify"

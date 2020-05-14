@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Paper } from "../components/Style/style"
+import { Paper } from "../components/Style"
 import { Form, FormBlock } from "../blocks/form"
 import { Title, TitleBlock } from "../blocks/title"
 import { Image, ImageBlock } from "../blocks/image"

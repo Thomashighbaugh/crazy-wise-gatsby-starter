@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
 import { transparentize } from "polished"
-import { Wrapper, Overlay, LinkButton } from "../Style/style"
+import { Wrapper, Overlay, LinkButton } from "../Style"
 import BackgroundImage from "gatsby-background-image"
 
 export const Hero = ({ hero }) => {

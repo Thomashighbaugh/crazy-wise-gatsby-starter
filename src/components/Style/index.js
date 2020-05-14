@@ -11,7 +11,6 @@ export const bestContrast = (baseColor, optionOne, optionTwo) => {
 }
 
 export const Reset = css`
-  /*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
   html,
   body,
   p,
@@ -272,9 +271,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 100%;
-    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
+    font-family:"Yantramanav", sans-serif;
     line-height: 1.5;
     color: ${(props) => props.theme.color.foreground};
     background-color: ${(props) =>
@@ -466,7 +463,7 @@ export const GlobalStyles = createGlobalStyle`
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 896px;
+  max-width: 1200px;
   margin: 0 auto;
   --wrapper-padding-x: 1rem;
   padding: 0 var(--wrapper-padding-x);
@@ -491,7 +488,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.color.black};
-  opacity: 0.7;
+  opacity: 0.9;
 `
 
 export const Image = styled(Img)``
@@ -586,22 +583,22 @@ const ButtonStyles = css`
   line-height: 2.25rem;
   font-size: 1rem;
   padding: 0 1rem;
+        font-weight: 900;
+      text-shadow:0.12rem 0.12rem #686868 ;
+      background: #212125;
   text-align: center;
   text-decoration: none;
   min-width: 8rem;
   border-radius: ${(props) => props.theme.radius.small};
-  border: none;
+  border: #8265ff 0.15rem solid;
   transition: all 150ms ${(props) => props.theme.easing};
-  color: ${(props) => props.theme.color.foreground};
-  background-color: ${(props) => props.theme.color.background};
-  border-bottom: 3px solid
-    ${(props) => transparentize(0.8, props.theme.color.black)};
+  color: ${(props) => props.theme.color.white};
+  background-color: ${(props) => props.theme.color.black};
   cursor: pointer;
   z-index: 1;
   box-shadow: 0 3px 4px
     ${(props) => transparentize(0.8, props.theme.color.black)};
-  text-shadow: 0 1px 1px
-    ${(props) => transparentize(0.5, props.theme.color.black)};
+
 
   &:after,
   &:before {
@@ -645,14 +642,17 @@ const ButtonStyles = css`
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px ${(props) => props.theme.color.secondary};
+    box-shadow: 0 0 3px 3px ${(props) => props.theme.color.secondary};
   }
 
   ${(p) =>
     p.primary &&
     css`
       background-color: ${(props) => props.theme.color.primary};
-      color: ${(props) => props.theme.color.primaryContrast};
+      color: ${(props) => props.theme.color.white};
+      font-weight: 900;
+      text-shadow:0.2rem 0.2rem #565165 ;
+      border: #d2d2d2  solid 0.15rem;
     `};
 `
 
