@@ -14,10 +14,10 @@ export function Title({ page, data }) {
 }
 
 const StyledTitle = styled.h2`
-  font-size: 2.2em;
+  font-size: 2.82em;
   line-height: 1.2;
   word-spacing: 1px;
-  font-weight: 700;
+  font-weight: 900;
 
   ${(props) =>
     props.center &&

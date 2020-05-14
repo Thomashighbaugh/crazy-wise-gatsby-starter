@@ -5,7 +5,7 @@ import { Form, FormBlock } from "../blocks/form"
 import { Title, TitleBlock } from "../blocks/title"
 import { Image, ImageBlock } from "../blocks/image"
 import { Content, ContentBlock } from "../blocks/content"
-import { PageLayout } from "../components/PageLayout/pageLayout"
+import { PageLayout } from "../components/PageLayout"
 
 import { useLocalJsonForm } from "gatsby-tinacms-json"
 

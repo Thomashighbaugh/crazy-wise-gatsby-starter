@@ -1,7 +1,7 @@
-import { useAuthors } from "../UseAuthors/useAuthors"
+import { UseAuthors } from "../UseAuthors"
 
 export const ListAuthors = ({ authorIDs }) => {
-  const authors = useAuthors().filter((author) =>
+  const authors = UseAuthors().filter((author) =>
     authorIDs.find((id) => id === author.id)
   )
 

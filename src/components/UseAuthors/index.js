@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useAuthors = () => {
+export const UseAuthors = () => {
   const { settingsJson } = useStaticQuery(
     graphql`
       query authorsQuery {

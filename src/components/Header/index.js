@@ -3,7 +3,7 @@ import { Wrapper } from "../Style"
 import { Coffee } from "styled-icons/boxicons-regular"
 import styled, { css } from "styled-components"
 import { transparentize } from "polished"
-import { Nav } from "../Nav/nav"
+import { Nav } from "../Nav"
 import { ThemeContext } from "../Theme/theme"
 import { Link } from "gatsby"
 

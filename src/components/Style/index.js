@@ -584,16 +584,15 @@ const ButtonStyles = css`
   font-size: 1rem;
   padding: 0 1rem;
         font-weight: 900;
-      text-shadow:0.12rem 0.12rem #686868 ;
-      background: #212125;
+      text-shadow:0.12rem 0.12rem #565165 ;
   text-align: center;
   text-decoration: none;
   min-width: 8rem;
   border-radius: ${(props) => props.theme.radius.small};
   border: #8265ff 0.15rem solid;
   transition: all 150ms ${(props) => props.theme.easing};
-  color: ${(props) => props.theme.color.white};
-  background-color: ${(props) => props.theme.color.black};
+  color: #b0b0b1;
+  background-color: #282828;
   cursor: pointer;
   z-index: 1;
   box-shadow: 0 3px 4px

@@ -1,11 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Wrapper, Main } from "../Style"
-import { SEO } from "../SEO/seo"
+import { Index } from "../SEO"
 import { ThemeContext } from "../Theme/theme"
-import { Hero } from "../Hero/hero"
-import { removeNull } from "../Helpers/helpers"
-import { NavForm } from "../Nav/nav"
+import { Hero } from "../Hero"
+import { removeNull } from "../Helpers"
+import { NavForm } from "../Nav"
 import { ThemeForm } from "../Theme/theme"
 
 import { useGlobalJsonForm } from "gatsby-tinacms-json"
@@ -64,7 +64,7 @@ export const PageLayout = ({ page, children }) => {
 
   return (
     <>
-      {pageTitle && <SEO title={pageTitle} />}
+      {pageTitle && <Index title={pageTitle} />}
       <Hero hero={hero} />
       <Main>
         <Wrapper>{children}</Wrapper>

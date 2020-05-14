@@ -22,14 +22,14 @@
     "underline": true
   },
   "hero": {
-    "image": "../images/cafe.jpg",
+    "image": "../images/LPC5.jpg",
     "large": false,
     "overlay": true,
     "overlap": "8rem",
     "parallax": true
   },
   "typography": {
-    "uppercaseH2": false
+    "uppercaseH2": true
   },
   "menu": {
     "style": "glow"

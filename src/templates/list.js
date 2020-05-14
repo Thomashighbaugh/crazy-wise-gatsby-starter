@@ -8,9 +8,9 @@ import {
   MetaActions,
   DraftBadge,
 } from "../components/Style"
-import { ListAuthors, AuthorsForm } from "../components/Authors/authors"
+import { ListAuthors, AuthorsForm } from "../components/Authors"
 import { Link } from "gatsby"
-import { PageLayout } from "../components/PageLayout/pageLayout"
+import { PageLayout } from "../components/PageLayout"
 
 import { useLocalJsonForm } from "gatsby-tinacms-json"
 

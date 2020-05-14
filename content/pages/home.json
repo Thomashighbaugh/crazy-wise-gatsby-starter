@@ -20,7 +20,7 @@
         "label": "Hit Us Up",
         "link": "/contact",
         "arrow": true,
-        "primary": false
+        "primary": true
       }
     ],
     "image": "../images/LPC52.jpg",

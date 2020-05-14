@@ -101,16 +101,19 @@ export const Headline = styled.h2`
   word-spacing: 1px;
   font-weight: 700;
   text-transform: none;
+    text-shadow: 0.125rem 0.125rem ${(props) => props.theme.color.primary};
+background-color: ${(props) => props.theme.color.black};
 `
 
 export const Textline = styled.p`
   font-size: 1.3rem;
   line-height: 1.2;
-  color: ${(props) => props.theme.color.secondary};
+  color: ${(props) => props.theme.color.white};
   word-spacing: 1px;
   font-weight: 500;
   text-transform: none;
   padding-bottom: 0.3rem;
+  text-shadow: 0.125rem 0.125rem ${(props) => props.theme.color.primary};
 `
 
 export const Actions = styled.div`

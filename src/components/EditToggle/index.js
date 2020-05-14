@@ -2,7 +2,7 @@ import React from "react"
 import { useInlineForm } from "react-tinacms-inline"
 import { EditButton } from "../Style"
 
-export function EditToggle() {
+export function EditorToggle() {
   const { status, deactivate, activate } = useInlineForm()
 
   return (

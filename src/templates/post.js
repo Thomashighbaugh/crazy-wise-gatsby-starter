@@ -7,20 +7,19 @@ import {
   MetaActions,
   DraftBadge,
 } from "../components/Style"
-import { EditToggle } from "../components/EditToggle/editToggle"
-import { ListAuthors } from "../components/Authors/authors"
+import { EditorToggle } from "../components/EditToggle"
+import { ListAuthors } from "../components/Authors"
 import { Link } from "gatsby"
-import { PageLayout } from "../components/PageLayout/pageLayout"
+import { PageLayout } from "../components/PageLayout"
 import { useLocalRemarkForm, DeleteAction } from "gatsby-tinacms-remark"
 import {
   InlineForm,
   InlineTextField,
   InlineWysiwyg,
 } from "react-tinacms-inline"
-import { useAuthors } from "../components/UseAuthors/useAuthors"
-
+import { UseAuthors } from "../components/UseAuthors"
 function Post(props) {
-  const authors = useAuthors()
+  const authors = UseAuthors()
   const page = props.data.markdownRemark
   const formOptions = {
     actions: [DeleteAction],
@@ -94,7 +93,7 @@ function Post(props) {
             />
           </InlineWysiwyg>
           {data.frontmatter.draft && <DraftBadge>Draft</DraftBadge>}
-          {process.env.NODE_ENV !== "production" && <EditToggle />}
+          {process.env.NODE_ENV !== "production" && <EditorToggle />}
         </Paper>
       </PageLayout>
     </InlineForm>
