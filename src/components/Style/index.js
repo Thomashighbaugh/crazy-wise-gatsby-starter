@@ -271,7 +271,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 100%;
-    font-family:"Yantramanav", sans-serif;
+font-family: 'Teko', sans-serif;
     line-height: 1.5;
     color: ${(props) => props.theme.color.foreground};
     background-color: ${(props) =>
@@ -340,6 +340,7 @@ export const GlobalStyles = createGlobalStyle`
   h5,
   h6 {
     margin-bottom: 1.5rem;
+    font-family: 'Lilita One', cursive;
   }
 
   p, blockquote, ul, li {
