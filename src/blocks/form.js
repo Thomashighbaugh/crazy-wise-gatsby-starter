@@ -86,26 +86,6 @@ export const emailInputBlock = {
   ...base,
 }
 
-export const phoneInputBlock = {
-  label: "Phone Input",
-  defaultItem: {
-    label: "Phone",
-    inputType: "text",
-    autocomplete: "tel",
-  },
-  ...base,
-}
-
-export const companyInputBlock = {
-  label: "Company Input",
-  defaultItem: {
-    label: "Company",
-    inputType: "text",
-    autocomplete: "organization",
-  },
-  ...base,
-}
-
 export const messageInputBlock = {
   label: "Message Input",
   defaultItem: {
@@ -142,8 +122,6 @@ export const FormBlock = {
         customInputBlock,
         nameInputBlock,
         emailInputBlock,
-        phoneInputBlock,
-        companyInputBlock,
         messageInputBlock,
       },
     },
@@ -198,6 +176,8 @@ export const FormField = styled.div`
   label {
     display: block;
     margin-bottom: 0.25rem;
+    color: ${(props) => props.theme.foreground};
+    font-size: 2rem;
   }
 
   ${(p) =>
