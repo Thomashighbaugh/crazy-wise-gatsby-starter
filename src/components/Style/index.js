@@ -45,7 +45,7 @@ export const Reset = css`
   h5,
   h6 {
     font-size: 100%;
-    font-weight: 700;
+    font-weight: 900;
   }
 
   ul {
@@ -584,8 +584,8 @@ const ButtonStyles = css`
   line-height: 2.25rem;
   font-size: 1rem;
   padding: 0 1rem;
-        font-weight: 900;
-      text-shadow:0.12rem 0.12rem #565165 ;
+  font-weight: 900;
+  text-shadow: 0.12rem 0.12rem #565165;
   text-align: center;
   text-decoration: none;
   min-width: 8rem;
@@ -598,7 +598,6 @@ const ButtonStyles = css`
   z-index: 1;
   box-shadow: 0 3px 4px
     ${(props) => transparentize(0.8, props.theme.color.black)};
-
 
   &:after,
   &:before {
@@ -651,8 +650,8 @@ const ButtonStyles = css`
       background-color: ${(props) => props.theme.color.primary};
       color: ${(props) => props.theme.color.white};
       font-weight: 900;
-      text-shadow:0.2rem 0.2rem #565165 ;
-      border: #d2d2d2  solid 0.15rem;
+      text-shadow: 0.2rem 0.2rem #565165;
+      border: #d2d2d2 solid 0.15rem;
     `};
 `
 

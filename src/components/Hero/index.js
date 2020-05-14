@@ -101,8 +101,8 @@ export const Headline = styled.h2`
   word-spacing: 1px;
   font-weight: 700;
   text-transform: none;
-    text-shadow: 0.125rem 0.125rem ${(props) => props.theme.color.primary};
-background-color: ${(props) => props.theme.color.black};
+  text-shadow: 0.125rem 0.125rem ${(props) => props.theme.color.primary};
+  text-align: end;
 `
 
 export const Textline = styled.p`

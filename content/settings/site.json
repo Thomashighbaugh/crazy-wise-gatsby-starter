@@ -1,8 +1,8 @@
 {
-  "logo": "Coffee",
+  "logo": "School",
   "title": "Community College Life",
   "description": "Group 5's project submissiong blog about community college life, written in React.js, rendered in Gatsby with a preconfigured CMS system provided by TinaCMS. ",
-  "author": "TinaCMS",
+  "author": "Thomas Leon Highbaugh",
   "__gatsby_resolved": {
     "fileRelativePath": "/content/settings/site.json"
   }

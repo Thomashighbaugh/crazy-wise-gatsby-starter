@@ -120,7 +120,12 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Lato:400,700", "Chewy", "Mukta:200,300,400,500,600,700,800", "Yantramanav:100,300,400,500,700,900"],
+          families: [
+            "Lato:400,700",
+            "Chewy",
+            "Mukta:200,300,400,500,600,700,800",
+            "Yantramanav:100,300,400,500,700,900",
+          ],
         },
       },
     },

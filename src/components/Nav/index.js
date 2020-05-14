@@ -61,8 +61,8 @@ export const StyledNavbar = styled.ul`
     transform: translate3d(0, 100%, 0);
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: start;
     opacity: 0;
     z-index: 1000;
     background-color: ${(props) =>
