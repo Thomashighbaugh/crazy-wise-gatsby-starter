@@ -109,7 +109,7 @@ export const postQuery = graphql`
       frontmatter: { path: { eq: $path } }
     ) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 360)
       html
 
       frontmatter {

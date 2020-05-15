@@ -57,19 +57,21 @@ export const Header = styled(({ siteTitle, ...styleProps }) => {
 `
 
 export const SiteLink = styled(Link)`
-  position: relative;
+  position: static;
+  
   display: flex;
   align-items: center;
   justify-items: center;
   align-self: stretch;
   color: inherit !important;
+  font-size: 2.25rem;
   text-decoration: none;
-  margin: 0 0 0 0;
+  margin: 0 0 0 0 !important;
   transition: all 2s ${(p) => p.theme.easing};
   z-index: 1;
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     margin-right: 0.75rem;
     fill: ${(props) => props.theme.color.primary};
   }
