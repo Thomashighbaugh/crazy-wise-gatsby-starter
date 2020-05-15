@@ -1,7 +1,7 @@
 ---
 title: Coronavirus disruption of elite universities boosts community college appeal
 path: /blog/disruption
-date: '2020-05-06T00:00:00.000Z'
+date: "2020-05-06T00:00:00.000Z"
 type: post
 authors:
   - nina-alexis-villar

@@ -142,8 +142,8 @@ export const NavLink = styled(({ children, ...styleProps }) => (
   padding: 0 0.75rem;
   display: flex;
   align-items: center;
-    font-size: 1rem;
-font-family: 'Lilita One', monospace;
+  font-size: 1rem;
+  font-family: "Lilita One", monospace;
   position: relative;
   text-align: center;
   text-transform: uppercase;

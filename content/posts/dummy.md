@@ -11,4 +11,4 @@ hero:
 ---
 
 I am the dummy post that works as a template for the others. To use me, you must add one additional metric to the above
-_**frontmatter**_ which is `path:blog/dummy` 
+_**frontmatter**_ which is `path:blog/dummy`

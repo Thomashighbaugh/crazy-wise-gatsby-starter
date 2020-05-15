@@ -374,8 +374,8 @@ font-family: 'Teko', sans-serif;\
     font-weight: 700;
 
   ${(props) =>
-  props.theme.isDarkMode &&
-  css`
+    props.theme.isDarkMode &&
+    css`
       color: ${(props) => props.theme.color.white};
     `};
     ${(props) =>
@@ -533,8 +533,8 @@ export const Paper = styled.div`
     css`
       background-color: ${(props) =>
         mix(0.92, props.theme.color.background, props.theme.color.foreground)};
-        box-shadow: 0 0.5rem 0.5rem 0.5rem ${(props) => transparentize(0.9, props.theme.color.black)};
-
+      box-shadow: 0 0.5rem 0.5rem 0.5rem
+        ${(props) => transparentize(0.9, props.theme.color.black)};
     `};
 
   > *:last-child,
