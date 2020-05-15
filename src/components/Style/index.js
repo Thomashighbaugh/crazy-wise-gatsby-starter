@@ -271,8 +271,9 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 100%;
-font-family: 'Teko', sans-serif;
-    line-height: 1.5;
+font-family: 'Teko', sans-serif;\
+
+    line-height: 1.25;
     color: ${(props) => props.theme.color.foreground};
     background-color: ${(props) =>
       mix(0.95, props.theme.color.background, props.theme.color.foreground)};
@@ -340,12 +341,12 @@ font-family: 'Teko', sans-serif;
   h5,
   h6 {
     margin-bottom: 1.5rem;
-    font-family: 'Lilita One', cursive;
+    font-family: 'Lilita One', monospace;
   }
 
   p, blockquote, ul, li {
     + h1, + h2, + h3, + h4, + h5, + h6 {
-      margin-top: 3rem;
+      margin-top:1rem;
     }
   }
 
@@ -365,15 +366,23 @@ font-family: 'Teko', sans-serif;
   }
 
   h2 {
+      margin-top: 1rem;
+        color: #3a3c4a;
     font-size: 1.8em;
     line-height: 1.2;
     word-spacing: 1px;
     font-weight: 700;
 
+  ${(props) =>
+  props.theme.isDarkMode &&
+  css`
+      color: ${(props) => props.theme.color.white};
+    `};
     ${(props) =>
       props.theme.typography.uppercaseH2 &&
       css`
         text-transform: uppercase;
+        text-align: center;
       `};
   }
 
@@ -396,7 +405,7 @@ font-family: 'Teko', sans-serif;
 
   ul:not([class]),
   ol:not([class]) {
-    padding-left: 1em;
+    padding-left: 0.2em;
     margin-bottom: 1.5rem;
   }
 
@@ -466,7 +475,7 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  --wrapper-padding-x: 1rem;
+  --wrapper-padding-x: 0.1rem;
   padding: 0 var(--wrapper-padding-x);
 
   @media (min-width: ${(props) => props.theme.breakpoints.small}) {
@@ -478,7 +487,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.huge}) {
-    max-width: 1280px;
+    max-width: 1920px;
   }
 `
 
@@ -489,7 +498,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.color.black};
-  opacity: 0.9;
+  opacity: 0.75;
 `
 
 export const Image = styled(Img)``
@@ -500,7 +509,7 @@ export const Paper = styled.div`
   box-shadow: 0 0.5rem 1rem -0.5rem ${(props) => transparentize(0.9, props.theme.color.black)};
   border-radius: ${(props) => props.theme.radius.small};
 
-  --paper-padding-y: 2.5rem;
+  --paper-padding-y: 1rem;
   --paper-padding-x: 2.5rem;
   padding: var(--paper-padding-y) var(--paper-padding-x);
 
@@ -524,6 +533,8 @@ export const Paper = styled.div`
     css`
       background-color: ${(props) =>
         mix(0.92, props.theme.color.background, props.theme.color.foreground)};
+        box-shadow: 0 0.5rem 0.5rem 0.5rem ${(props) => transparentize(0.9, props.theme.color.black)};
+
     `};
 
   > *:last-child,
@@ -593,7 +604,6 @@ const ButtonStyles = css`
   border: #8265ff 0.15rem solid;
   transition: all 150ms ${(props) => props.theme.easing};
   color: #b0b0b1;
-  background-color: #282828;
   cursor: pointer;
   z-index: 1;
   box-shadow: 0 3px 4px
@@ -691,7 +701,7 @@ export const MetaSpan = styled.span`
     opacity: 0.5;
   }
   svg {
-    opacity: 0.5;
+    opacity: 0.15;
     width: 1.4em;
     margin-top: -0.2em;
     &:not(:last-child) {
@@ -755,7 +765,6 @@ export const PlainInput = styled.input`
   background: inherit;
   line-height: inherit;
   outline: none;
-  border: none;
   font-family: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;

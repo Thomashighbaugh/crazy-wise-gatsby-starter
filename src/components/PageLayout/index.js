@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Wrapper, Main } from "../Style"
-import { Index } from "../SEO"
+import { SEO } from "../SEO"
 import { ThemeContext } from "../Theme/theme"
 import { Hero } from "../Hero"
 import { removeNull } from "../Helpers"
@@ -64,7 +64,7 @@ export const PageLayout = ({ page, children }) => {
 
   return (
     <>
-      {pageTitle && <Index title={pageTitle} />}
+      {pageTitle && <SEO title={pageTitle} />}
       <Hero hero={hero} />
       <Main>
         <Wrapper>{children}</Wrapper>

@@ -5,7 +5,8 @@
   "listType": "post",
   "hero": {
     "image": "../images/LPC53.jpg",
-    "large": true,
-    "overlay": true
+    "large": false,
+    "overlay": true,
+    "headline": "Our Latest Works"
   }
 }

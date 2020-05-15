@@ -7,7 +7,7 @@ import { Nav } from "../Nav"
 import { ThemeContext } from "../Theme/theme"
 import { Link } from "gatsby"
 
-export const Index = styled(({ siteTitle, ...styleProps }) => {
+export const Header = styled(({ siteTitle, ...styleProps }) => {
   return (
     <ThemeContext.Consumer>
       {({ toggleDarkMode, isDarkMode, theme }) => (
@@ -58,20 +58,18 @@ export const Index = styled(({ siteTitle, ...styleProps }) => {
 
 export const SiteLink = styled(Link)`
   position: relative;
-  line-height: 1.75rem;
   display: flex;
   align-items: center;
-  justify-items: start;
+  justify-items: center;
   align-self: stretch;
   color: inherit !important;
   text-decoration: none;
-  margin: 0 1.75rem 0 0;
-
+  margin: 0 0 0 0;
   transition: all 2s ${(p) => p.theme.easing};
   z-index: 1;
   svg {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: 0.75rem;
     fill: ${(props) => props.theme.color.primary};
   }
@@ -99,7 +97,7 @@ export const SiteLink = styled(Link)`
 export const SiteTitle = styled.h1`
   margin: 0;
   flex: 0 0 auto;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   align-self: stretch;
   display: flex;
 `
@@ -107,7 +105,7 @@ export const SiteTitle = styled.h1`
 export const HeaderWrapper = styled(Wrapper)`
   display: flex;
   align-self: stretch;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100%;
 `

@@ -3,7 +3,11 @@
   "blocks": [
     {
       "_template": "ContentBlock",
-      "content": "## Welcome\n\n This is Community College Life, a blog for Living With Community College. The articles you will find on this site are primarily about life as a community college student. We get you, life can be hard trying to manage school, work, friends and family all while trying to make it past the first few years and make it to your dream school/job."
+      "content": "## Welcome\n\n This is Community College Life, a blog for Living With Community College. The articles you will find on this site are primarily about life as a community college student. We get you, life can be hard trying to manage school, work, friends and family all while trying to make it past the first few years and make it to your dream school/job. \n\n"
+    },
+    {
+      "_template": "ContentBlock",
+      "content": "## Content Viewer Modes"
     }
   ],
   "hero": {
@@ -21,26 +25,6 @@
         "link": "/contact",
         "arrow": true,
         "primary": true
-      }
-    ],
-    "blocks": [
-      {
-        "_template": "ContentBlock",
-        "content": "### Development Server // CMS \n\n The **Content Management System** that is being utilized by this site is not so much a full page as it is a sidebar available to the user on the development side. For the sake of completing the assignment, we opted not to configure a separate URL to host the development server to edit the content, which would have required several additional authenication hoops and for a blog utilizing this CMS, it seems this method is the only viable option other than what they style Open Authoring, which would enable anyone to edit content and submit it as a pull request to the repository hosting the site, which at present only seems to work with a different static site generator, **Next.js**. \n\n Content Management Systems enable the parties with access to the CMS panel the ability to edit the content of a website, which is how most blog writers interact with their sites exclusively. \n\n #### Set Up \n\n To experiment with and test our content management panel, Simply run `npm i -g yarn` then  `yarn && yarn develop` then navigate to port that is linked in the terminal. In your browser the site will render and in the bottom left hand corner there will be a pen icon on a tab the same color as the accents through the site. This is the CMS panel!  It allows you to modify the site content, rearrange it, add or remove content and create all new content right there. \n\n This cool headless CMS panel is from the external library known as TinaCMS, a relatively new project that is very exciting as it requires none of the overhead or expense of other CMS systems, while also lacking the security implications of Wordpress. \n\n The coolest feature is in the top lefthand corner, where you can open an additional menu that enables page modification, theme modification (which is why styled components ended up being the CSS variant employed here), menu style modifications and changes to the site metadata. While not separately hosted at Netlify (who while able to host it, would have meant additional complexitites exceeding the boundaries of reason for this project we felt), the power of this system even to introduce developer's who are writing blog posts to some of these technologies as they pull in the repo and use the cms system to write their own blogs after first getting the dev server up is a powerful way to engender the technical skills that are quickly becoming unavoidable for the entire workforce. For better or for worse, it also will probably require generalized Javascript knowledge as it seems that JS is here to stay.",
-        "name": "cms",
-        "title": "Development Server // CMS",
-        "center": false,
-        "underline": true,
-        "recipient": "dummy",
-        "image": "../images/dummy.jpg",
-        "fields": [
-          {
-            "_template": "dummy",
-            "label": "dummy",
-            "inputType": "dummy",
-            "autocomplete": "dummy"
-          }
-        ]
       }
     ],
     "image": "../images/LPC52.jpg",

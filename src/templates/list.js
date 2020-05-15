@@ -138,7 +138,6 @@ export const ListNav = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-
   a {
     display: inline-block;
     padding: 0.5rem 1rem;

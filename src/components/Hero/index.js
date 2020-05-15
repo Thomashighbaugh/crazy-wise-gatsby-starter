@@ -113,6 +113,7 @@ export const Textline = styled.p`
   font-weight: 500;
   text-transform: none;
   padding-bottom: 0.3rem;
+  font-family: "Teko", monospace;
   text-shadow: 0.125rem 0.125rem ${(props) => props.theme.color.primary};
 `
 

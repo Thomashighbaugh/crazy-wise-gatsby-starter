@@ -15,10 +15,9 @@ export const Footer = styled(({ ...styleProps }) => {
     </footer>
   )
 })`
-  font-size: 0.8rem;
-  line-height: 3rem;
+  font-size: 1.25rem;
   text-align: center;
-  height: 3rem;
+  height: 1rem;
   background-color: ${(props) =>
     transparentize(0.97, props.theme.color.foreground)};
   box-shadow: inset 0 1px 0

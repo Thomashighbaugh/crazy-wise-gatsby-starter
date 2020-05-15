@@ -54,6 +54,7 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
 
 export const StyledNavbar = styled.ul`
   color: inherit;
+
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
     position: absolute;
     bottom: 0;
@@ -62,7 +63,6 @@ export const StyledNavbar = styled.ul`
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: start;
     opacity: 0;
     z-index: 1000;
     background-color: ${(props) =>
@@ -80,14 +80,15 @@ export const StyledNavbar = styled.ul`
       `};
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.small}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
     display: flex;
     flex-direction: row;
     align-self: stretch;
     align-items: stretch;
     justify-content: flex-end;
-    flex: 1 0 auto;
+    flex: 2 0 auto;
     margin: 0;
+    margin-top: 1rem;
     opacity: 1;
     pointer-events: all;
   }
@@ -136,15 +137,16 @@ export const NavLink = styled(({ children, ...styleProps }) => (
     <span>{children}</span>
   </Link>
 ))`
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   line-height: ${(props) => props.theme.header.height};
   padding: 0 0.75rem;
   display: flex;
   align-items: center;
+    font-size: 1rem;
+font-family: 'Lilita One', monospace;
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  font-size: 0.8rem;
   letter-spacing: 0.5px;
   text-decoration: none;
   color: inherit !important;
@@ -181,7 +183,7 @@ export const NavLink = styled(({ children, ...styleProps }) => (
   ${(props) =>
     props.theme.menu.style === "pill" &&
     css`
-      padding: 0 1rem;
+      padding: 0 0.51rem;
 
       &:before {
         content: "";
@@ -258,7 +260,7 @@ export const NavLink = styled(({ children, ...styleProps }) => (
         width: 100%;
         height: 6px;
         background-color: ${(props) =>
-          transparentize(0.85, props.theme.color.white)};
+          transparentize(0.95, props.theme.color.black)};
         transform: translate3d(0, -100%, 0);
         transition: all 150ms ${(props) => props.theme.easing};
       }
@@ -267,7 +269,7 @@ export const NavLink = styled(({ children, ...styleProps }) => (
         content: "";
         position: absolute;
         display: none;
-        top: 0;
+        top: -8px;
         left: 0;
         width: 100%;
         height: 100%;
@@ -350,7 +352,7 @@ export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
     </button>
   )
 })`
-  position: relative;
+  position: absolute;
   padding: 0;
   border: 0;
   background: transparent;
