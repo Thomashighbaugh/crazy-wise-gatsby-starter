@@ -2,22 +2,24 @@
 label: Dummy
 hide_body: true
 fields:
-  - type: text
-    name: title
-    label: title
+- type: text
+  name: title
+  label: title
+- type: boolean
+  name: draft
+  label: draft
+- type: field_group
+  name: hero
+  label: hero
+  fields:
+  - type: file
+    name: image
+    label: image
   - type: boolean
-    name: draft
-    label: draft
-  - type: field_group
-    name: hero
-    label: hero
-    fields:
-      - type: file
-        name: image
-        label: image
-      - type: boolean
-        name: large
-        label: large
-      - type: boolean
-        name: overlay
-        label: overlay
+    name: large
+    label: large
+  - type: boolean
+    name: overlay
+    label: overlay
+pages:
+- content/posts/test.md
