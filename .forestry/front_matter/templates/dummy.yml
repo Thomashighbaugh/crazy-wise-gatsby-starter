@@ -1,0 +1,23 @@
+---
+label: Dummy
+hide_body: true
+fields:
+- type: text
+  name: type
+  label: type
+- type: boolean
+  name: draft
+  label: draft
+- type: field_group
+  name: hero
+  label: hero
+  fields:
+  - type: file
+    name: image
+    label: image
+  - type: boolean
+    name: large
+    label: large
+  - type: boolean
+    name: overlay
+    label: overlay
