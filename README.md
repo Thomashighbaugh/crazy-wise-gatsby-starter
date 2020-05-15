@@ -9,7 +9,7 @@ This repository contains the files to be submitted for Group 5
 ## For the Instructor 
 **Hello Instructor,**
  
-This page is intended to serve as an introduction to how to access the
+This is intended to serve as an introduction to how to access the
 features of the site both publically viewable, and those that would be 
 hidden from users if this mock up were real. It should also help explain 
 to you various aspects of the site and why the choices were made the way
@@ -45,8 +45,23 @@ specify an example.
 In order to be readable by client machines, which React is not, it is *transpiled* into Javascript by Babel. This also makes the source code 
 compliant with older browsers, turning ES6 & ES7 into vanilla JS. 
 
+#### Styled Components
+Breaking from tradition and my standard workflow, we decided to write the stylesheet in Styled Components, an extremely ugly but effective means of injecting CSS into the HTML rendered out of the React (where it is called JSX). While being both ugly and sometimes cumbersome, it enabled the styling of various components I could not access with my typical SCSS means of creating a stylesheet. 
+
+The CSS itself is either at the bottom of a React file with the general CSS provided by the component `src/component/Styles`
+
 #### Static Site Generator
-This site is additionally processed by an application called Gatsby.js which takes the components and other 
+This site is additionally processed by an application called Gatsby.js which takes the components and JSON files within `content/pages` and renders them into HTML5 and CSS3. This means that the server is just caching a series of HTML and CSS files that user's request, saving hardware resources and making it so that the developer may add a content manager for writers to add content without need to edit source code. 
+
+As input, template files create content blocks, which then are called by the `content/pages` files and these are all wrapped within configurations provided in `src/components/pageLayout` and `src/components/siteLayout` that includes the React Helmet package enabling the modification of the generated head element in the generated html that enables SEO in the generated site, an otherwise impossible task. 
+
+
+
+Configuration is provided in the files `gatsby-config.js`, `gatsby-browser.js` and `gatsby-node.js` which include a list of additional plugins added to the SSG to extend its functionality, such as reading the Markdown files, adding in images, etc. 
+
+#### Markdown 
+The articles are written in Markdown, a quick markup that utilizes HTML
+elements ergonomically. They are taken as input by the SSG to dynamically produce pages for each in the generated code. 
 
 ### CMS
 
