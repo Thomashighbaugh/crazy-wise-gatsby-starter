@@ -88,7 +88,6 @@ export const StyledNavbar = styled.ul`
     justify-content: flex-end;
     flex: 2 0 auto;
     margin: 0;
-    margin-top: 1rem;
     opacity: 1;
     pointer-events: all;
   }

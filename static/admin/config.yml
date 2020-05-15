@@ -1,0 +1,15 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: "content/images" # Media files will be stored in the repo under
+collections:
+  - name: "posts"
+    label: "Post"
+    create: true # Allow users to create new documents in this collection
+    folder: "content/posts"
+    slug: {{slug}}
+    filter:
+    fields: # The fields for each document, usually in front matter
+    - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+    - {label: "Title", name: "title", widget: "string"}
+    - {label: "Path", name: "path", widget: "string"}

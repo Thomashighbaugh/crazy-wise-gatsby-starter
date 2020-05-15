@@ -7,12 +7,14 @@ import { Hero } from "../Hero"
 import { removeNull } from "../Helpers"
 import { NavForm } from "../Nav"
 import { ThemeForm } from "../Theme/theme"
-
+import { withTina } from 'tinacms'
 import { useGlobalJsonForm } from "gatsby-tinacms-json"
+import { useCMS } from "@tinacms/react-core"
 
 const merge = require("lodash.merge")
 
 export const PageLayout = ({ page, children }) => {
+  const cms = useCMS()
   const data = useStaticQuery(graphql`
     query PageLayoutQuery {
       nav: settingsJson(
