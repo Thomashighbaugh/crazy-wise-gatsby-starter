@@ -2,8 +2,7 @@
 title: Test
 draft: false
 hero:
-  image: ''
+  image: ""
   large: false
   overlay: false
-
 ---
