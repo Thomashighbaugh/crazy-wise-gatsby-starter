@@ -4,6 +4,8 @@ This repository contains the files to be submitted for Group 5
 
 [![Group 5](https://img.shields.io/badge/Group%205-CCLife-brightgreen)](https://github.com/Thomashighbaugh/g5-Blog-CCLife)
 
+[Site Hosted Here](https://g5-blog-cclife.netlify.app/)
+
 ---
 
 ## For the Instructor 
