@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Thomas Leon Highbaugh <thighbaugh@zoho.com>",
   "dependencies": {
-    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/mdx": "^1.6.5",
     "@mdx-js/react": "^1.5.1",
     "babel-plugin-styled-components": "^1.10.6",
     "focus-visible": "^5.0.2",
