@@ -40,7 +40,7 @@
     "lodash.get": "^4.4.2",
     "lodash.merge": "^4.6.2",
     "netlify-cms": "^2.10.48",
-    "polished": "^3.4.1",
+    "polished": "^3.6.6",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
