@@ -1,7 +1,7 @@
 ---
-title: 'My Throne, the Bathtub on Main Street'
+title: "My Throne, the Bathtub on Main Street"
 path: /blog/disruption
-date: '2020-05-06T00:00:00.000Z'
+date: "2020-05-06T00:00:00.000Z"
 type: post
 authors:
   - Author A
