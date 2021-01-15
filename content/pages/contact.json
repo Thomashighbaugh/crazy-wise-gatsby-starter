@@ -2,9 +2,9 @@
   "title": "Contact",
   "path": "/contact",
   "hero": {
-    "headline": "Contact Our Staff",
-    "textline": "Sign up for an exclusive newletter sent to your inbox, send us some feedback about the blog or even just drop us a line.",
-    "image": "../images/LPC5.jpg",
+    "headline": "Comments or Concerns",
+    "textline": "[DO NOT POST HERE FOR SUPPORT, Open a GitHub issue instead please]",
+    "image": "../images/3.png",
     "large": false
   },
   "blocks": [

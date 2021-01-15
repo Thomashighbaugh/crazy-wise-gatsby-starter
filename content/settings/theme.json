@@ -1,9 +1,9 @@
 {
   "color": {
-    "black": "#17161B",
-    "white": "#d7d7d7",
-    "primary": "#8265ff",
-    "secondary": "#614be0"
+    "black": "#14171A",
+    "white": "#F5F8FA",
+    "primary": "#1DA1F2",
+    "secondary": "#657786"
   },
   "easing": "cubic-bezier(0.215, 0.610, 0.355, 1.000)",
   "breakpoints": {
@@ -13,7 +13,7 @@
     "huge": "2200px"
   },
   "radius": {
-    "small": "8px"
+    "small": "12px"
   },
   "header": {
     "overline": true,
@@ -22,10 +22,10 @@
     "underline": true
   },
   "hero": {
-    "image": "../images/LPC5.jpg",
+    "image": "../images/1.jpg",
     "large": false,
     "overlay": true,
-    "overlap": "6rem",
+    "overlap": "10rem",
     "parallax": true
   },
   "typography": {

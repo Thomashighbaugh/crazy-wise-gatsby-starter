@@ -59,12 +59,12 @@ const HeroWrapper = styled.div`
 
 const HeroContent = styled.div`
   display: block;
-  padding: 2rem 0;
+  padding: 1rem 0;
 
   ${(props) =>
     props.large &&
     css`
-      padding: 8rem 0;
+      padding: 6rem 0;
     `}
 `
 
@@ -95,8 +95,8 @@ const HeroBackground = styled.div`
 `
 
 export const Headline = styled.h2`
-  font-size: 2.6em;
-  line-height: 1.2;
+  font-size: 3.6em;
+  line-height: 1;
   color: ${(props) => props.theme.color.white};
   word-spacing: 1px;
   font-weight: 700;

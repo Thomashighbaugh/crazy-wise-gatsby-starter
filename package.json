@@ -1,7 +1,7 @@
 {
-  "name": "G5",
+  "name": "crazy-wise",
   "private": true,
-  "description": "The submission of group 5",
+  "description": "An example blog written in Gatsby.js, featuring tinaCMS and styled components.",
   "version": "0.1.0",
   "author": "Thomas Leon Highbaugh <thighbaugh@zoho.com>",
   "dependencies": {

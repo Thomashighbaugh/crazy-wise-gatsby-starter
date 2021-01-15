@@ -1,7 +1,7 @@
 ---
 type: dummmy
 authors:
-  - nina-alexis-villar
+  - Author B
 draft: false
 date: "2019-11-06T00:00:00.000Z"
 hero:

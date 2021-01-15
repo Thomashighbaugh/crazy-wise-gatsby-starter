@@ -1,49 +1,40 @@
 ---
-title: How to Balance School and Work
+title: Fools for Shiva
 path: /blog/work-life-balance
 date: "2020-04-04"
 type: post
 authors:
-  - sydney-moseley
+  - author-c
 draft: false
 ---
 
-Balancing the overwhelming demands of both school and work is no easy feat. Unfortunately it’sa task that many students
-that attend community college must face. Although it can be challenging these tips are sure to help you gain balance in
-your life.
 
-## Good Time Management
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
-In order to create balance in your personal and professional life you must know that time is precious, but before you
-decide how much time you devote to what tasks you must first know yourself. If you know that you work more efficiently
-in the morning grind out what must be done then or vice versa. If you know that you are too tired after work to complete
-even the smallest assignments, be sure to reserve time before your shift to get your work done. Sometimes sacrifices
-must be made, whether that be staying up later than normal or studying throughout the weekend. The next tip goes hand
-in hand with time management, so be sure to continue reading!
+1. Tempus iaculis urna id volutpat. 
+2. Cras ornare arcu dui vivamus. 
+3. Id leo in vitae turpis massa sed elementum. 
 
-## Organization
+Semper auctor neque vitae tempus quam pellentesque nec. Morbi tincidunt augue interdum velit euismod in. Cras pulvinar mattis nunc sed blandit libero volutpat sed cras. Euismod quis viverra nibh cras pulvinar mattis. Eu nisl nunc mi ipsum faucibus. At varius vel pharetra vel turpis nunc. Id eu nisl nunc mi ipsum faucibus vitae aliquet. Tortor dignissim convallis aenean et tortor at risus viverra. Nunc faucibus a pellentesque sit amet porttitor eget dolor morbi. Aenean pharetra magna ac placerat. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Vel fringilla est ullamcorper eget. Tellus cras adipiscing enim eu turpis egestas. Accumsan tortor posuere ac ut.
 
-Organization is key to staying sane as a student. Planners are crucial for prioritizing what must get done throughout
-the week. Many of them include an hourly breakdown of the day, which can help greatly with time management. It’s so
-easy to miss due dates once we get caught up in daily life, but writing everything out on a calendar is sure to keep
-you prepared. Also, be sure to organize when it comes to your assignments and study materials as well. Instead of
-tossing papers and supplies in your bag once class ends, have a designated folder, notebook, or binder for each course.
+## Donec ultrices tincidunt arcu non sodales neque sodales ut.
 
-## Communicating Your Needs
+-  Auctor eu augue ut lectus arcu bibendum at. 
+-  Lectus quam id leo in vitae. 
+-  Diam vulputate ut pharetra sit amet aliquam id. Ut sem viverra aliquet eget sit amet tellus cras adipiscing. 
 
-It may be intimidating to speak to your boss, but if they know that you’re also a student they will most likely
-understand and make accommodations. It helps to inform them ahead of time of high stress times in the semester such
-as midterms, so they know that you will be taking time off work. If for some reason you find yourself in a situation
-where work is over demanding you may need to consider other employment options or working part-time. Everything is
-easier when you have a support system around you. Making friends in each of your classes can help you stay on top
-of things. From study groups to having someone reach out to in case you miss a lecture,communicate with those around
-you while making sure not to lean on anyone excessively.
+Elementum integer enim neque volutpat ac tincidunt vitae semper quis. Ullamcorper morbi tincidunt ornare massa eget egestas. Pellentesque id nibh tortor id. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Elit ut aliquam purus sit amet luctus venenatis lectus magna. Vel pretium lectus quam id leo in vitae. Hendrerit dolor magna eget est lorem ipsum dolor. Nec dui nunc mattis enim ut. Egestas sed tempus urna et. Sem fringilla ut morbi tincidunt augue interdum velit. Viverra justo nec ultrices dui sapien eget mi. Ullamcorper sit amet risus nullam eget felis eget nunc. Sit amet risus nullam eget felis eget nunc lobortis mattis.
 
-## Online Classes
+### Nibh venenatis cras sed felis eget velit aliquet sagittis id. Vivamus arcu felis bibendum ut tristique. 
 
-Online classes can make going back to school so much easier while working full-time. Most online courses​ give students
-the flexibility to work when they can, not have to show up at a certain time in a physical location. Some ​online
-the flexibility to work when they can, not have to show up at a certain time in a physical location. Some ​online
-courses​ even offer self-paced classes, allowing students to start and stop when they need to. Be sure to look for
-online classes that will fit your learning style​. For example, my community college (Las Posit as College) offers
-hybrid classes that are online the majority of the time with in person classes only once a week.
+Elementum sagittis vitae et leo duis ut diam. Ultricies integer quis auctor elit. Ac turpis egestas sed tempus urna et pharetra pharetra massa. Sapien eget mi proin sed libero enim sed faucibus turpis. Nunc id cursus metus aliquam eleifend mi. A scelerisque purus semper eget duis at tellus. Sit amet risus nullam eget felis eget nunc lobortis mattis. Quam elementum pulvinar etiam non quam lacus suspendisse. Vel pretium lectus quam id leo in vitae. Arcu dui vivamus arcu felis bibendum ut tristique. Massa id neque aliquam vestibulum morbi blandit cursus. Quis vel eros donec ac. Adipiscing commodo elit at imperdiet dui. Commodo viverra maecenas accumsan lacus vel facilisis. Egestas quis ipsum suspendisse ultrices gravida. Tempus urna et pharetra pharetra massa. Accumsan lacus vel facilisis volutpat est velit egestas. Vel facilisis volutpat est velit.
+
+Tellus id interdum velit laoreet id.
+
+> Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse. Nec ullamcorper sit amet risus nullam eget felis eget. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet. Amet consectetur adipiscing elit pellentesque habitant morbi tristique. Ut sem nulla pharetra diam sit amet nisl suscipit. 
+
+Vitae aliquet nec ullamcorper sit amet. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Amet est placerat in egestas erat imperdiet sed euismod. Bibendum at 
+
+>varius vel pharetra vel turpis nunc. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Mauris augue neque gravida in.
+
+Ac tortor vitae purus faucibus ornare suspendisse sed. Mauris vitae ultricies leo integer malesuada. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. Eleifend quam adipiscing vitae proin. Lacus vel facilisis volutpat est. Arcu bibendum at varius vel pharetra vel. Urna molestie at elementum eu facilisis sed odio. Nunc aliquet bibendum enim facilisis gravida. Tortor vitae purus faucibus ornare suspendisse sed nisi. In hendrerit gravida rutrum quisque non tellus orci ac auctor. Aliquam sem et tortor consequat id porta nibh venenatis. Habitasse platea dictumst vestibulum rhoncus. Massa vitae tortor condimentum lacinia quis.

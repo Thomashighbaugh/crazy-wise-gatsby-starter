@@ -3,16 +3,12 @@
   "blocks": [
     {
       "_template": "ContentBlock",
-      "content": "## Welcome\n\n This is Community College Life, a blog for Living With Community College. The articles you will find on this site are primarily about life as a community college student. We get you, life can be hard trying to manage school, work, friends and family all while trying to make it past the first few years and make it to your dream school/job. \n\n"
-    },
-    {
-      "_template": "ContentBlock",
-      "content": "## Content Viewer Modes \n\n If you prefer a darker interface, or are viewing this at night and would like to not burn your eyes, just click that moon icon in the top right hand corner. "
+      "content": "## Welcome\n\n This blog was written by Thomas Leon Highbaugh using Gatsby.js, Styled Components, Custom Artwork and tinacCMS. Feel free to fork it and use it as the basis of your next project or to experiment with the code and underlying technology stack.\n\n Especially interesting is the manner that the pages and blog content are composed. In both cases, JSON files are used, thus enabling tinaCMS to modify the content. To experiment with tinaCMS you will have to run a local development server, but just head on over to the GitHub repository and you'll find instructions on accomplishing this task within the README.md page. "
     }
   ],
   "hero": {
-    "headline": "Who Knew School Could Be So Hard?",
-    "textline": "A Blog For Living With Community College ",
+    "headline": "Crazy-Wise!!",
+    "textline": "An Example Gatsby Blog Template/Starter with tinaCMS ",
     "ctas": [
       {
         "label": "Read The Blog",
@@ -21,13 +17,13 @@
         "arrow": true
       },
       {
-        "label": "Hit Us Up",
+        "label": "Hit Me Up",
         "link": "/contact",
         "arrow": true,
         "primary": true
       }
     ],
-    "image": "../images/LPC52.jpg",
+    "image": "../images/1.jpg",
     "large": false
   },
   "displayTitle": false,
