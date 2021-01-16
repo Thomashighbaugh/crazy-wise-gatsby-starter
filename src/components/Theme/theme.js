@@ -241,7 +241,7 @@ export const ThemeForm = {
       name: "rawJson.hero",
       component: "group",
       fields: [
-        {  
+        {
           label: "Default Image",
           name: "image",
           component: "text",
