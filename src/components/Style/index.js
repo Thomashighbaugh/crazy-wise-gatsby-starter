@@ -271,7 +271,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 100%;
-font-family: 'Teko', sans-serif;\
+font-family: 'Yantramanav', sans-serif;\
 
     line-height: 1.25;
     color: ${(props) => props.theme.color.foreground};
@@ -361,15 +361,13 @@ font-family: 'Teko', sans-serif;\
     font-weight: 500;
 
     + hr {
-      margin: 2.4rem 0;
     }
   }
 
   h2 {
       margin-top: 1rem;
-        color: #3a3c4a;
+        color: #24262d;
     font-size: 1.8em;
-    line-height: 1.2;
     word-spacing: 1px;
     font-weight: 700;
 
@@ -457,11 +455,12 @@ font-family: 'Teko', sans-serif;\
   }
 
   hr {
-    width: 35%;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right:2.5%;
     min-width: 10rem;
     max-width: 100%;
     border: none;
-    margin: 1.6rem 0;
     border-top: 2px solid ${(props) => props.theme.color.secondary};
   }
 
@@ -475,7 +474,7 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  --wrapper-padding-x: 0.1rem;
+  --wrapper-padding-x: 1rem;
   padding: 0 var(--wrapper-padding-x);
 
   @media (min-width: ${(props) => props.theme.breakpoints.small}) {
@@ -532,9 +531,9 @@ export const Paper = styled.div`
     props.theme.isDarkMode &&
     css`
       background-color: ${(props) =>
-        mix(0.92, props.theme.color.background, props.theme.color.foreground)};
+        mix(0.7, props.theme.color.background, props.theme.color.foreground)};
       box-shadow: 0 0.5rem 0.5rem 0.5rem
-        ${(props) => transparentize(0.9, props.theme.color.black)};
+        ${(props) => transparentize(0.8, props.theme.color.black)};
     `};
 
   > *:last-child,
@@ -660,7 +659,7 @@ const ButtonStyles = css`
       background-color: ${(props) => props.theme.color.primary};
       color: ${(props) => props.theme.color.white};
       font-weight: 900;
-      text-shadow: 0.2rem 0.2rem #565165;
+      text-shadow: 0.2rem 0.2rem #555e70;
       border: #d2d2d2 solid 0.15rem;
     `};
 `

@@ -68,9 +68,9 @@ export const SiteLink = styled(Link)`
   transition: all 2s ${(p) => p.theme.easing};
   z-index: 1;
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.75rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 4.75rem;
     fill: ${(props) => props.theme.color.primary};
   }
   &:after {
@@ -97,7 +97,7 @@ export const SiteLink = styled(Link)`
 export const SiteTitle = styled.h1`
   margin: 0;
   flex: 0 0 auto;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   align-self: stretch;
   display: flex;
 `

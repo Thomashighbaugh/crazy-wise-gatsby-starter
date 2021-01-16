@@ -7,7 +7,7 @@ import { Hero } from "../Hero"
 import { removeNull } from "../Helpers"
 import { NavForm } from "../Nav"
 import { ThemeForm } from "../Theme/theme"
-import { withTina } from 'tinacms'
+import { withTina } from "tinacms"
 import { useGlobalJsonForm } from "gatsby-tinacms-json"
 import { useCMS } from "@tinacms/react-core"
 

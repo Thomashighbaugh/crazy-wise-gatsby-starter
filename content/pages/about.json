@@ -11,6 +11,16 @@
     {
       "_template": "ContentBlock",
       "content": "This blog began its existance as a group project for a class I took on Javascript, wanting to practice my React skills I took upon myself the entire task of writing the blog from scratch after finding the cms system (tina) that the other members use to fill in the content. \n\n Since I wrote the source code, I have stripped out all of the other group memebers' work, thrown in Lorem Ipsum in its place and offer to anyone who wants it as a Gatsby Starter free of charge as my thank you to all the open source projects just like this one that have helped me learn all of these awesome things. "
+    },
+    {
+      "_template": "TitleBlock",
+      "title": "Why Crazy-Wise?",
+      "underline": true,
+      "content": "Crazy-Wise"
+    },
+    {
+      "_template": "ContentBlock",
+      "content": "I happened to come across the topic and thought it sounded cool so I used it lacking other inspiration at that moment."
     }
   ],
   "displayTitle": true

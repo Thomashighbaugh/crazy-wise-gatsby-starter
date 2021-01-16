@@ -3,12 +3,12 @@
   "blocks": [
     {
       "_template": "ContentBlock",
-      "content": "## Welcome\n\n This blog was written by Thomas Leon Highbaugh using Gatsby.js, Styled Components, Custom Artwork and tinacCMS. Feel free to fork it and use it as the basis of your next project or to experiment with the code and underlying technology stack.\n\n Especially interesting is the manner that the pages and blog content are composed. In both cases, JSON files are used, thus enabling tinaCMS to modify the content. To experiment with tinaCMS you will have to run a local development server, but just head on over to the GitHub repository and you'll find instructions on accomplishing this task within the README.md page. "
+      "content": "## Welcome\n\n This example blog was written by Thomas Leon Highbaugh using Gatsby.js, Styled Components, Custom Artwork and tinacCMS. Feel free to fork it and use it as the basis of your next project or to experiment with the code and underlying technology stack.\n\n Especially interesting is the manner that the pages and blog content are composed. In both cases, JSON files are used, thus enabling tinaCMS to modify the content. To experiment with tinaCMS you will have to run a local development server, but just head on over to the GitHub repository and you'll find instructions on accomplishing this task within the README.md page. "
     }
   ],
   "hero": {
-    "headline": "Crazy-Wise!!",
-    "textline": "An Example Gatsby Blog Template/Starter with tinaCMS ",
+    "headline": "Welcome",
+    "textline": "This is an Example Gatsby Blog Template/Starter with tinaCMS ",
     "ctas": [
       {
         "label": "Read The Blog",
@@ -17,7 +17,7 @@
         "arrow": true
       },
       {
-        "label": "Hit Me Up",
+        "label": "Comments? Concerns?",
         "link": "/contact",
         "arrow": true,
         "primary": true

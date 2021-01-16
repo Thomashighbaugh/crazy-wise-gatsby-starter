@@ -10,14 +10,18 @@ export const Footer = styled(({ ...styleProps }) => {
         © {new Date().getFullYear()} – Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a> and{" "}
-        <a href="https://www.tinacms.org">Tina</a> <span>by </span>
+        <a href="https://www.tinacms.org">Tina</a>{" "}
+        <span>
+          by <a href="https://thomasleonhighbaugh.me">Thomas Leon Highbaugh</a>{" "}
+        </span>
       </Wrapper>
     </footer>
   )
 })`
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-align: center;
-  height: 1rem;
+  font-family: "Lilita One", monospace;
+  height: 0.5rem;
   background-color: ${(props) =>
     transparentize(0.97, props.theme.color.foreground)};
   box-shadow: inset 0 1px 0

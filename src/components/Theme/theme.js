@@ -231,7 +231,7 @@ export const ThemeForm = {
           name: "style",
           component: "text",
           parse(value) {
-            return value || ""
+            return value || "glow"
           },
         },
       ],
@@ -241,7 +241,7 @@ export const ThemeForm = {
       name: "rawJson.hero",
       component: "group",
       fields: [
-        {
+        {  
           label: "Default Image",
           name: "image",
           component: "text",

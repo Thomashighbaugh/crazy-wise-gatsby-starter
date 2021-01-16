@@ -1,7 +1,7 @@
 {
-  "logo": "yantra",
-  "title": "Crazy-wise Gatsby Starter",
-  "description": "Group 5's project submissiong blog about community college life, written in React.js, rendered in Gatsby with a preconfigured CMS system provided by TinaCMS. ",
+  "logo": "icon.png",
+  "title": "Crazy-Wise",
+  "description": "A pleasing Gatsby starter in the Electric Tantra style, written in React.js, rendered in Gatsby with a preconfigured CMS system provided by TinaCMS. ",
   "author": "Thomas Leon Highbaugh",
   "__gatsby_resolved": {
     "fileRelativePath": "/content/settings/site.json"

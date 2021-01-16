@@ -1,99 +1,84 @@
-# Group 5 Submission
+---
 
-This repository contains the files to be submitted for Group 5
-
-[![Group 5](https://img.shields.io/badge/Group%205-CCLife-brightgreen)](https://github.com/Thomashighbaugh/g5-Blog-CCLife)
-
-[Site Hosted Here](https://g5-blog-cclife.netlify.app/)
+<h1>Crazy-Wise Starter</h1>
+<h2>A Gatsby.js starter featuring tinaCMS, styled-components and a bunch of custom artwork</h2>
+<button style="width: 5rem;height: 2rem;border: 2px solid #24262d;"><a href="https://g5-blog-cclife.netlify.app/" >Hosted Here </a></button>
 
 ---
 
-## For the Instructor 
-**Hello Instructor,**
- 
-This is intended to serve as an introduction to how to access the
-features of the site both publically viewable, and those that would be 
-hidden from users if this mock up were real. It should also help explain 
-to you various aspects of the site and why the choices were made the way
-they were leading to the 
-site before you now.
+## Installation
 
-## Set Up
-In order to manipulate the site's cms features the following steps are 
-required to produce the development server and run it locally. 
+Assuming you are using a Unix-like OS or have a BASH terminal available and node.js installed, follow the steps below to get this respository up and running locally so you can modify it with your code editor of choice to make it your own. 
 
-- Install Node.js for your platform (Node Version Manager Highly Recommended) 
-- open a terminal/command line
-- navigate to this folder/directory
-- run `npm i -g yarn`
-- run `yarn install`
-- run `yarn develop`
-- open browser to http://localhost:8000
+```bash 
 
-### Source Code 
+$ git clone https://github.com/Thomashighbaugh/g5-blog-cclife
 
-#### Javascript Version // Library
-The site utilizes and conforms to the conventions of the React
-library/framework which is a library enabling the construction of
-Javascript as a series of components, isolating various logical aspects
-of the application in a modular format. The files written in this Javascript variant are across the `src` folder.
+$ cd g5-blog-cclife
 
-In combination with React, a lot of the logic that is utilized within 
-this site is derived from Node.js and is wrapped in React components, or
-site configuration files, determining which is clearly node vs. node+configuration is hard to do, as they are isolated into functional
-portions due to the React development pattern, otherwise I would 
-specify an example. 
+# install yarn if not already installed
+$ npm i -g yarn
 
-In order to be readable by client machines, which React is not, it is *transpiled* into Javascript by Babel. This also makes the source code 
-compliant with older browsers, turning ES6 & ES7 into vanilla JS. 
+# install packages
+$ yarn 
 
-#### Styled Components
-Breaking from tradition and my standard workflow, we decided to write the stylesheet in Styled Components, an extremely ugly but effective means of injecting CSS into the HTML rendered out of the React (where it is called JSX). While being both ugly and sometimes cumbersome, it enabled the styling of various components I could not access with my typical SCSS means of creating a stylesheet. 
+# run thr development server
 
-The CSS itself is either at the bottom of a React file with the general CSS provided by the component `src/component/Styles`
+$ yarn dev
 
-#### Static Site Generator
-This site is additionally processed by an application called Gatsby.js which takes the components and JSON files within `content/pages` and renders them into HTML5 and CSS3. This means that the server is just caching a series of HTML and CSS files that user's request, saving hardware resources and making it so that the developer may add a content manager for writers to add content without need to edit source code. 
 
-As input, template files create content blocks, which then are called by the `content/pages` files and these are all wrapped within configurations provided in `src/components/pageLayout` and `src/components/siteLayout` that includes the React Helmet package enabling the modification of the generated head element in the generated html that enables SEO in the generated site, an otherwise impossible task. 
+# After finishing your changes run the below to format the code
+$ yarn format 
+
+```
+
+---
+## Using tinaCMS
+
+Unfortunately, the only way at present to use tinaCMS is to do so in the development server. Though its not too much more work than the steps above. Once they are done, open up your browser and navigate to `http://localhost:8000` and you will see the website. In the bottom left hand corner there is an icon of a pencil, click that and it will open up the CMS, which is relatively self explanatory. 
+
+Modifications you make with the CMS interface will be reflected in the JSON files populating the various pages and configurations used to render the site. Its a relatively slick way to dynamically edit the content as well as write it in the first place as JSON files strip out all of the syntax and allow you to focus more specifically on content. 
+
+---
+## Features 
+
+This starter offers the crazy-wise developer:
+	- tinaCMS
+	- styled components
+	- custom artwork (including a few extras that aren't used by default)
+	- clean, formatted React.js code 
+	- atomic design 
 
 
 
-Configuration is provided in the files `gatsby-config.js`, `gatsby-browser.js` and `gatsby-node.js` which include a list of additional plugins added to the SSG to extend its functionality, such as reading the Markdown files, adding in images, etc. 
+---
+## Issues and Things to Watch For
 
-#### Markdown 
-The articles are written in Markdown, a quick markup that utilizes HTML
-elements ergonomically. They are taken as input by the SSG to dynamically produce pages for each in the generated code. 
+### Node Versions
+An issue I have had come up in developing this site is the version of node, the wrong version breaks the whole process. I reccomend you install nvm (node version manager) and run the following commands if you have an major issues with the development server 
 
-### CMS
+```bash 	
 
-The Content Management System that is being utilized by this site is not
-so much a full page as it is a sidebar available to the user on the 
-development side. For
-the sake of completing the assignment, we opted not to configure a 
-separate URL to host the development server to edit the content, which 
-would have required 
-several additional authentication hoops and for a blog utilizing this 
-CMS, it seems this method is the only viable option other than what they
-style Open Authoring, which would enable anyone to edit content and 
-submit it as a pull request to the repository hosting the site, which at
-present only seems to work with a different static site generator, 
-Next.js.
+# Install Node.js version 10
+$ nvm install 10
 
-#### Features
+$ nvm use 10
 
-- Live Editing Content
-    - Editing Tabs on Articles Content 
-- Page and Site Editing 
-    - Theme Editing 
-    - Modifications of the Site's General Configuration
-   
-#### Screenshots
-![CMS2](./content/images/cms3.png)
-![CMS3](./content/images/cms5.png)    
-![CMS1](./content/images/cms2.png)
-![CMS3](./content/images/cms4.png)
+```
+Try `yarn dev` again and it should work. 
 
 
+### Gatsby Limitations
+Another issue is the Gatsby system in general, while an awesome way to generate static webpages with React, the inclusion of plugins makes the whole process a lot more prone to failure or bugginess that will require restarting the dev server or will prevent the dev server from registering a change or something else equally annoying. Its the price you pay for the simplified access to WebPack features. 
+
+### TinaCMS
+As far as I know it is still that tinaCMS is not ready for deployment on a production website, for one it lacks a means of authentication, meaning anyone could vandalize the site that used it. I do not actually use CMS systems to edit content on my sites, I like using vim to edit text and can easily write out the types of files useful here, so I am not going to invest heavily into solving this issue myself, but that would be a really awesome project for the right individual(s) and I will merge your pull requests so have at it.
+
+This does hamper the use case for many with a CMS, and I am sure in the future it will be handled if the project survives, however I found it was an awesome way to get people participating in the process of designing and producing content for the site even if they were intimidate by the code itself. 
 
 
+---
+
+## License 
+
+This software is licensed under the MIT license, consult the file named `License` for details. 

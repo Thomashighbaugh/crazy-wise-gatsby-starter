@@ -1,9 +1,9 @@
 {
   "color": {
-    "black": "#14171A",
+    "black": "#24262d",
     "white": "#F5F8FA",
     "primary": "#1DA1F2",
-    "secondary": "#657786"
+    "secondary": "#555e70"
   },
   "easing": "cubic-bezier(0.215, 0.610, 0.355, 1.000)",
   "breakpoints": {
@@ -18,11 +18,11 @@
   "header": {
     "overline": true,
     "transparent": true,
-    "height": "5.25rem",
+    "height": "4.5rem",
     "underline": true
   },
   "hero": {
-    "image": "../images/1.jpg",
+    "image": "../images/5.png",
     "large": false,
     "overlay": true,
     "overlap": "10rem",

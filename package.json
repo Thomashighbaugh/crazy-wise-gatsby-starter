@@ -1,5 +1,5 @@
 {
-  "name": "crazy-wise",
+  "name": "crazy-wise-starter",
   "private": true,
   "description": "An example blog written in Gatsby.js, featuring tinaCMS and styled components.",
   "version": "0.1.0",
@@ -63,8 +63,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "clean": "rm -rf ./cache",
-    "dev": "yarn clean && yarn develop",
+    "clean": "rm -rf ./cache && rm -rf yarn.lock && rm -rf node_modules",
+    "dev": "yarn clean && yarn && yarn develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",
