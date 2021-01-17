@@ -28,7 +28,7 @@
     "gatsby-remark-images": "^3.1.28",
     "gatsby-remark-prismjs": "^3.5.10",
     "gatsby-remark-relative-images": "^0.3.0",
-    "gatsby-source-filesystem": "^2.3.3",
+    "gatsby-source-filesystem": "^2.9.1",
     "gatsby-tinacms-git": "^0.4.11",
     "gatsby-tinacms-json": "^0.8.22",
     "gatsby-tinacms-remark": "^0.7.15",
