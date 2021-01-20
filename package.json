@@ -20,7 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.2.31",
-    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-plugin-styled-components": "^3.9.0",
     "gatsby-plugin-tinacms": "^0.1.35",
     "gatsby-plugin-transition-link": "^1.13.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
