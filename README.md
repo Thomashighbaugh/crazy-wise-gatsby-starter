@@ -1,8 +1,9 @@
+
 <h1> Crazy-Wise Starter </h1>
 
 <h2> A Gatsby.js starter featuring tinaCMS, styled-components and a bunch of custom artwork </h2>
 
-<button style="width: 5rem;height: 2rem;border: 2px solid #24262d;"><a href="https://g5-blog-cclife.netlify.app/" >Hosted Here </a></button>
+<button><a href="https://g5-blog-cclife.netlify.app/" >Hosted Here </a></button>
 
 ---
 
