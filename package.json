@@ -39,7 +39,6 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.get": "^4.4.2",
     "lodash.merge": "^4.6.2",
-    "netlify-cms": "^2.10.48",
     "polished": "^3.4.1",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
