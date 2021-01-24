@@ -1,4 +1,3 @@
-
 <h1> Crazy-Wise Starter </h1>
 
 <h2> A Gatsby.js starter featuring tinaCMS, styled-components and a bunch of custom artwork </h2>
