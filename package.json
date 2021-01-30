@@ -39,7 +39,7 @@
     "lodash.clonedeep": "4.5.0",
     "lodash.get": "4.4.2",
     "lodash.merge": "4.6.2",
-    "polished": "3.6.7",
+    "polished": "4.1.0",
     "prismjs": "1.23.0",
     "prop-types": "15.7.2",
     "react": "16.14.0",
