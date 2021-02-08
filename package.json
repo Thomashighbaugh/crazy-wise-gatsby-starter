@@ -31,7 +31,7 @@
     "gatsby-source-filesystem": "2.10.0",
     "gatsby-tinacms-git": "0.36.0",
     "gatsby-tinacms-json": "0.8.31",
-    "gatsby-tinacms-remark": "0.7.20",
+    "gatsby-tinacms-remark": "0.36.0",
     "gatsby-transformer-json": "2.9.0",
     "gatsby-transformer-remark": "2.14.0",
     "gatsby-transformer-sharp": "2.10.1",
