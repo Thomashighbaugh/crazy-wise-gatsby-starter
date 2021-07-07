@@ -50,7 +50,7 @@
     "react-tinacms-inline": "0.4.9",
     "styled-components": "5.2.1",
     "styled-icons": "10.25.0",
-    "tinacms": "0.19.4"
+    "tinacms": "0.41.1"
   },
   "devDependencies": {
     "prettier": "2.2.1"
